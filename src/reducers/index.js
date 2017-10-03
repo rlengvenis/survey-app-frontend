@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import appReducer from './appReducer';
+import surveyConfig from './surveyConfig';
+import questions from './questions';
+import answerOptions from './answerOptions';
 
 export default combineReducers({
-  appReducer,
-  routing: routerReducer
+    surveyConfig,
+    questions,
+    answerOptions,
+    routing: routerReducer
 });

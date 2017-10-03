@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { incrementValue } from '../actions';
+import './Survey.css';
 
 class Questions extends Component {
   render() {
     return (
-      <article className="layout-questions">
+      <article>
         <h1>Favourite movies</h1>
         <p>Please provide info about the movie you liked.</p>
         <div>
-          <form method="POST" action="localhost">
+          <form className="questions-form" method="POST" action="localhost">
             <div className="form-group">
               <h2>What is the name of your movie? <abbr title="Required">*</abbr></h2>
               <input className="form-control" type="text" name="movieName" id="movieName" placeholder="Your answer" required/>
@@ -60,8 +60,7 @@ class Questions extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/about-us'),
-  incrementValue
+  changePage: () => push('/about-us')
 }, dispatch);
 
 
