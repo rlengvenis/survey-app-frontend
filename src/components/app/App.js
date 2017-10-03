@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import Survey from './Survey'
-import SurveyBuilder from '../containers/SurveyBuilder';
+
+import Survey from '../survey/Survey'
+import SurveyBuilder from '../suvey-builder/SurveyBuilder';
 import './App.css';
-import firebase from '../firebase';
+import firebase from '../../firebase';
 
 const App = () => (
   <div>
