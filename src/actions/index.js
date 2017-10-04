@@ -31,17 +31,17 @@ export const addNewQuestion = () => {
   };
 };
 
-export const changeQuestionTitle = ({id, title}) => ({
+export const changeQuestionTitle = ({questionId, title}) => ({
   type: actionTypes.QUESTION_CHANGE_TITLE,
   payload: {
-    id,
+    questionId,
     title
   }
 });
 
-export const changeQuestionType = ({questionType, id}) => ({
+export const changeQuestionType = ({questionType, questionId}) => ({
   type: actionTypes.QUESTION_CHANGE_TYPE,
-  payload: {questionType, id}
+  payload: {questionType, questionId}
 });
 
 // Answer Option Actions
@@ -55,7 +55,7 @@ export const addNewAnswerOption = ({questionId}) => ({
   }
 });
 
-export const changeAnswerOptionTitle = ({title, id}) => ({
+export const changeAnswerOptionTitle = ({answerOptionId, title}) => ({
   type: actionTypes.ANSWER_OPTION_CHANGE_TITLE,
-  payload: {title, id}
+  payload: {answerOptionId, title}
 });

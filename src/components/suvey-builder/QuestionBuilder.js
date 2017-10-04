@@ -17,13 +17,13 @@ const QuestionBuilder = ({
 }) => {
 
   const handleQuestionTypeChange = ({questionType}) =>
-    changeQuestionType({id: question.id, questionType});
+    changeQuestionType({questionId: question.id, questionType});
 
   const handleQuestionTitleChange = ({title}) =>
-    changeQuestionTitle({id: question.id, title});
+    changeQuestionTitle({questionId: question.id, title});
 
-  const handleAnswerOptionTitleChange = ({id, title}) =>
-    changeAnswerOptionTitle({id, title});      //TODO pervadink į answerOptionId
+  const handleAnswerOptionTitleChange = ({answerOptionId, title}) =>
+    changeAnswerOptionTitle({answerOptionId, title});
 
   const handleAddNewAnswerOption = ({questionId}) =>
     addNewAnswerOption({questionId});

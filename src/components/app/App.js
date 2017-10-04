@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 import Survey from '../survey/Survey'
 import SurveyBuilder from '../suvey-builder/SurveyBuilder';
@@ -17,10 +17,10 @@ const App = () => (
         </ul>
       </nav>
     </header>
-    
+
     <main className="container">
-      <Route exact path="/" component={SurveyBuilder} />
-      <Route exact path="/survey" component={Survey} />
+      <Route exact path="/" component={SurveyBuilder}/>
+      <Route exact path="/survey" component={Survey}/>
     </main>
   </div>
 );

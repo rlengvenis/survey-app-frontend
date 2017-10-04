@@ -22,7 +22,7 @@ const AnswerOptions = ({
                 value={answerOption.title}
                 onChange={(e) => onChangeAnswerOptionTitle({
                   title: e.target.value,
-                  id: answerOption.id
+                  answerOptionId: answerOption.id
                 })}
               />
             </li>);
