@@ -1,106 +1,52 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import * as actions from '../../actions/';
 import questionTypes from '../../constants/questionTypes';
-import * as actions from '../../actions/index';
 
-import SimpleQuestion from './SimpleQuestion';
-import MultipleAnswerQuestion from './MultipleAnswerQuestion';
+import QuestionInput from './QuestionInput';
+import QuestionTypeSelector from './QuestionTypeSelector';
+import AnswerOptions from './AnswerOptions';
 
-class QuestionBuilder extends React.Component {
-  render() {
-    return (
-      <div>
-        {this.renderQuestionTypeControls()}
-        {this.renderQuestion()}
-      </div>
-    );
-  }
+const QuestionBuilder = ({
+  question,
+  changeQuestionTitle,
+  addNewAnswerOption,
+  changeAnswerOptionTitle,
+  changeQuestionType
+}) => {
 
-  renderQuestionTypeControls() {
-    const {
-      question,
-      changeQuestionType
-    } = this.props;
+  const handleQuestionTypeChange = ({questionType}) =>
+    changeQuestionType({id: question.id, questionType});
 
-    return (
-      <div>
-        <ul>
-          <li>
-            <button
-              onClick={() => changeQuestionType({
-                questionType: questionTypes.SHORT_ANSWER,
-                id: question.id
-              })}
-            >
-              Short answer
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => changeQuestionType({
-                questionType: questionTypes.PARAGRAPH,
-                id: question.id
-              })}
-            >
-              Paragraph
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => changeQuestionType({
-                questionType: questionTypes.MULTIPLE_ANSWER,
-                id: question.id
-              })}
-            >
-              Multiple answers
-            </button>
-          </li>
-        </ul>
-      </div>
-    )
-  }
+  const handleQuestionTitleChange = ({title}) =>
+    changeQuestionTitle({id: question.id, title});
 
-  renderQuestion() {
-    const {
-      question,
-      changeQuestionTitle,
-      addNewAnswerOption,
-      changeAnswerOptionTitle
-    } = this.props;
+  const handleAnswerOptionTitleChange = ({id, title}) =>
+    changeAnswerOptionTitle({id, title});      //TODO pervadink į answerOptionId
 
-    switch (question.questionType) {
-      case questionTypes.SHORT_ANSWER:
-      case questionTypes.PARAGRAPH:
+  const handleAddNewAnswerOption = ({questionId}) =>
+    addNewAnswerOption({questionId});
 
-        return (
-          <SimpleQuestion
-            question={question}
-            onChangeQuestionTitle={({id, title}) =>
-              changeQuestionTitle({id, title})
-            }
-          />
-        );
-      case questionTypes.MULTIPLE_ANSWER:
+  return (
+    <div>
+      <QuestionTypeSelector
+        onSelectQuestionType={handleQuestionTypeChange}
+      />
+      <QuestionInput
+        questionTitle={question.title}
+        onChangeQuestionTitle={handleQuestionTitleChange}
+      />
+      {question.questionType === questionTypes.MULTIPLE_ANSWER &&
+        <AnswerOptions
+          questionId={question.id}
+          answerOptions={question.answerOptions}
+          onChangeAnswerOptionTitle={handleAnswerOptionTitleChange}
+          onAddNewAnswerOption={handleAddNewAnswerOption}
+        />
+      }
+    </div>
+  );
+};
 
-        return (
-          <MultipleAnswerQuestion
-            question={question}
-            onChangeQuestionTitle={({title, id}) =>
-              changeQuestionTitle({id, title})
-            }
-            onAddNewAnswerOption={({questionId}) =>
-              addNewAnswerOption({questionId})
-            }
-            onChangeAnswerOptionTitle={({id, title}) =>
-              changeAnswerOptionTitle({id, title})
-            }
-          />
-        );
-    }
-  }
-}
-
-QuestionBuilder = connect(null, actions)(QuestionBuilder);
-
-export default QuestionBuilder;
+export default connect(null, actions)(QuestionBuilder);
