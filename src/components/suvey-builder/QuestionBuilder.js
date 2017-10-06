@@ -7,7 +7,7 @@ import questionTypes from '../../constants/questionTypes';
 import customPropTypes from './customPropTypes';
 
 import QuestionTypeSelector from './QuestionTypeSelector';
-import AnswerOptionList from './AnswerOptionBuilder';
+import AnswerOptionListBuilder from './AnswerOptionListBuilder';
 
 
 const QuestionBuilder = ({
@@ -48,7 +48,7 @@ const QuestionBuilder = ({
       {
         question.questionType === questionTypes.MULTIPLE_ANSWER &&
 
-        <AnswerOptionList
+        <AnswerOptionListBuilder
           questionId={question.id}
           answerOptions={question.answerOptions}
           onChangeAnswerOptionTitle={changeAnswerOptionTitle}

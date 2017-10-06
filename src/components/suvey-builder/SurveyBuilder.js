@@ -6,7 +6,7 @@ import * as actions from '../../actions';
 import customPropTypes from './customPropTypes';
 
 import getSurveyQuestions from '../../selectors/getSurveryQuestions';
-import QuestionBuilder from './QuestionBuilder';
+import QuestionListBuilder from './QuestionListBuilder';
 
 
 const mapStateToProps = (state) => ({
@@ -47,18 +47,11 @@ const SurveyBuilder = ({
         />
       </div>
 
-      <div>
-        {
-          surveyQuestions.length > 0 &&
+      {
+        surveyQuestions.length > 0 &&
 
-          surveyQuestions.map((question) => (
-            <QuestionBuilder
-              key={question.id}
-              question={question}
-            />
-          ))
-        }
-      </div>
+        <QuestionListBuilder questions={surveyQuestions}/>
+      }
 
       <div>
         <button onClick={addNewQuestion}>
