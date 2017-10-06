@@ -1,12 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import * as actions from '../../actions/';
 import questionTypes from '../../constants/questionTypes';
+import customPropTypes from './customPropTypes';
 
-import QuestionInput from './QuestionInput';
 import QuestionTypeSelector from './QuestionTypeSelector';
-import AnswerOptions from './AnswerOptions';
+import AnswerOptionList from './AnswerOptionList';
+
 
 const QuestionBuilder = ({
   question,
@@ -16,39 +18,53 @@ const QuestionBuilder = ({
   changeQuestionType
 }) => {
 
-  console.log('Render QuestionBuilder')
-  const handleQuestionTypeChange = ({questionType}) =>
-    changeQuestionType({questionId: question.id, questionType});
+  const handleQuestionTypeChange = ({questionType}) => {
+    return changeQuestionType({
+      questionId: question.id,
+      questionType
+    });
+  };
 
-  const handleQuestionTitleChange = ({title}) =>
-    changeQuestionTitle({questionId: question.id, title});
-
-  const handleAnswerOptionTitleChange = ({answerOptionId, title}) =>
-    changeAnswerOptionTitle({answerOptionId, title});
-
-  const handleAddNewAnswerOption = ({questionId}) =>
-    addNewAnswerOption({questionId});
+  const handleQuestionTitleChange = (e) => {
+    return changeQuestionTitle({
+      questionId: question.id,
+      title: e.target.value
+    });
+  };
 
   return (
     <div>
       <QuestionTypeSelector
         onSelectQuestionType={handleQuestionTypeChange}
       />
-      <QuestionInput
-        questionTitle={question.title}
-        onChangeQuestionTitle={handleQuestionTitleChange}
+
+      <input
+        type="text"
+        placeholder="Enter Question"
+        value={question.title}
+        onChange={handleQuestionTitleChange}
       />
+
       {question.questionType === questionTypes.MULTIPLE_ANSWER &&
 
-        <AnswerOptions
-          questionId={question.id}
-          answerOptions={question.answerOptions}
-          onChangeAnswerOptionTitle={handleAnswerOptionTitleChange}
-          onAddNewAnswerOption={handleAddNewAnswerOption}
-        />
+      <AnswerOptionList
+        questionId={question.id}
+        answerOptions={question.answerOptions}
+        onChangeAnswerOptionTitle={changeAnswerOptionTitle}
+        onAddNewAnswerOption={addNewAnswerOption}
+      />
       }
     </div>
   );
 };
+
+QuestionBuilder.propTypes = {
+  question: customPropTypes.question,
+  changeQuestionTitle: PropTypes.func.isRequired,
+  addNewAnswerOption: PropTypes.func.isRequired,
+  changeAnswerOptionTitle: PropTypes.func.isRequired,
+  changeQuestionType: PropTypes.func.isRequired
+};
+
 
 export default connect(null, actions)(QuestionBuilder);

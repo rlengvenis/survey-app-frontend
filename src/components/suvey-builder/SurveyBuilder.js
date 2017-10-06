@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import * as actions from '../../actions';
+import customPropTypes from './customPropTypes';
 
 import getSurveyQuestions from '../../selectors/getSurveryQuestions';
 import QuestionList from './QuestionList';
@@ -59,6 +61,17 @@ const SurveyBuilder = ({
   );
 };
 
-
+SurveyBuilder.propTypes = {
+  surveyConfig: PropTypes.shape({
+    surveyName: PropTypes.string.isRequired,
+    surveyDescription: PropTypes.string.isRequired,
+    questionIds: PropTypes.arrayOf(PropTypes.string).isRequired
+  }).isRequired,
+  surveyQuestions: PropTypes.arrayOf(customPropTypes.question).isRequired,
+  changeSurveyName: PropTypes.func.isRequired,
+  changeSurveyDescription: PropTypes.func.isRequired,
+  addNewQuestion: PropTypes.func.isRequired,
+  saveSurvey: PropTypes.func.isRequired
+};
 
 export default connect(mapStateToProps, actions)(SurveyBuilder);

@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import customPropTypes from './customPropTypes';
 
-const AnswerOptions = ({
+const AnswerOptionList = ({
   questionId,
   answerOptions,
   onChangeAnswerOptionTitle,
@@ -35,4 +37,11 @@ const AnswerOptions = ({
   );
 };
 
-export default AnswerOptions;
+AnswerOptionList.propTypes = {
+  questionId: PropTypes.string.isRequired,
+  answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
+  onChangeAnswerOptionTitle: PropTypes.func.isRequired,
+  onAddNewAnswerOption: PropTypes.func.isRequired
+};
+
+export default AnswerOptionList;
