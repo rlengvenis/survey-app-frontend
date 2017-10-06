@@ -39,10 +39,10 @@ const AnswerOptionListBuilder = ({
 };
 
 AnswerOptionListBuilder.propTypes = {
-  questionId: PropTypes.string.isRequired,
   answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
+  onAddNewAnswerOption: PropTypes.func.isRequired,
   onChangeAnswerOptionTitle: PropTypes.func.isRequired,
-  onAddNewAnswerOption: PropTypes.func.isRequired
+  questionId: PropTypes.string.isRequired
 };
 
 export default AnswerOptionListBuilder;

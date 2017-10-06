@@ -9,9 +9,9 @@ const answerOption = PropTypes.shape({
 });
 
 const question = PropTypes.shape({
+  answerOptions: PropTypes.arrayOf(answerOption).isRequired,
   id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  answerOptions: PropTypes.arrayOf(answerOption).isRequired
+  title: PropTypes.string.isRequired
 });
 
 export default {

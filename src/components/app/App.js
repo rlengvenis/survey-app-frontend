@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
 
-import Survey from '../survey/SurveyForm'
+import Survey from '../survey-form/SurveyForm'
 import SurveyBuilder from '../suvey-builder/SurveyBuilder';
 import './App.css';
 import firebase from '../../firebase';

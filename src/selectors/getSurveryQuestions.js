@@ -2,7 +2,7 @@ import getAnswerOptions from './getAnswerOptions';
 
 const getSurveryQuestions = (state) =>
   state.surveyConfig.questionIds.map((id) => ({
-    ...state.questions[id],
+    ...state.surveyQuestions[id],
     answerOptions: getAnswerOptions(state, id)
   }));
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
 
-import * as actions from '../../actions/';
+import * as questionActions from '../../actions/questionActions';
+import * as answerOptionActions from '../../actions/answerOptionActions';
 import questionTypes from '../../constants/questionTypes';
 import customPropTypes from './customPropTypes';
 
@@ -10,23 +12,26 @@ import QuestionTypeSelector from './QuestionTypeSelector';
 import AnswerOptionListBuilder from './AnswerOptionListBuilder';
 
 
+const mapDispatchToProps = (dispatch) => ({
+  questionActions: bindActionCreators(questionActions, dispatch),
+  answerOptionActions: bindActionCreators(answerOptionActions, dispatch)
+});
+
 const QuestionBuilder = ({
   question,
-  changeQuestionTitle,
-  addNewAnswerOption,
-  changeAnswerOptionTitle,
-  changeQuestionType
+  questionActions,
+  answerOptionActions
 }) => {
 
   const handleQuestionTypeChange = ({questionType}) => {
-    return changeQuestionType({
+    return questionActions.changeQuestionType({
       questionId: question.id,
       questionType
     });
   };
 
   const handleQuestionTitleChange = (e) => {
-    return changeQuestionTitle({
+    return questionActions.changeQuestionTitle({
       questionId: question.id,
       title: e.target.value
     });
@@ -51,8 +56,8 @@ const QuestionBuilder = ({
         <AnswerOptionListBuilder
           questionId={question.id}
           answerOptions={question.answerOptions}
-          onChangeAnswerOptionTitle={changeAnswerOptionTitle}
-          onAddNewAnswerOption={addNewAnswerOption}
+          onChangeAnswerOptionTitle={answerOptionActions.changeAnswerOptionTitle}
+          onAddNewAnswerOption={answerOptionActions.addNewAnswerOption}
         />
       }
     </div>
@@ -60,12 +65,16 @@ const QuestionBuilder = ({
 };
 
 QuestionBuilder.propTypes = {
+  questionActions: PropTypes.shape({
+    changeQuestionTitle: PropTypes.func.isRequired,
+    changeQuestionType: PropTypes.func.isRequired
+  }).isRequired,
+  answerOptionActions: PropTypes.shape({
+    addNewAnswerOption: PropTypes.func.isRequired,
+    changeAnswerOptionTitle: PropTypes.func.isRequired,
+  }).isRequired,
   question: customPropTypes.question.isRequired,
-  changeQuestionTitle: PropTypes.func.isRequired,
-  addNewAnswerOption: PropTypes.func.isRequired,
-  changeAnswerOptionTitle: PropTypes.func.isRequired,
-  changeQuestionType: PropTypes.func.isRequired
 };
 
 
-export default connect(null, actions)(QuestionBuilder);
+export default connect(null, mapDispatchToProps)(QuestionBuilder);

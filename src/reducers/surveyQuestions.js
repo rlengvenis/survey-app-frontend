@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const questions = (state = {}, action) => {
+const surveyQuestions = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.QUESTION_ADD_NEW: {
       const {id} = action.payload;
@@ -29,8 +29,7 @@ const questions = (state = {}, action) => {
         ...state,
         [questionId]: {
           ...state[questionId],
-          questionType,
-          title: ''
+          questionType
         }
       };
     }
@@ -57,4 +56,4 @@ const questions = (state = {}, action) => {
 };
 
 
-export default questions;
+export default surveyQuestions;

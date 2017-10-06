@@ -1,5 +1,9 @@
 import React from 'react';
+
+import questionTypes from '../../constants/questionTypes';
+
 import AnswerOptionList from './AnswerOptionList';
+
 
 const Question = ({question}) => {
 
@@ -7,13 +11,17 @@ const Question = ({question}) => {
     <div className="form-group">
       <h2> {question.title} <abbr title="Required">*</abbr></h2>
 
-      <input
-        className="form-control"
-        type="text"
-        name="movieName"
-        id="movieName"
-        placeholder="Your answer"
-      />
+      {
+        question.questionType !== questionTypes.MULTIPLE_ANSWER &&
+
+        <input
+          className="form-control"
+          type="text"
+          name={question.id}
+          value=''
+          placeholder="Your answer"
+        />
+      }
 
       {
         question.answerOptions.length > 0 &&

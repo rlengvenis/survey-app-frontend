@@ -1,8 +1,10 @@
 import React from 'react';
-import QuestionBuilder from './QuestionBuilder';
 import PropTypes from 'prop-types';
 
 import customPropTypes from './customPropTypes';
+
+import QuestionBuilder from './QuestionBuilder';
+
 
 const QuestionListBuilder = ({questions}) => {
   return (

@@ -6,6 +6,7 @@ import './Survey.css';
 
 import QuestionList from './QuestionList';
 
+
 const mapStateToProps = (state) => ({
   surveyConfig: state.surveyConfig,
   surveyQuestions: getSurveyQuestions(state)
@@ -18,18 +19,20 @@ const SurveyForm = ({
 
   return (
     <article>
-      <h1>{surveyConfig.surveyName}</h1>
-      <p>{surveyConfig.surveyDescription}</p>
       <div>
-        <form className="questions-form" method="POST" action="localhost">
-          <QuestionList questions={surveyQuestions}/>
-          <div>
-            <button className="submit" type="submit">Submit</button>
-          </div>
-        </form>
+        <h1>{surveyConfig.surveyName}</h1>
+        <p>{surveyConfig.surveyDescription}</p>
       </div>
+
+      <form className="questions-form" method="POST" action="localhost">
+        <QuestionList questions={surveyQuestions}/>
+        <div>
+          <button className="submit" type="submit">Submit</button>
+        </div>
+      </form>
+
     </article>
   );
-}
+};
 
 export default connect(mapStateToProps, null)(SurveyForm);

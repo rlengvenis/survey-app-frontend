@@ -14,7 +14,7 @@ const initialState = {
       'e5461251-e47c-4ff9-abc4-af650ac6935e'
     ]
   },
-  questions: {
+  surveyQuestions: {
     '9421686c-a31a-4efd-9a9c-5e4d67d965e2': {
       id: '9421686c-a31a-4efd-9a9c-5e4d67d965e2',
       title: 'Kokia mano lytis?',
