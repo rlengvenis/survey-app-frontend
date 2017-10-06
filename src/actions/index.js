@@ -24,7 +24,8 @@ export const addNewQuestion = () => {
   return {
     type: actionTypes.QUESTION_ADD_NEW,
     payload: {
-      id: v4(), title: '',
+      id: v4(),
+      title: '',
       questionType: questionTypes.SHORT_ANSWER,
       answerOptionIds: []
     }
@@ -49,7 +50,7 @@ export const changeQuestionType = ({questionType, questionId}) => ({
 export const addNewAnswerOption = ({questionId}) => ({
   type: actionTypes.ANSWER_OPTION_ADD_NEW,
   payload: {
-    id: v4(),
+    answerOptionId: v4(),
     title: '',
     questionId
   }

@@ -5,15 +5,16 @@ const QuestionInput = ({
   onChangeQuestionTitle
 }) => {
 
+  const handleQuestionTitleChange = (e) =>
+    onChangeQuestionTitle({title: e.target.value});
+
   return (
     <div>
       <input
         type="text"
         placeholder="Enter Question"
         value={questionTitle}
-        onChange={(e) => onChangeQuestionTitle({
-          title: e.target.value
-        })}
+        onChange={handleQuestionTitleChange}
       />
     </div>
   );

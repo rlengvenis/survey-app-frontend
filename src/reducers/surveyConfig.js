@@ -9,25 +9,28 @@ const initialState = {
 const surveyConfig = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SURVEY_CHANGE_DESCRIPTION: {
+      const {surveyDescription} = action.payload;
       return {
         ...state,
-        surveyDescription: action.payload.surveyDescription
+        surveyDescription
       };
     }
 
     case actionTypes.SURVEY_CHANGE_NAME: {
+      const {surveyName} = action.payload;
       return {
         ...state,
-        surveyName: action.payload.surveyName
+        surveyName
       };
     }
 
     case actionTypes.QUESTION_ADD_NEW: {
+      const {id} = action.payload;
       return {
         ...state,
         questionIds: [
           ...state.questionIds,
-          action.payload.id
+          id
         ]
       };
     }

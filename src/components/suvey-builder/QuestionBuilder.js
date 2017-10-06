@@ -16,6 +16,7 @@ const QuestionBuilder = ({
   changeQuestionType
 }) => {
 
+  console.log('Render QuestionBuilder')
   const handleQuestionTypeChange = ({questionType}) =>
     changeQuestionType({questionId: question.id, questionType});
 
@@ -38,6 +39,7 @@ const QuestionBuilder = ({
         onChangeQuestionTitle={handleQuestionTitleChange}
       />
       {question.questionType === questionTypes.MULTIPLE_ANSWER &&
+
         <AnswerOptions
           questionId={question.id}
           answerOptions={question.answerOptions}

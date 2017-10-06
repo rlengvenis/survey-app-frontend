@@ -3,9 +3,10 @@ import * as actionTypes from '../constants/actionTypes';
 const questions = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.QUESTION_ADD_NEW: {
+      const {id} = action.payload;
       return {
         ...state,
-        [action.payload.id]: action.payload
+        [id]: action.payload
       };
     }
 
@@ -35,7 +36,7 @@ const questions = (state = {}, action) => {
     }
 
     case actionTypes.ANSWER_OPTION_ADD_NEW: {
-      const {id, questionId} = action.payload;
+      const {answerOptionId, questionId} = action.payload;
       const previousQuestion = state[questionId];
 
       return {
@@ -44,7 +45,7 @@ const questions = (state = {}, action) => {
           ...previousQuestion,
           answerOptionIds: [
             ...previousQuestion.answerOptionIds,
-            id
+            answerOptionId
           ]
         }
       };
