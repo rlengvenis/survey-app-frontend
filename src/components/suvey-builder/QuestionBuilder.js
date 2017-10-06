@@ -7,7 +7,7 @@ import questionTypes from '../../constants/questionTypes';
 import customPropTypes from './customPropTypes';
 
 import QuestionTypeSelector from './QuestionTypeSelector';
-import AnswerOptionList from './AnswerOptionList';
+import AnswerOptionList from './AnswerOptionBuilder';
 
 
 const QuestionBuilder = ({
@@ -45,21 +45,22 @@ const QuestionBuilder = ({
         onChange={handleQuestionTitleChange}
       />
 
-      {question.questionType === questionTypes.MULTIPLE_ANSWER &&
+      {
+        question.questionType === questionTypes.MULTIPLE_ANSWER &&
 
-      <AnswerOptionList
-        questionId={question.id}
-        answerOptions={question.answerOptions}
-        onChangeAnswerOptionTitle={changeAnswerOptionTitle}
-        onAddNewAnswerOption={addNewAnswerOption}
-      />
+        <AnswerOptionList
+          questionId={question.id}
+          answerOptions={question.answerOptions}
+          onChangeAnswerOptionTitle={changeAnswerOptionTitle}
+          onAddNewAnswerOption={addNewAnswerOption}
+        />
       }
     </div>
   );
 };
 
 QuestionBuilder.propTypes = {
-  question: customPropTypes.question,
+  question: customPropTypes.question.isRequired,
   changeQuestionTitle: PropTypes.func.isRequired,
   addNewAnswerOption: PropTypes.func.isRequired,
   changeAnswerOptionTitle: PropTypes.func.isRequired,

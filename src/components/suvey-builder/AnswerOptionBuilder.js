@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import customPropTypes from './customPropTypes';
 
-const AnswerOptionList = ({
+const AnswerOptionBuilder = ({
   questionId,
   answerOptions,
   onChangeAnswerOptionTitle,
@@ -30,6 +30,7 @@ const AnswerOptionList = ({
             </li>);
         })}
       </ul>
+
       <button onClick={handleAddNewAnswerOption}>
         Add Option
       </button>
@@ -37,11 +38,11 @@ const AnswerOptionList = ({
   );
 };
 
-AnswerOptionList.propTypes = {
+AnswerOptionBuilder.propTypes = {
   questionId: PropTypes.string.isRequired,
   answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
   onChangeAnswerOptionTitle: PropTypes.func.isRequired,
   onAddNewAnswerOption: PropTypes.func.isRequired
 };
 
-export default AnswerOptionList;
+export default AnswerOptionBuilder;
