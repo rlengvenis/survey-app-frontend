@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
 const initialState = {
-  surveyConfig: {
+  survey: {
     surveyName: 'Apklausa',
     surveyDescription: 'Apie save patį',
     questionIds: [

@@ -6,7 +6,7 @@ const initialState = {
   questionIds: []
 };
 
-const surveyConfig = (state = initialState, action) => {
+const survey = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SURVEY_CHANGE_DESCRIPTION: {
       const {surveyDescription} = action.payload;
@@ -40,4 +40,4 @@ const surveyConfig = (state = initialState, action) => {
   }
 };
 
-export default surveyConfig;
+export default survey;

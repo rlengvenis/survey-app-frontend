@@ -12,7 +12,7 @@ import QuestionListBuilder from './QuestionListBuilder';
 
 
 const mapStateToProps = (state) => ({
-  surveyConfig: state.surveyConfig,
+  survey: state.survey,
   surveyQuestions: getSurveyQuestions(state)
 });
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const SurveyBuilder = ({
-  surveyConfig,
+  survey,
   surveyQuestions,
   surveyActions,
   questionActions
@@ -42,14 +42,14 @@ const SurveyBuilder = ({
       <div>
         <input
           type="text"
-          value={surveyConfig.surveyName}
+          value={survey.surveyName}
           onChange={handleChangeSurveyName}
           placeholder="Survey Name"
         />
         <br/>
         <input
           type="text"
-          value={surveyConfig.surveyDescription}
+          value={survey.surveyDescription}
           onChange={handleChangeSurveyDescription}
           placeholder="Survey description"
         />
@@ -84,7 +84,7 @@ SurveyBuilder.propTypes = {
     changeSurveyName: PropTypes.func.isRequired,
     saveSurvey: PropTypes.func.isRequired
   }).isRequired,
-  surveyConfig: PropTypes.shape({
+  survey: PropTypes.shape({
     questionIds: PropTypes.arrayOf(PropTypes.string).isRequired,
     surveyDescription: PropTypes.string.isRequired,
     surveyName: PropTypes.string.isRequired

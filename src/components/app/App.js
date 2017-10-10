@@ -27,11 +27,14 @@ const App = () => (
 
 const itemsRef = firebase.database().ref('items');
 
+console.log('itemsRef', itemsRef);
+
 const item = {
   title: 'test',
   user: 'test'
 };
 
-itemsRef.push(item);
+// itemsRef.push(item);
+
 
 export default App;

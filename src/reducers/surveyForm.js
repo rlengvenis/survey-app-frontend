@@ -1,13 +1,13 @@
 import * as actionTypes from '../constants/actionTypes';
 
-
-const surveyAnswers = (state = {}, action) => {
+const surveyForm = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SURVEY_FORM_INIT_FORM_CONFIG: {
-      const {answersById} = action.payload;
+      const {questionIds, isValid} = action.payload;
 
       return {
-        ...answersById
+        isValid,
+        questionIds
       };
     }
 
@@ -21,4 +21,4 @@ const surveyAnswers = (state = {}, action) => {
   }
 };
 
-export default surveyAnswers;
+export default surveyForm;

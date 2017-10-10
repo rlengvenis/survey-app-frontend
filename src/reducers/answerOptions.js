@@ -8,7 +8,8 @@ const answerOptions = (state = {}, action) => {
       return {
         ...state,
         [answerOptionId]: {
-          id: answerOptionId, title
+          id: answerOptionId,
+          title
         }
       };
     }

@@ -23,25 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="090ec23b-c4b1-4c5c-8792-7027a42236db" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/survey/AnswerOption.js" afterPath="$PROJECT_DIR$/src/components/survey-form/AnswerOption.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/survey/AnswerOptionList.js" afterPath="$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/survey/Question.js" afterPath="$PROJECT_DIR$/src/components/survey-form/Question.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/survey/QuestionList.js" afterPath="$PROJECT_DIR$/src/components/survey-form/QuestionList.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/survey/Survey.scss" afterPath="$PROJECT_DIR$/src/components/survey-form/Survey.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/survey/SurveyForm.js" afterPath="$PROJECT_DIR$/src/components/survey-form/SurveyForm.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/reducers/questions.js" afterPath="$PROJECT_DIR$/src/reducers/surveyQuestions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/reducers/surveyForm.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/surveyAnswers.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/reducers/surveyConfig.js" afterPath="$PROJECT_DIR$/src/reducers/survey.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/app/App.js" afterPath="$PROJECT_DIR$/src/components/app/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/suvey-builder/AnswerOptionListBuilder.js" afterPath="$PROJECT_DIR$/src/components/suvey-builder/AnswerOptionListBuilder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/survey-form/AnswerOption.js" afterPath="$PROJECT_DIR$/src/components/survey-form/AnswerOption.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js" afterPath="$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/survey-form/Question.js" afterPath="$PROJECT_DIR$/src/components/survey-form/Question.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/survey-form/QuestionList.js" afterPath="$PROJECT_DIR$/src/components/survey-form/QuestionList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/survey-form/SurveyForm.js" afterPath="$PROJECT_DIR$/src/components/survey-form/SurveyForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js" afterPath="$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/suvey-builder/QuestionListBuilder.js" afterPath="$PROJECT_DIR$/src/components/suvey-builder/QuestionListBuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeSelector.js" afterPath="$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeSelector.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/suvey-builder/SurveyBuilder.js" afterPath="$PROJECT_DIR$/src/components/suvey-builder/SurveyBuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/suvey-builder/customPropTypes.js" afterPath="$PROJECT_DIR$/src/components/suvey-builder/customPropTypes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/configureStore.js" afterPath="$PROJECT_DIR$/src/configureStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants/actionTypes.js" afterPath="$PROJECT_DIR$/src/constants/actionTypes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/answerOptions.js" afterPath="$PROJECT_DIR$/src/reducers/answerOptions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/selectors/getAnswerOptions.js" afterPath="$PROJECT_DIR$/src/selectors/getAnswerOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/surveyQuestions.js" afterPath="$PROJECT_DIR$/src/reducers/surveyQuestions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/selectors/getSurveryQuestions.js" afterPath="$PROJECT_DIR$/src/selectors/getSurveryQuestions.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,113 +51,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SurveyBuilder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/SurveyBuilder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestionTypeSelector.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeSelector.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-380">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestionListBuilder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionListBuilder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Question.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/survey-form/Question.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnswerOptionList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnswerOption.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/survey-form/AnswerOption.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuestionBuilder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="75" column="48" lean-forward="false" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customPropTypes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/customPropTypes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnswerOptionListBuilder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/AnswerOptionListBuilder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SurveyForm.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SurveyForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/survey-form/SurveyForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="35" column="2" lean-forward="false" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+            <state relative-caret-position="325">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/app/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firebase.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/firebase.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surveyFormActions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/surveyFormActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="answerOptions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/answerOptions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surveyForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/surveyForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surveyAnswers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/surveyAnswers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surveyQuestions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/surveyQuestions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="605">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="survey.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/survey.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -176,12 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>increment</find>
-      <find>add</find>
-      <find>addNewQuestion</find>
-      <find>ADD_NEW_QUESTION</find>
-      <find>updateQuestion</find>
-      <find>UPDATE_QUESTION</find>
       <find>onQuestionUpdate</find>
       <find>onAnswerOptionChange</find>
       <find>getAnswerOptions</find>
@@ -206,6 +182,12 @@
       <find>Proptypes</find>
       <find>changePage</find>
       <find>QUESTION_CHANGE_TYPE</find>
+      <find>handle</find>
+      <find>on</find>
+      <find>surveyConfig</find>
+      <find>surveyFormConfig</find>
+      <find>surveyBuilderConfig</find>
+      <find>SURVEY_FORM_INIT_FORM_CONFIG</find>
     </findStrings>
     <replaceStrings>
       <replace>onChangeQuestionTitle</replace>
@@ -213,6 +195,9 @@
       <replace>MULTIPLE_ANSWER</replace>
       <replace>QuestionInput</replace>
       <replace>PropTypes</replace>
+      <replace>surveyBuilderConfig</replace>
+      <replace>surveyForm</replace>
+      <replace>survey</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -221,21 +206,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/SurveyBuilder.js" />
-        <option value="$PROJECT_DIR$/src/components/QuestionBuilder.js" />
-        <option value="$PROJECT_DIR$/src/components/MultipleAnswerQuestion.js" />
-        <option value="$PROJECT_DIR$/src/components/suvey-builder/SimpleQuestion.js" />
-        <option value="$PROJECT_DIR$/src/components/suvey-builder/QuoestionList2.js" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/components/suvey-builder/MultipleAnswerQuestion.js" />
-        <option value="$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeChanger.js" />
-        <option value="$PROJECT_DIR$/src/firebase.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/registerServiceWorker.js" />
-        <option value="$PROJECT_DIR$/src/components/app/App.js" />
         <option value="$PROJECT_DIR$/src/components/app/App.test.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/reducers/answerOptions.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/surveyConfig.js" />
         <option value="$PROJECT_DIR$/src/components/suvey-builder/QuestionInput.js" />
@@ -255,23 +229,34 @@
         <option value="$PROJECT_DIR$/src/reducers/questions.js" />
         <option value="$PROJECT_DIR$/src/selectors/getAnswerOptions.js" />
         <option value="$PROJECT_DIR$/src/configureStore.js" />
-        <option value="$PROJECT_DIR$/src/selectors/getSurveryQuestions.js" />
-        <option value="$PROJECT_DIR$/src/reducers/surveyQuestions.js" />
-        <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/actions/surveyActions.js" />
         <option value="$PROJECT_DIR$/src/actions/questionActions.js" />
         <option value="$PROJECT_DIR$/src/actions/answerOptionActions.js" />
         <option value="$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeSelector.js" />
-        <option value="$PROJECT_DIR$/src/components/survey-form/QuestionList.js" />
-        <option value="$PROJECT_DIR$/src/components/survey-form/Question.js" />
-        <option value="$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js" />
-        <option value="$PROJECT_DIR$/src/components/survey-form/AnswerOption.js" />
         <option value="$PROJECT_DIR$/src/components/suvey-builder/QuestionListBuilder.js" />
         <option value="$PROJECT_DIR$/src/components/suvey-builder/SurveyBuilder.js" />
-        <option value="$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js" />
         <option value="$PROJECT_DIR$/src/components/suvey-builder/customPropTypes.js" />
         <option value="$PROJECT_DIR$/src/components/suvey-builder/AnswerOptionListBuilder.js" />
+        <option value="$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js" />
+        <option value="$PROJECT_DIR$/src/reducers/answerOptions.js" />
+        <option value="$PROJECT_DIR$/src/reducers/surveyQuestions.js" />
+        <option value="$PROJECT_DIR$/src/components/survey-form/QuestionList.js" />
+        <option value="$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js" />
+        <option value="$PROJECT_DIR$/src/components/survey-form/AnswerOption.js" />
+        <option value="$PROJECT_DIR$/src/selectors/getSurveyQuestionsWithAnswers.js" />
+        <option value="$PROJECT_DIR$/src/selectors/getSurveryQuestions.js" />
+        <option value="$PROJECT_DIR$/src/actions/answerActions.js" />
+        <option value="$PROJECT_DIR$/src/constants/actionTypes.js" />
+        <option value="$PROJECT_DIR$/src/reducers/surveyBuilderConfig.js" />
+        <option value="$PROJECT_DIR$/src/reducers/surveyFormConfig.js" />
+        <option value="$PROJECT_DIR$/src/reducers/questionAnswers.js" />
+        <option value="$PROJECT_DIR$/src/reducers/surveyAnswers.js" />
+        <option value="$PROJECT_DIR$/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/src/components/survey-form/Question.js" />
+        <option value="$PROJECT_DIR$/src/actions/surveyFormActions.js" />
         <option value="$PROJECT_DIR$/src/components/survey-form/SurveyForm.js" />
+        <option value="$PROJECT_DIR$/src/reducers/surveyForm.js" />
+        <option value="$PROJECT_DIR$/src/components/app/App.js" />
       </list>
     </option>
   </component>
@@ -314,8 +299,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,6 +331,13 @@
               <item name="questionnaire-builder" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="questionnaire-builder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="questionnaire-builder" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="survey-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -358,12 +351,6 @@
               <item name="questionnaire-builder" type="b2602c69:ProjectViewProjectNode" />
               <item name="questionnaire-builder" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="questionnaire-builder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="questionnaire-builder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -372,17 +359,10 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="selectors" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="questionnaire-builder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="questionnaire-builder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,6 +375,9 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -457,24 +440,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30331126" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22119205" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22002634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29470673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32674572" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -520,43 +503,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/styles/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ParagraphQuestion.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/questionnaire-builder.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -572,7 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -580,23 +528,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
-          <folding>
-            <marker date="1507300149454" expanded="true" signature="58341:58358" ph="..." />
-            <marker date="1507300149454" expanded="true" signature="58341:58376" ph="..." />
-            <marker date="1507300149454" expanded="true" signature="58341:58389" ph="..." />
-            <marker date="1507300149454" expanded="true" signature="58341:58404" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/MultipleAnswerQuestion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/MultipleAnswerQuestion.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-redux/es/connect/connect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -605,21 +540,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/firebase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,17 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/app/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,7 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-892">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -693,18 +603,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionInput.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Root.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -713,14 +615,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionList.js" />
     <entry file="file://$PROJECT_DIR$/src/components/survey-form/Survey.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -729,11 +624,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeSelector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="57" />
+        <state relative-caret-position="-380">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/AnswerOptionListBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/customPropTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionListBuilder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -745,73 +671,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/getAnswerOptions.js">
+    <entry file="file://$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="198">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/configureStore.js">
+    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="1219">
+          <caret line="79" column="39" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/getSurveryQuestions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/surveyQuestions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/surveyConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/answerOptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/surveyAnswers.js">
+    <entry file="file://$PROJECT_DIR$/src/selectors/getSurveyQuestionsWithAnswers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -819,23 +695,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/surveyActions.js">
+    <entry file="file://$PROJECT_DIR$/src/selectors/getAnswerOptions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/answers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29#0" expanded="false" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/answerOptionActions.js">
+    <entry file="file://$PROJECT_DIR$/src/configureStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#29#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-479">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -849,105 +747,214 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-form/QuestionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-form/Question.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-form/AnswerOptionList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-form/AnswerOption.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionTypeSelector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionListBuilder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/QuestionBuilder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="75" column="48" lean-forward="false" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/customPropTypes.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/answerOptionActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/AnswerOptionListBuilder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/SurveyBuilder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/surveyActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/survey-form/AnswerOption.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/selectors/getSurveryQuestions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/survey-form/Question.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/survey-form/QuestionList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/surveyFormActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/surveyForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/surveyAnswers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/surveyQuestions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/survey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/answerOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/survey-form/SurveyForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-form/SurveyForm.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/firebase/externs/firebase-app-externs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="35" column="2" lean-forward="false" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        <state relative-caret-position="243">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>react-DefinitelyTyped</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>questionnaire-builder</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

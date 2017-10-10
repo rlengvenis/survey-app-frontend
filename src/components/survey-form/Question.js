@@ -1,11 +1,27 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 import questionTypes from '../../constants/questionTypes';
+import * as answerActions from '../../actions/surveyFormActions';
 
 import AnswerOptionList from './AnswerOptionList';
 
 
-const Question = ({question}) => {
+const mapDispatchToProps = (dispatch) => ({
+  answerActions: bindActionCreators(answerActions, dispatch)
+});
+
+const Question = ({question, answerActions}) => {
+
+  console.log('question', question);
+
+  const handleChangeQuestionAnswer = (e) => {
+    answerActions.changeQuestionAnswer({
+      questionId: question.id,
+      answer: e.target.value
+    });
+  };
 
   return (
     <div className="form-group">
@@ -18,7 +34,8 @@ const Question = ({question}) => {
           className="form-control"
           type="text"
           name={question.id}
-          value=''
+          value={question.answer.answerText}
+          onChange={handleChangeQuestionAnswer}
           placeholder="Your answer"
         />
       }
@@ -26,11 +43,14 @@ const Question = ({question}) => {
       {
         question.answerOptions.length > 0 &&
 
-        <AnswerOptionList answerOptions={question.answerOptions}/>
+        <AnswerOptionList
+          answerOptions={question.answerOptions}
+          onChangeAnswerOption={handleChangeQuestionAnswer}
+        />
       }
 
     </div>
   );
 };
 
-export default Question;
+export default connect(null, mapDispatchToProps)(Question);

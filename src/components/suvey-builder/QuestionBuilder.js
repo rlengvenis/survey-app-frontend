@@ -73,7 +73,7 @@ QuestionBuilder.propTypes = {
     addNewAnswerOption: PropTypes.func.isRequired,
     changeAnswerOptionTitle: PropTypes.func.isRequired,
   }).isRequired,
-  question: customPropTypes.question.isRequired,
+  question: customPropTypes.question.isRequired
 };
 
 

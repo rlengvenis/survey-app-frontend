@@ -10,7 +10,7 @@ const AnswerOptionList = ({answerOptions}) => {
         {
           answerOptions.map((answerOption) => (
 
-            <li>
+            <li key={answerOption.id}>
               <AnswerOption answerOption={answerOption}/>
             </li>
 

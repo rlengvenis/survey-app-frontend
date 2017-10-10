@@ -1,9 +1,10 @@
 import getAnswerOptions from './getAnswerOptions';
 
-const getSurveryQuestions = (state) =>
-  state.surveyConfig.questionIds.map((id) => ({
+const getSurveyQuestions = (state) =>
+  state.survey.questionIds.map((id) => ({
     ...state.surveyQuestions[id],
-    answerOptions: getAnswerOptions(state, id)
+    answerOptions: getAnswerOptions(state, id),
+    answer: state.surveyAnswers[id]
   }));
 
-export default getSurveryQuestions;
+export default getSurveyQuestions;
