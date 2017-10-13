@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/questionnaire-builder.iml" filepath="$PROJECT_DIR$/.idea/questionnaire-builder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/survey-app-client.iml" filepath="$PROJECT_DIR$/.idea/survey-app-client.iml" />
     </modules>
   </component>
 </project>

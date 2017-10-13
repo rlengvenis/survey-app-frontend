@@ -4,7 +4,6 @@ import {Route, Link} from 'react-router-dom';
 import Survey from '../survey-form/SurveyForm'
 import SurveyBuilder from '../suvey-builder/SurveyBuilder';
 import './App.css';
-import firebase from '../../firebase';
 
 const App = () => (
   <div>
@@ -24,17 +23,6 @@ const App = () => (
     </main>
   </div>
 );
-
-const itemsRef = firebase.database().ref('items');
-
-console.log('itemsRef', itemsRef);
-
-const item = {
-  title: 'test',
-  user: 'test'
-};
-
-// itemsRef.push(item);
 
 
 export default App;
