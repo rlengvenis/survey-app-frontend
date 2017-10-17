@@ -2,13 +2,19 @@ import * as actionTypes from '../constants/actionTypes';
 
 const answerOptions = (state = {}, action) => {
   switch (action.type) {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
+      const {answerOptions} = action.payload.entities;
+      return {
+        ...answerOptions
+      };
+    }
     case actionTypes.ANSWER_OPTION_ADD_NEW:
     case actionTypes.ANSWER_OPTION_CHANGE_TITLE: {
       const {answerOptionId, title} = action.payload;
       return {
         ...state,
         [answerOptionId]: {
-          id: answerOptionId,
+          _id: answerOptionId,
           title
         }
       };

@@ -17,14 +17,14 @@ const AnswerOptionListBuilder = ({
       <ul>
         {answerOptions.map((answerOption) => {
           return (
-            <li key={answerOption.id}>
+            <li key={answerOption._id}>
               <input
                 type="text"
                 placeholder="Add answer option"
                 value={answerOption.title}
                 onChange={(e) => onChangeAnswerOptionTitle({
                   title: e.target.value,
-                  answerOptionId: answerOption.id
+                  answerOptionId: answerOption._id
                 })}
               />
             </li>);

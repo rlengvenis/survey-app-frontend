@@ -1,36 +1,42 @@
 import * as actionTypes from '../constants/actionTypes';
 
 const initialState = {
-  surveyName: '',
-  surveyDescription: '',
-  questionIds: []
+  name: '',
+  description: '',
+  questions: []
 };
 
 const survey = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
+      const {entities: {survey}, result} = action.payload;
+      return {
+        ...survey[result]
+      }
+    }
     case actionTypes.SURVEY_CHANGE_DESCRIPTION: {
-      const {surveyDescription} = action.payload;
+      const {description} = action.payload;
       return {
         ...state,
-        surveyDescription
+        description
       };
     }
 
     case actionTypes.SURVEY_CHANGE_NAME: {
-      const {surveyName} = action.payload;
+      const {name} = action.payload;
       return {
         ...state,
-        surveyName
+        name
       };
     }
 
     case actionTypes.QUESTION_ADD_NEW: {
-      const {id} = action.payload;
+      const {_id} = action.payload;
       return {
         ...state,
-        questionIds: [
-          ...state.questionIds,
-          id
+        questions: [
+          ...state.questions,
+          _id
         ]
       };
     }

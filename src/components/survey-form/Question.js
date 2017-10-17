@@ -13,12 +13,9 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const Question = ({question, answerActions}) => {
-
-  console.log('question', question);
-
   const handleChangeQuestionAnswer = (e) => {
     answerActions.changeQuestionAnswer({
-      questionId: question.id,
+      questionId: question._id,
       answer: e.target.value
     });
   };
@@ -33,7 +30,7 @@ const Question = ({question, answerActions}) => {
         <input
           className="form-control"
           type="text"
-          name={question.id}
+          name={question._id}
           value={question.answer.answerText}
           onChange={handleChangeQuestionAnswer}
           placeholder="Your answer"

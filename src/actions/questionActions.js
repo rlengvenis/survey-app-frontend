@@ -7,10 +7,10 @@ export const addNewQuestion = () => {
   return {
     type: actionTypes.QUESTION_ADD_NEW,
     payload: {
-      id: v4(),
+      _id: v4(),
       title: '',
       questionType: questionTypes.SHORT_ANSWER,
-      answerOptionIds: []
+      answerOptions: []
     }
   };
 };

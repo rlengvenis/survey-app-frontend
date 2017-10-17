@@ -9,7 +9,7 @@ const initSurveyFormConfig = ({questionIds}) => ({
     answersById: questionIds.reduce((questionAnswers = {}, questionId) => {
       const answerId = v4();
       questionAnswers[questionIds] = {
-        id: answerId,
+        _id: answerId,
         questionId,
         answerText: null
       };
@@ -22,7 +22,7 @@ const initSurveyFormConfig = ({questionIds}) => ({
 const changeQuestionAnswer = ({questionId, answerText}) => ({
   type: actionTypes.SURVEY_FORM_CHANGE_QUESTION_ANSWER,
   payload: {
-    id: v4(),
+    _id: v4(),
     questionId,
     answerText
   }

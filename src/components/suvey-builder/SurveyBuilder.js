@@ -5,15 +5,13 @@ import PropTypes from 'prop-types';
 
 import * as surveyActions from '../../actions/surveyActions';
 import * as questionActions from '../../actions/questionActions';
-import customPropTypes from './customPropTypes';
 
-import getSurveyQuestions from '../../selectors/getSurveryQuestions';
+import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import QuestionListBuilder from './QuestionListBuilder';
 
 
 const mapStateToProps = (state) => ({
-  survey: state.survey,
-  surveyQuestions: getSurveyQuestions(state)
+  survey: getDenormalizedSurvey(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,16 +21,12 @@ const mapDispatchToProps = (dispatch) => ({
 
 class SurveyBuilder extends React.Component {
   componentDidMount() {
-   fetch('/api/survey').then((response) => response.json()).then((result) => {
-     console.log('result', result);
-   });
+    this.props.surveyActions.loadSurvey();
   }
 
   render() {
     const {
       survey,
-      surveyQuestions,
-      surveyActions,
       questionActions
     } = this.props;
 
@@ -41,23 +35,23 @@ class SurveyBuilder extends React.Component {
         <div>
           <input
             type="text"
-            value={survey.surveyName}
+            value={survey.name}
             onChange={this.handleChangeSurveyName}
             placeholder="Survey Name"
           />
           <br/>
           <input
             type="text"
-            value={survey.surveyDescription}
+            value={survey.description}
             onChange={this.handleChangeSurveyDescription}
             placeholder="Survey description"
           />
         </div>
 
         {
-          surveyQuestions.length > 0 &&
+          survey.questions.length > 0 &&
 
-          <QuestionListBuilder questions={surveyQuestions}/>
+          <QuestionListBuilder questions={survey.questions}/>
         }
 
         <div>
@@ -66,7 +60,7 @@ class SurveyBuilder extends React.Component {
           </button>
         </div>
         <div>
-          <button onClick={surveyActions.saveSurvey}>
+          <button onClick={this.handleSaveSurvey}>
             Save Survey
           </button>
         </div>
@@ -74,12 +68,16 @@ class SurveyBuilder extends React.Component {
     );
   }
 
+  handleSaveSurvey = () => {
+    return this.props.surveyActions.saveSurvey(this.props.survey);
+  }
+
   handleChangeSurveyName = (e) => {
-    return surveyActions.changeSurveyName(e.target.value);
+    return this.props.surveyActions.changeSurveyName(e.target.value);
   }
 
   handleChangeSurveyDescription = (e) => {
-    return surveyActions.changeSurveyDescription(e.target.value);
+    return this.props.surveyActions.changeSurveyDescription(e.target.value);
   }
 }
 
@@ -93,11 +91,10 @@ SurveyBuilder.propTypes = {
     saveSurvey: PropTypes.func.isRequired
   }).isRequired,
   survey: PropTypes.shape({
-    questionIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-    surveyDescription: PropTypes.string.isRequired,
-    surveyName: PropTypes.string.isRequired
-  }).isRequired,
-  surveyQuestions: PropTypes.arrayOf(customPropTypes.question).isRequired
+    questions: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SurveyBuilder);

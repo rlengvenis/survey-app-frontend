@@ -25,14 +25,14 @@ const QuestionBuilder = ({
 
   const handleQuestionTypeChange = ({questionType}) => {
     return questionActions.changeQuestionType({
-      questionId: question.id,
+      questionId: question._id,
       questionType
     });
   };
 
   const handleQuestionTitleChange = (e) => {
     return questionActions.changeQuestionTitle({
-      questionId: question.id,
+      questionId: question._id,
       title: e.target.value
     });
   };
@@ -51,10 +51,10 @@ const QuestionBuilder = ({
       />
 
       {
-        question.questionType === questionTypes.MULTIPLE_ANSWER &&
+        question.type === questionTypes.MULTIPLE_ANSWER &&
 
         <AnswerOptionListBuilder
-          questionId={question.id}
+          questionId={question._id}
           answerOptions={question.answerOptions}
           onChangeAnswerOptionTitle={answerOptionActions.changeAnswerOptionTitle}
           onAddNewAnswerOption={answerOptionActions.addNewAnswerOption}

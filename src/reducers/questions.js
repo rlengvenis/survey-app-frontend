@@ -1,12 +1,19 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const surveyQuestions = (state = {}, action) => {
+const questions = (state = {}, action) => {
   switch (action.type) {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
+      const {questions} = action.payload.entities;
+
+      return {
+        ...questions
+      };
+    }
     case actionTypes.QUESTION_ADD_NEW: {
-      const {id} = action.payload;
+      const {_id} = action.payload;
       return {
         ...state,
-        [id]: action.payload
+        [_id]: action.payload
       };
     }
 
@@ -42,8 +49,8 @@ const surveyQuestions = (state = {}, action) => {
         ...state,
         [questionId]: {
           ...previousQuestion,
-          answerOptionIds: [
-            ...previousQuestion.answerOptionIds,
+          answerOptions: [
+            ...previousQuestion.answerOptions,
             answerOptionId
           ]
         }
@@ -55,4 +62,4 @@ const surveyQuestions = (state = {}, action) => {
   }
 };
 
-export default surveyQuestions;
+export default questions;

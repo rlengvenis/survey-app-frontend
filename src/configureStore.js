@@ -7,14 +7,14 @@ import rootReducer from './reducers';
 
 const initialState = {
   survey: {
-    surveyName: 'Apklausa',
-    surveyDescription: 'Apie save patį',
+    name: 'Apklausa',
+    description: 'Apie save patį',
     questionIds: [
       '9421686c-a31a-4efd-9a9c-5e4d67d965e2',
       'e5461251-e47c-4ff9-abc4-af650ac6935e'
     ]
   },
-  surveyQuestions: {
+  questions: {
     '9421686c-a31a-4efd-9a9c-5e4d67d965e2': {
       id: '9421686c-a31a-4efd-9a9c-5e4d67d965e2',
       title: 'Kokia mano lytis?',
@@ -62,7 +62,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const store = createStore(
   rootReducer,
-  initialState,
+  {}, //initialState,
   compose(
     applyMiddleware(...middlewares),
     ...enhancers

@@ -11,7 +11,7 @@ const QuestionListBuilder = ({questions}) => {
     <div>
       {questions.map((question) => (
         <QuestionBuilder
-          key={question.id}
+          key={question._id}
           question={question}
         />
       ))}

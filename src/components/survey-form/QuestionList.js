@@ -9,7 +9,7 @@ const QuestionList = ({questions}) => {
       {
         questions.map((question) => (
             <Question
-              key={question.id}
+              key={question._id}
               question={question}
             />
         ))

@@ -10,7 +10,7 @@ const AnswerOptionList = ({answerOptions}) => {
         {
           answerOptions.map((answerOption) => (
 
-            <li key={answerOption.id}>
+            <li key={answerOption._id}>
               <AnswerOption answerOption={answerOption}/>
             </li>
 
