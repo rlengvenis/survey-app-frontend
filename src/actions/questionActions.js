@@ -23,8 +23,8 @@ export const changeQuestionTitle = ({questionId, title}) => ({
   }
 });
 
-export const changeQuestionType = ({questionType, questionId}) => ({
+export const changeQuestionType = ({type, questionId}) => ({
   type: actionTypes.QUESTION_CHANGE_TYPE,
-  payload: {questionType, questionId}
+  payload: {type, questionId}
 });
 

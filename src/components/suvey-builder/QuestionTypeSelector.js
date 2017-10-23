@@ -14,7 +14,7 @@ const QuestionTypeSelector = ({
         <li>
           <button
             onClick={() => onSelectQuestionType({
-              questionType: questionTypes.SHORT_ANSWER
+              type: questionTypes.SHORT_ANSWER
             })}
           >
             Short answer
@@ -23,16 +23,7 @@ const QuestionTypeSelector = ({
         <li>
           <button
             onClick={() => onSelectQuestionType({
-              questionType: questionTypes.PARAGRAPH
-            })}
-          >
-            Paragraph
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => onSelectQuestionType({
-              questionType: questionTypes.MULTIPLE_ANSWER
+              type: questionTypes.MULTIPLE_ANSWER
             })}
           >
             Multiple answers

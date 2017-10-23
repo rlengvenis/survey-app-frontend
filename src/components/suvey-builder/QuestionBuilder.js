@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux';
 import * as questionActions from '../../actions/questionActions';
 import * as answerOptionActions from '../../actions/answerOptionActions';
 import questionTypes from '../../constants/questionTypes';
-import customPropTypes from './customPropTypes';
+import customPropTypes from '../../constants/customPropTypes';
 
 import QuestionTypeSelector from './QuestionTypeSelector';
 import AnswerOptionListBuilder from './AnswerOptionListBuilder';
@@ -23,10 +23,10 @@ const QuestionBuilder = ({
   answerOptionActions
 }) => {
 
-  const handleQuestionTypeChange = ({questionType}) => {
+  const handleQuestionTypeChange = ({type}) => {
     return questionActions.changeQuestionType({
       questionId: question._id,
-      questionType
+      type
     });
   };
 

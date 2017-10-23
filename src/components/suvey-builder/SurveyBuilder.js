@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import * as surveyActions from '../../actions/surveyActions';
 import * as questionActions from '../../actions/questionActions';
+import customPropTypes from '../../constants/customPropTypes';
 
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import QuestionListBuilder from './QuestionListBuilder';
@@ -23,6 +24,18 @@ class SurveyBuilder extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
+
+  handleSaveSurvey = () => {
+    return this.props.surveyActions.saveSurvey(this.props.survey);
+  };
+
+  handleChangeSurveyName = (e) => {
+    return this.props.surveyActions.changeSurveyName(e.target.value);
+  };
+
+  handleChangeSurveyDescription = (e) => {
+    return this.props.surveyActions.changeSurveyDescription(e.target.value);
+  };
 
   render() {
     const {
@@ -67,33 +80,21 @@ class SurveyBuilder extends React.Component {
       </div>
     );
   }
-
-  handleSaveSurvey = () => {
-    return this.props.surveyActions.saveSurvey(this.props.survey);
-  }
-
-  handleChangeSurveyName = (e) => {
-    return this.props.surveyActions.changeSurveyName(e.target.value);
-  }
-
-  handleChangeSurveyDescription = (e) => {
-    return this.props.surveyActions.changeSurveyDescription(e.target.value);
-  }
 }
 
 SurveyBuilder.propTypes = {
   questionActions: PropTypes.shape({
     addNewQuestion: PropTypes.func.isRequired,
   }).isRequired,
+  survey: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    questions: PropTypes.arrayOf(customPropTypes.question).isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired,
   surveyActions: PropTypes.shape({
     changeSurveyDescription: PropTypes.func.isRequired,
     changeSurveyName: PropTypes.func.isRequired,
     saveSurvey: PropTypes.func.isRequired
-  }).isRequired,
-  survey: PropTypes.shape({
-    questions: PropTypes.arrayOf(PropTypes.string).isRequired,
-    description: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
   }).isRequired
 };
 

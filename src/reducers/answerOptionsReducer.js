@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const answerOptions = (state = {}, action) => {
+const answerOptionsReducer = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {answerOptions} = action.payload.entities;
@@ -8,6 +8,7 @@ const answerOptions = (state = {}, action) => {
         ...answerOptions
       };
     }
+
     case actionTypes.ANSWER_OPTION_ADD_NEW:
     case actionTypes.ANSWER_OPTION_CHANGE_TITLE: {
       const {answerOptionId, title} = action.payload;
@@ -19,9 +20,10 @@ const answerOptions = (state = {}, action) => {
         }
       };
     }
+
     default:
       return state;
   }
 };
 
-export default answerOptions;
+export default answerOptionsReducer;

@@ -1,48 +1,51 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import {Field} from 'redux-form';
 
 import questionTypes from '../../constants/questionTypes';
-import * as answerActions from '../../actions/surveyFormActions';
+import customPropTypes from '../../constants/customPropTypes';
 
 import AnswerOptionList from './AnswerOptionList';
 
 
-const mapDispatchToProps = (dispatch) => ({
-  answerActions: bindActionCreators(answerActions, dispatch)
-});
+const required = (value) => {
+  return value ? undefined : 'Required';
+};
 
-const Question = ({question, answerActions}) => {
-  const handleChangeQuestionAnswer = (e) => {
-    answerActions.changeQuestionAnswer({
-      questionId: question._id,
-      answer: e.target.value
-    });
-  };
+const renderInput = (field) => {
+  return (
+    <div>
+      <input type="text" {...field.input} />
+      {field.meta.touched && <span>{field.meta.error}</span>}
+    </div>
+  )
+};
 
+const Question = ({question}) => {
   return (
     <div className="form-group">
       <h2> {question.title} <abbr title="Required">*</abbr></h2>
 
       {
-        question.questionType !== questionTypes.MULTIPLE_ANSWER &&
+        question.type !== questionTypes.MULTIPLE_ANSWER &&
 
-        <input
+        <Field
           className="form-control"
           type="text"
+          component={renderInput}
           name={question._id}
-          value={question.answer.answerText}
-          onChange={handleChangeQuestionAnswer}
           placeholder="Your answer"
+          validate={[required]}
         />
       }
 
       {
         question.answerOptions.length > 0 &&
 
-        <AnswerOptionList
+        <Field
+          component={AnswerOptionList}
+          name={question._id}
           answerOptions={question.answerOptions}
-          onChangeAnswerOption={handleChangeQuestionAnswer}
+          validate={[required]}
         />
       }
 
@@ -50,4 +53,8 @@ const Question = ({question, answerActions}) => {
   );
 };
 
-export default connect(null, mapDispatchToProps)(Question);
+Question.propTypes = {
+  question: customPropTypes.question.isRequired
+};
+
+export default Question;

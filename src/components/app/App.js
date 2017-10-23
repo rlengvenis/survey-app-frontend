@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
 
-import Survey from '../survey-form/SurveyForm'
+import SurveyForm from '../survey-form/SurveyForm'
 import SurveyBuilder from '../suvey-builder/SurveyBuilder';
 import './App.css';
 
@@ -19,7 +19,7 @@ const App = () => (
 
     <main className="container">
       <Route exact path="/" component={SurveyBuilder}/>
-      <Route exact path="/survey" component={Survey}/>
+      <Route exact path="/survey" component={SurveyForm}/>
     </main>
   </div>
 );

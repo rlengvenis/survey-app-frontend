@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import customPropTypes from './customPropTypes';
+import customPropTypes from '../../constants/customPropTypes';
 
 const AnswerOptionListBuilder = ({
   questionId,
@@ -9,8 +9,9 @@ const AnswerOptionListBuilder = ({
   onAddNewAnswerOption
 }) => {
 
-  const handleAddNewAnswerOption = () =>
-    onAddNewAnswerOption({questionId});
+  const handleAddNewAnswerOption = () => {
+    return onAddNewAnswerOption({questionId});
+  }
 
   return (
     <div>

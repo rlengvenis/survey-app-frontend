@@ -1,6 +1,6 @@
 import {denormalize} from 'normalizr';
 
-import survey from '../actions/schema';
+import survey from '../constants/schema';
 
 const getDenormalizedSurvey = (state) => {
    return denormalize(state.survey, survey, {...state});

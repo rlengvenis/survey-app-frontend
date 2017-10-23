@@ -1,23 +1,39 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import AnswerOption from './AnswerOption';
+import customPropTypes from '../../constants/customPropTypes';
 
+class AnswerOptionList extends React.Component {
+  render() {
+    const {
+      input,
+      meta: {touched, error},
+      answerOptions
+    } = this.props;
 
-const AnswerOptionList = ({answerOptions}) => {
-  return (
-    <div>
-      <ul className="form-scale">
-        {
-          answerOptions.map((answerOption) => (
+    return (
+      <div>
+        {answerOptions.map(answerOption => (
+          <label key={answerOption._id}>
+            <input
+              type="radio"
+              {...input}
+              value={answerOption.title}
+              checked={answerOption.title === input.value}
+            />
+            {answerOption.title}
+          </label>))
+        }
+        {touched && <span className="error">{error}</span>}
+      </div>
+    );
+  }
+}
 
-            <li key={answerOption._id}>
-              <AnswerOption answerOption={answerOption}/>
-            </li>
-
-          ))}
-      </ul>
-    </div>
-  );
+AnswerOptionList.propTypes = {
+  answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
+  input: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired
 };
 
 export default AnswerOptionList;

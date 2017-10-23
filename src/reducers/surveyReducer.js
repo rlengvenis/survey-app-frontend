@@ -6,7 +6,7 @@ const initialState = {
   questions: []
 };
 
-const survey = (state = initialState, action) => {
+const surveyReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {entities: {survey}, result} = action.payload;
@@ -14,6 +14,7 @@ const survey = (state = initialState, action) => {
         ...survey[result]
       }
     }
+
     case actionTypes.SURVEY_CHANGE_DESCRIPTION: {
       const {description} = action.payload;
       return {
@@ -46,4 +47,4 @@ const survey = (state = initialState, action) => {
   }
 };
 
-export default survey;
+export default surveyReducer;

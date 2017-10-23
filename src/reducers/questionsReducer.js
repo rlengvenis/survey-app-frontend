@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const questions = (state = {}, action) => {
+const questionsReducer = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {questions} = action.payload.entities;
@@ -9,6 +9,7 @@ const questions = (state = {}, action) => {
         ...questions
       };
     }
+
     case actionTypes.QUESTION_ADD_NEW: {
       const {_id} = action.payload;
       return {
@@ -30,13 +31,14 @@ const questions = (state = {}, action) => {
     }
 
     case actionTypes.QUESTION_CHANGE_TYPE: {
-      const {questionId, questionType} = action.payload;
+      const {questionId, type} = action.payload;
 
       return {
         ...state,
         [questionId]: {
           ...state[questionId],
-          questionType
+          answerOptions: [],
+          type
         }
       };
     }
@@ -57,9 +59,27 @@ const questions = (state = {}, action) => {
       };
     }
 
+    case actionTypes.SURVEY_SAVE_ANSWERS: {
+      const {answers} = action.payload;
+
+      const updatedQuestionsById = answers.reduce((result, answer) => {
+        result[answer.questionId] = {
+          ...state[answer.questionId],
+          answers: [answer._id]
+        };
+
+        return result;
+      }, {});
+
+      return {
+        ...state,
+        ...updatedQuestionsById
+      }
+    }
+
     default:
       return state;
   }
 };
 
-export default questions;
+export default questionsReducer;

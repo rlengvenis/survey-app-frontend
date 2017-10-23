@@ -1,17 +1,17 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
+import {reducer as formReducer} from 'redux-form'
 
-import survey from './survey';
-import questions from './questions';
-import answerOptions from './answerOptions';
-import surveyForm from './surveyForm';
-import answers from './answers';
+import surveyReducer from './surveyReducer';
+import questionsReducer from './questionsReducer';
+import answerOptionsReducer from './answerOptionsReducer';
+import answersReducer from './answersReducer';
 
 export default combineReducers({
-  survey,
-  questions,
-  answerOptions,
-  answers,
-  surveyForm,
+  survey: surveyReducer,
+  questions: questionsReducer,
+  answerOptions: answerOptionsReducer,
+  answers: answersReducer,
+  form: formReducer,
   routing: routerReducer
 });
