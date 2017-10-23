@@ -14,9 +14,9 @@ const AnswerOptionListBuilder = ({
   }
 
   return (
-    <div>
+    <div className="survey-builder__answer-options">
       <ul>
-        {answerOptions.map((answerOption) => {
+        {answerOptions.map((answerOption, index) => {
           return (
             <li key={answerOption._id}>
               <input
@@ -28,13 +28,20 @@ const AnswerOptionListBuilder = ({
                   answerOptionId: answerOption._id
                 })}
               />
+
+              {
+                answerOptions.length - 1 === index &&
+
+                (
+                  <button className="button-flat"
+                          onClick={handleAddNewAnswerOption}>
+                    Add Other
+                  </button>
+                )
+              }
             </li>);
         })}
       </ul>
-
-      <button onClick={handleAddNewAnswerOption}>
-        Add Option
-      </button>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import {v4} from 'node-uuid';
 
 import questionTypes from '../constants/questionTypes';
 import * as actionTypes from '../constants/actionTypes';
+import {addNewAnswerOption} from './answerOptionActions';
 
 export const addNewQuestion = () => {
   return {
@@ -23,8 +24,14 @@ export const changeQuestionTitle = ({questionId, title}) => ({
   }
 });
 
-export const changeQuestionType = ({type, questionId}) => ({
-  type: actionTypes.QUESTION_CHANGE_TYPE,
-  payload: {type, questionId}
-});
+export const changeQuestionType = ({type, questionId}) => (dispatch) => {
+  dispatch({
+    type: actionTypes.QUESTION_CHANGE_TYPE,
+    payload: {type, questionId}
+  });
+
+  if (type === questionTypes.MULTIPLE_ANSWER) {
+    dispatch(addNewAnswerOption({questionId}));
+  }
+};
 

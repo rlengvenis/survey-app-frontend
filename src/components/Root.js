@@ -3,10 +3,8 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from '../configureStore'
 
-import App from './app/App';
+import App from './App';
 
-import '../styles/reset.css';
-import '../styles/typography.css';
 
 const Root = () => (
     <Provider store={store}>

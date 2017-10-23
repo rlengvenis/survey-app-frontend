@@ -44,9 +44,10 @@ class SurveyBuilder extends React.Component {
     } = this.props;
 
     return (
-      <div>
-        <div>
+      <div className="survey-builder">
+        <div className="survey-builder__heading">
           <input
+            className="survey-builder__title"
             type="text"
             value={survey.name}
             onChange={this.handleChangeSurveyName}
@@ -54,6 +55,7 @@ class SurveyBuilder extends React.Component {
           />
           <br/>
           <input
+            className="survey-builder__description"
             type="text"
             value={survey.description}
             onChange={this.handleChangeSurveyDescription}
@@ -67,13 +69,17 @@ class SurveyBuilder extends React.Component {
           <QuestionListBuilder questions={survey.questions}/>
         }
 
-        <div>
-          <button onClick={questionActions.addNewQuestion}>
+        <div className="survey-builder__control-group">
+          <button
+            className="button-raised"
+            onClick={questionActions.addNewQuestion}>
             Add new Question
           </button>
         </div>
         <div>
-          <button onClick={this.handleSaveSurvey}>
+          <button
+            className="button-raised"
+            onClick={this.handleSaveSurvey}>
             Save Survey
           </button>
         </div>

@@ -1,0 +1,97 @@
+@import 'variables.scss';
+
+/* ------------------------------------------ */
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------ */
+
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+
+/* ------------ BUTTONS --------------- */
+
+@mixin button-base() {
+  padding: 0 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 0;
+}
+
+.button-raised {
+  @include button-base();
+  color: #FFFFFF;
+  background-color: $color-blue;
+  &:hover {
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.button-flat {
+  @include button-base();
+  color: $color-blue;
+  background-color: transparent;
+}
+
+.button-disabled {
+  @include button-base();
+  background-color: $color-light-grey;
+  color: $color-grey;
+  cursor: default;
+}
+
+/* ------------ INPUT --------------- */
+
+input {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: $font-size-regular;
+  font-weight: $font-weight-light;
+  line-height: 36px;
+  border-width: 0;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.22);
+  &:focus {
+    border-color: $color-blue;
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+/* ------------ HEADER --------------- */
+
+.container {
+  margin: 60px auto;
+  padding: 0 15px;
+  max-width: 600px;
+}
+
+header {
+  line-height: 64px;
+  background: $color-dark-blue;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 300;
+  }
+}
+
+nav > ul {
+  margin: 0 15px;
+  list-style-type: none;
+  font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  > li:not(:last-child) {
+    margin-right: 15px;
+  }
+  > li > a.active {
+    border-bottom: 1px solid #FFFFFF;
+    padding-bottom: 3px;
+  }
+}

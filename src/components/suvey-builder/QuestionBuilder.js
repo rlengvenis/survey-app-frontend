@@ -38,11 +38,7 @@ const QuestionBuilder = ({
   };
 
   return (
-    <div>
-      <QuestionTypeSelector
-        onSelectQuestionType={handleQuestionTypeChange}
-      />
-
+    <div className="survey-builder__question">
       <input
         type="text"
         placeholder="Enter Question"
@@ -60,6 +56,12 @@ const QuestionBuilder = ({
           onAddNewAnswerOption={answerOptionActions.addNewAnswerOption}
         />
       }
+
+      <QuestionTypeSelector
+        questionType={question.type}
+        onSelectQuestionType={handleQuestionTypeChange}
+      />
+
     </div>
   );
 };

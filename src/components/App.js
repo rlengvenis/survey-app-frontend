@@ -1,9 +1,15 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
 
-import SurveyForm from '../survey-form/SurveyForm'
-import SurveyBuilder from '../suvey-builder/SurveyBuilder';
-import './App.css';
+import SurveyForm from './survey-form/SurveyForm'
+import SurveyBuilder from './suvey-builder/SurveyBuilder';
+
+import '../styles/reset.css';
+import '../styles/typography.css';
+import '../styles/App.css';
+import '../styles/Survey.css';
+import '../styles/SurveyBuilder.css';
+
 
 const App = () => (
   <div>
@@ -23,6 +29,5 @@ const App = () => (
     </main>
   </div>
 );
-
 
 export default App;
