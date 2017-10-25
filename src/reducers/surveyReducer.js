@@ -42,6 +42,18 @@ const surveyReducer = (state = initialState, action) => {
       };
     }
 
+    case actionTypes.QUESTION_DELETE_QUESTION: {
+      const {questionId} = action.payload;
+
+      return {
+        ...state,
+        questions: [
+          ...state.questions.slice(0, state.questions.indexOf(questionId)),
+          ...state.questions.slice(state.questions.indexOf(questionId) + 1)
+        ]
+      };
+    }
+
     default:
       return state;
   }

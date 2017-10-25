@@ -1,0 +1,82 @@
+@import "../core/variables.scss";
+
+.survey-builder {
+  &__heading {
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    display: block;
+    width: 100%;
+  }
+
+  &__description {
+    font-size: $font-size-small;
+    display: block;
+    width: 100%;
+  }
+
+  &__question {
+    margin-top: 60px;
+
+    input {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__answer-options {
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    input {
+      display: block;
+      margin-left: 10px;
+      width: 50%;
+    }
+  }
+
+  &__add-option {
+    display: flex;
+    align-items: center;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+
+  &__add-question-button {
+    color: $color-blue;
+    font-size: 35px;
+    margin: 30px 0 30px -5px;
+    cursor: pointer;
+  }
+
+  &__question-control-group {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+
+    ul {
+      list-style: none;
+      display: flex;
+
+      li {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &__remove-question-button {
+    color: $color-blue;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+}

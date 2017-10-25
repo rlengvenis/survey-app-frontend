@@ -1,24 +1,34 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, NavLink} from 'react-router-dom';
 
 import SurveyForm from './survey-form/SurveyForm'
 import SurveyBuilder from './suvey-builder/SurveyBuilder';
 
-import '../styles/reset.css';
-import '../styles/typography.css';
-import '../styles/App.css';
-import '../styles/Survey.css';
-import '../styles/SurveyBuilder.css';
+import '../styles/core/reset.css';
+import '../styles/layouts/layout.css';
+import '../styles/modules/buttons.css';
+import '../styles/modules/typography.css';
+import '../styles/modules/form.css';
+import '../styles/modules/navigation.css';
+import '../styles/pages/App.css';
+import '../styles/pages/SurveyBuilder.css';
+import '../styles/pages/Survey.css';
 
 
 const App = () => (
   <div>
-    <header>
+    <header className="app__header">
       <nav>
-        <ul>
-          <li><Link className="active" to="/">Survey Builder</Link></li>
-          <li><Link to="/survey">Survey</Link></li>
-          <li><Link to="/responses">Responses</Link></li>
+        <ul className="navigation__list">
+          <li className="navigation__list-item">
+            <NavLink activeClassName="active" exact to="/">Survey Builder</NavLink>
+          </li>
+          <li className="navigation__list-item">
+            <NavLink activeClassName="active" to="/survey">Survey</NavLink>
+          </li>
+          <li className="navigation__list-item">
+            <NavLink activeClassName="active" to="/responses">Responses</NavLink>
+          </li>
         </ul>
       </nav>
     </header>

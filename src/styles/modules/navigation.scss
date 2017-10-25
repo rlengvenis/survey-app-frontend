@@ -1,0 +1,25 @@
+.navigation {
+  &__list {
+    margin: 0 15px;
+    list-style-type: none;
+    font-size: 18px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  &__list-item {
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 300;
+    }
+    a.active {
+      border-bottom: 1px solid #FFFFFF;
+      padding-bottom: 3px;
+    }
+  }
+}

@@ -11,40 +11,38 @@ const QuestionTypeSelector = ({
 }) => {
 
   const shortAnswerButtonStyle = classnames({
-    'button-disabled': questionType === questionTypes.SHORT_ANSWER,
+    'button-flat button-flat--active': questionType === questionTypes.SHORT_ANSWER,
     'button-flat': questionType !== questionTypes.SHORT_ANSWER
   });
 
   const multipleAnswerButtonStyle = classnames({
-    'button-disabled': questionType === questionTypes.MULTIPLE_ANSWER,
+    'button-flat button-flat--active': questionType === questionTypes.MULTIPLE_ANSWER,
     'button-flat': questionType !== questionTypes.MULTIPLE_ANSWER
   });
 
   return (
-    <div className="survey-builder__control-group">
-      <ul>
-        <li>
-          <button
-            className={shortAnswerButtonStyle}
-            onClick={() => onSelectQuestionType({
-              type: questionTypes.SHORT_ANSWER
-            })}
-          >
-            Short answer
-          </button>
-        </li>
-        <li>
-          <button
-            className={multipleAnswerButtonStyle}
-            onClick={() => onSelectQuestionType({
-              type: questionTypes.MULTIPLE_ANSWER
-            })}
-          >
-            Multiple answers
-          </button>
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li>
+        <button
+          className={shortAnswerButtonStyle}
+          onClick={() => onSelectQuestionType({
+            type: questionTypes.SHORT_ANSWER
+          })}
+        >
+          Short answer
+        </button>
+      </li>
+      <li>
+        <button
+          className={multipleAnswerButtonStyle}
+          onClick={() => onSelectQuestionType({
+            type: questionTypes.MULTIPLE_ANSWER
+          })}
+        >
+          Multiple answers
+        </button>
+      </li>
+    </ul>
   )
 };
 

@@ -14,11 +14,12 @@ const AnswerOptionListBuilder = ({
   }
 
   return (
-    <div className="survey-builder__answer-options">
-      <ul>
+    <div>
+      <ul className="survey-builder__answer-options">
         {answerOptions.map((answerOption, index) => {
           return (
             <li key={answerOption._id}>
+              <i className="material-icons">radio_button_unchecked</i>
               <input
                 type="text"
                 placeholder="Add answer option"
@@ -28,20 +29,17 @@ const AnswerOptionListBuilder = ({
                   answerOptionId: answerOption._id
                 })}
               />
-
-              {
-                answerOptions.length - 1 === index &&
-
-                (
-                  <button className="button-flat"
-                          onClick={handleAddNewAnswerOption}>
-                    Add Other
-                  </button>
-                )
-              }
             </li>);
         })}
       </ul>
+
+      <div className="survey-builder__add-option">
+        <i className="material-icons">radio_button_unchecked</i>
+        <button className="button-flat"
+                onClick={handleAddNewAnswerOption}>
+          Add Other
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,15 @@
+@import "../core/variables.scss";
+
+input {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: $font-size-regular;
+  font-weight: $font-weight-light;
+  line-height: 36px;
+  border-width: 0;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.22);
+  &:focus {
+    border-color: $color-blue;
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}

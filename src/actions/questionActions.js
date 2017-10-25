@@ -10,7 +10,7 @@ export const addNewQuestion = () => {
     payload: {
       _id: v4(),
       title: '',
-      questionType: questionTypes.SHORT_ANSWER,
+      type: questionTypes.SHORT_ANSWER,
       answerOptions: []
     }
   };
@@ -34,4 +34,11 @@ export const changeQuestionType = ({type, questionId}) => (dispatch) => {
     dispatch(addNewAnswerOption({questionId}));
   }
 };
+
+export const deleteQuestion = ({questionId}) => ({
+  type: actionTypes.QUESTION_DELETE_QUESTION,
+  payload: {
+    questionId
+  }
+});
 

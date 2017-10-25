@@ -37,8 +37,28 @@ const QuestionBuilder = ({
     });
   };
 
+  const handleDeleteQuestion = () => {
+    return questionActions.deleteQuestion({
+      questionId: question._id,
+    })
+  };
+
   return (
     <div className="survey-builder__question">
+      <div className="survey-builder__question-control-group">
+        <QuestionTypeSelector
+          questionType={question.type}
+          onSelectQuestionType={handleQuestionTypeChange}
+        />
+        <i
+          className="material-icons survey-builder__remove-question-button"
+          onClick={handleDeleteQuestion}
+        >
+          delete
+        </i>
+      </div>
+
+
       <input
         type="text"
         placeholder="Enter Question"
@@ -56,12 +76,6 @@ const QuestionBuilder = ({
           onAddNewAnswerOption={answerOptionActions.addNewAnswerOption}
         />
       }
-
-      <QuestionTypeSelector
-        questionType={question.type}
-        onSelectQuestionType={handleQuestionTypeChange}
-      />
-
     </div>
   );
 };
@@ -69,7 +83,8 @@ const QuestionBuilder = ({
 QuestionBuilder.propTypes = {
   questionActions: PropTypes.shape({
     changeQuestionTitle: PropTypes.func.isRequired,
-    changeQuestionType: PropTypes.func.isRequired
+    changeQuestionType: PropTypes.func.isRequired,
+    deleteQuestion: PropTypes.func.isRequired
   }).isRequired,
   answerOptionActions: PropTypes.shape({
     addNewAnswerOption: PropTypes.func.isRequired,

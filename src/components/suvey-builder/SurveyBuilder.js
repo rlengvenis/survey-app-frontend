@@ -69,13 +69,13 @@ class SurveyBuilder extends React.Component {
           <QuestionListBuilder questions={survey.questions}/>
         }
 
-        <div className="survey-builder__control-group">
-          <button
-            className="button-raised"
-            onClick={questionActions.addNewQuestion}>
-            Add new Question
-          </button>
-        </div>
+
+        <i className="material-icons survey-builder__add-question-button"
+           onClick={questionActions.addNewQuestion}
+        >
+          add_circle_outline
+        </i>
+
         <div>
           <button
             className="button-raised"

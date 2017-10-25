@@ -1,0 +1,10 @@
+@import '../core/variables.scss';
+
+.app {
+  &__header {
+    line-height: 64px;
+    background: $color-dark-blue;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
