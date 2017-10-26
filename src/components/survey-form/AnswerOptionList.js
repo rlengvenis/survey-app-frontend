@@ -12,20 +12,29 @@ class AnswerOptionList extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <ul className="survey-form__radio-group-list">
         {answerOptions.map(answerOption => (
-          <label key={answerOption._id}>
+
+          <li className="survey-form__radio-group-list-item">
             <input
+              id={answerOption._id}
               type="radio"
               {...input}
               value={answerOption.title}
               checked={answerOption.title === input.value}
             />
-            {answerOption.title}
-          </label>))
+
+            <label
+              htmlFor={answerOption._id}
+              key={answerOption._id}
+            >
+              {answerOption.title}
+            </label>
+          </li>
+        ))
         }
         {touched && <span className="error">{error}</span>}
-      </div>
+      </ul>
     );
   }
 }

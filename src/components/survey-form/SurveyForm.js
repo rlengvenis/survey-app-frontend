@@ -8,8 +8,8 @@ import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import customPropTypes from '../../constants/customPropTypes';
 
-
 import QuestionList from './QuestionList';
+
 
 const mapStateToProps = (state) => ({
   survey: getDenormalizedSurvey(state)
@@ -18,7 +18,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   surveyActions: bindActionCreators(surveyActions, dispatch)
 });
-
 
 class SurveyForm extends React.Component {
   componentDidMount() {
@@ -42,12 +41,12 @@ class SurveyForm extends React.Component {
           <p>{survey.description}</p>
         </div>
         <form
-          className="questions-form"
+          className="survey-form"
           onSubmit={handleSubmit(this.handleSurveyAnswers)}
         >
           <QuestionList questions={survey.questions}/>
           <div>
-            <button className="submit" type="submit">Submit</button>
+            <button className="button-raised survey-form__submit" type="submit">Submit</button>
           </div>
         </form>
       </article>

@@ -22,14 +22,13 @@ const renderInput = (field) => {
 
 const Question = ({question}) => {
   return (
-    <div className="form-group">
+    <div className="survey-form__question">
       <h2> {question.title} <abbr title="Required">*</abbr></h2>
 
       {
         question.type !== questionTypes.MULTIPLE_ANSWER &&
 
         <Field
-          className="form-control"
           type="text"
           component={renderInput}
           name={question._id}

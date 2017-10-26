@@ -1,0 +1,26 @@
+.survey-form {
+  margin-top: 35px;
+
+  &__question {
+    margin-top: 40px;
+  }
+
+  &__submit {
+    margin-top: 50px;
+  }
+
+  &__radio-group-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  &__radio-group-list-item {
+    margin-top: 20px;
+    display: flex;
+    align-items: baseline;
+
+    label {
+      margin-left: 10px;
+    }
+  }
+}

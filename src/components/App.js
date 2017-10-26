@@ -12,7 +12,7 @@ import '../styles/modules/form.css';
 import '../styles/modules/navigation.css';
 import '../styles/pages/App.css';
 import '../styles/pages/SurveyBuilder.css';
-import '../styles/pages/Survey.css';
+import '../styles/pages/SurveyForm.css';
 
 
 const App = () => (
