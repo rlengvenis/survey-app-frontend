@@ -6,6 +6,7 @@ import surveyReducer from './surveyReducer';
 import questionsReducer from './questionsReducer';
 import answerOptionsReducer from './answerOptionsReducer';
 import answersReducer from './answersReducer';
+import authReducer from './authReducer';
 
 export default combineReducers({
   survey: surveyReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
   answerOptions: answerOptionsReducer,
   answers: answersReducer,
   form: formReducer,
+  auth: authReducer,
   routing: routerReducer
 });

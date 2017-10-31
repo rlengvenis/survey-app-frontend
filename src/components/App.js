@@ -3,6 +3,10 @@ import {Route, NavLink} from 'react-router-dom';
 
 import SurveyForm from './survey-form/SurveyForm'
 import SurveyBuilder from './suvey-builder/SurveyBuilder';
+import Header from './Header';
+import SignIn from './auth/SignIn';
+import SignOut from './auth/SignOut';
+import SignUp from './auth/SignUp';
 
 import '../styles/core/reset.css';
 import '../styles/layouts/layout.css';
@@ -17,23 +21,12 @@ import '../styles/pages/SurveyForm.css';
 
 const App = () => (
   <div>
-    <header className="app__header">
-      <nav>
-        <ul className="navigation__list">
-          <li className="navigation__list-item">
-            <NavLink activeClassName="active" exact to="/">Survey Builder</NavLink>
-          </li>
-          <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/survey">Survey</NavLink>
-          </li>
-          <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/responses">Responses</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
 
     <main className="container">
+      <Route exact path="/signin" component={SignIn}/>
+      <Route exact path="/signout" component={SignOut}/>
+      <Route exact path="/signup" component={SignUp}/>
       <Route exact path="/" component={SurveyBuilder}/>
       <Route exact path="/survey" component={SurveyForm}/>
     </main>

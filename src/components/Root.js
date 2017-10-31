@@ -1,7 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux';
-import store, { history } from '../configureStore'
+import store from '../configureStore'
+import history from '../history';
 
 import App from './App';
 
