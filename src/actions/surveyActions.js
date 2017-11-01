@@ -18,7 +18,12 @@ export const changeSurveyDescription = (description) => ({
 });
 
 export const loadSurvey = () => (dispatch) => {
-  return fetch('/api/survey')
+  return fetch('/api/survey', {
+    method: 'GET',
+    headers: {
+      'Authorization': localStorage.getItem('token')
+    }
+  })
     .then((response) => response.json())
     .then((result) => {
       dispatch({
@@ -53,7 +58,8 @@ function _updateSurvey(survey) {
   fetch('/api/survey', {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('token')
     },
     body: JSON.stringify({
       survey
