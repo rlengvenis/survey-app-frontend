@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Field, FieldArray} from 'redux-form';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const QuestionBuilder = ({
   question,
+  surveyId,
   questionActions,
   answerOptionActions
 }) => {
@@ -40,6 +42,7 @@ const QuestionBuilder = ({
   const handleDeleteQuestion = () => {
     return questionActions.deleteQuestion({
       questionId: question._id,
+      surveyId: surveyId
     })
   };
 
@@ -59,11 +62,13 @@ const QuestionBuilder = ({
       </div>
 
 
-      <input
+      <Field
         type="text"
         placeholder="Enter Question"
-        value={question.title}
-        onChange={handleQuestionTitleChange}
+        component="input"
+        name={`questions.${question._id}`}
+        //value={question.title}
+        //onChange={handleQuestionTitleChange}
       />
 
       {
@@ -80,18 +85,18 @@ const QuestionBuilder = ({
   );
 };
 
-QuestionBuilder.propTypes = {
-  questionActions: PropTypes.shape({
-    changeQuestionTitle: PropTypes.func.isRequired,
-    changeQuestionType: PropTypes.func.isRequired,
-    deleteQuestion: PropTypes.func.isRequired
-  }).isRequired,
-  answerOptionActions: PropTypes.shape({
-    addNewAnswerOption: PropTypes.func.isRequired,
-    changeAnswerOptionTitle: PropTypes.func.isRequired,
-  }).isRequired,
-  question: customPropTypes.question.isRequired
-};
+// QuestionBuilder.propTypes = {
+//   questionActions: PropTypes.shape({
+//     changeQuestionTitle: PropTypes.func.isRequired,
+//     changeQuestionType: PropTypes.func.isRequired,
+//     deleteQuestion: PropTypes.func.isRequired
+//   }).isRequired,
+//   answerOptionActions: PropTypes.shape({
+//     addNewAnswerOption: PropTypes.func.isRequired,
+//     changeAnswerOptionTitle: PropTypes.func.isRequired,
+//   }).isRequired,
+//   question: customPropTypes.question.isRequired
+// };
 
 
 export default connect(null, mapDispatchToProps)(QuestionBuilder);

@@ -3,7 +3,8 @@ import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({
-  authenticated: state.auth.authenticated
+  authenticated: state.auth.authenticated,
+  survey: state.survey
 });
 
 const renderAuthLinks = (authenticated) => {
@@ -23,6 +24,9 @@ const renderAuthLinks = (authenticated) => {
 };
 
 const Header = (props) => {
+  const surveyId = props.survey && props.survey._id;
+  const surveyLink = surveyId ? `/survey?id=${surveyId}` : '/survey';
+
   return (
     <header className="app__header">
       <nav>
@@ -31,7 +35,7 @@ const Header = (props) => {
             <NavLink activeClassName="active" exact to="/">Survey Builder</NavLink>
           </li>
           <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/survey">Survey</NavLink>
+            <NavLink activeClassName="active" to={surveyLink}>Survey</NavLink>
           </li>
           <li className="navigation__list-item">
             <NavLink activeClassName="active" to="/responses">Responses</NavLink>

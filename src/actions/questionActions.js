@@ -4,25 +4,20 @@ import questionTypes from '../constants/questionTypes';
 import * as actionTypes from '../constants/actionTypes';
 import {addNewAnswerOption} from './answerOptionActions';
 
-export const addNewQuestion = () => {
+export const addNewQuestion = ({surveyId}) => {
   return {
     type: actionTypes.QUESTION_ADD_NEW,
     payload: {
-      _id: v4(),
-      title: '',
-      type: questionTypes.SHORT_ANSWER,
-      answerOptions: []
+      surveyId,
+      question: {
+        _id: v4(),
+        title: '',
+        type: questionTypes.SHORT_ANSWER,
+        answerOptions: []
+      }
     }
   };
 };
-
-export const changeQuestionTitle = ({questionId, title}) => ({
-  type: actionTypes.QUESTION_CHANGE_TITLE,
-  payload: {
-    questionId,
-    title
-  }
-});
 
 export const changeQuestionType = ({type, questionId}) => (dispatch) => {
   dispatch({
@@ -35,10 +30,11 @@ export const changeQuestionType = ({type, questionId}) => (dispatch) => {
   }
 };
 
-export const deleteQuestion = ({questionId}) => ({
-  type: actionTypes.QUESTION_DELETE_QUESTION,
+export const deleteQuestion = ({questionId, surveyId}) => ({
+  type: actionTypes.QUESTION_DELETE,
   payload: {
-    questionId
+    questionId,
+    surveyId
   }
 });
 

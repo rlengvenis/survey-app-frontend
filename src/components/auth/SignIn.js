@@ -66,7 +66,7 @@ class SignIn extends React.Component {
       </form>
     );
   }
-};
+}
 
 
 const validate = (formProps) => {

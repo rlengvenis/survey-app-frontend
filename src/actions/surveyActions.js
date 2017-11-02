@@ -4,37 +4,79 @@ import {normalize} from 'normalizr';
 import getDenormalizedSurvey from '../selectors/getDenormalizedSurvey';
 import survey from '../constants/schema';
 
-
 import * as actionTypes from '../constants/actionTypes';
 
-export const changeSurveyName = (name) => ({
-  type: actionTypes.SURVEY_CHANGE_NAME,
-  payload: {name}
-});
 
-export const changeSurveyDescription = (description) => ({
-  type: actionTypes.SURVEY_CHANGE_DESCRIPTION,
-  payload: {description}
-});
-
-export const loadSurvey = () => (dispatch) => {
-  return fetch('/api/survey', {
+export const loadSurvey = () => async (dispatch) => {
+  const response = await fetch('/api/survey', {
     method: 'GET',
     headers: {
       'Authorization': localStorage.getItem('token')
     }
-  })
-    .then((response) => response.json())
-    .then((result) => {
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+
+    if (data.survey) {
       dispatch({
-        type: actionTypes.SURVEY_LOAD_SUCCESS,
-        payload: normalize(result.survey, survey)
+        type: actionTypes.SURVEY_UPDATE,
+        payload: normalize(data.survey, survey)
       });
-    })
+
+    } else {
+      dispatch({
+        type: actionTypes.SURVEY_INIT_NEW,
+        payload: {
+          _id: v4(),
+          name: '',
+          description: '',
+          questions: []
+        }
+      });
+    }
+  }
 };
 
-export const saveSurvey = (survey) => (dispatch) => {
-  _updateSurvey(survey);
+export const saveSurvey = ({surveyFormData}) => (dispatch, getState) => {
+    const state = getState();
+    const surveyId = Object.keys(state.surveys)[0];
+
+    const modifiedNormalizedSurvey = {
+      entities: {
+        surveys: {
+          ...state.surveys,
+          [surveyId]: {
+            ...state.surveys[surveyId],
+            name: surveyFormData.surveyName,
+            description: surveyFormData.surveyDescription
+          }
+        },
+        questions: _transformFormDataToState(surveyFormData.questions, state.questions),
+        answerOptions: _transformFormDataToState(surveyFormData.answerOptions, state.answerOptions)
+      }
+    };
+
+    dispatch({
+      type: actionTypes.SURVEY_UPDATE,
+      payload: modifiedNormalizedSurvey
+    });
+
+  _saveSurvey(getDenormalizedSurvey(getState()))
+  };
+
+export const clearSurvey = () => ({
+  type: actionTypes.SURVEY_CLEAN_UP
+});
+
+const _transformFormDataToState = (items, state) => {
+  if (!items) {
+    return {};
+  }
+  return Object.keys(items).reduce((result, nextKey) => {
+    result[nextKey] = {...state[nextKey], title: items[nextKey]};
+    return result;
+  }, {});
 };
 
 export const saveSurveyAnswers = ({surveyFormData}) => (dispatch, getState) => {
@@ -51,10 +93,10 @@ export const saveSurveyAnswers = ({surveyFormData}) => (dispatch, getState) => {
     payload: {answers}
   });
 
-  _updateSurvey(getDenormalizedSurvey(getState()))
+  _saveSurvey(getDenormalizedSurvey(getState()))
 };
 
-function _updateSurvey(survey) {
+const _saveSurvey = (survey) => {
   fetch('/api/survey', {
     method: 'PUT',
     headers: {
@@ -65,4 +107,4 @@ function _updateSurvey(survey) {
       survey
     })
   })
-}
+};

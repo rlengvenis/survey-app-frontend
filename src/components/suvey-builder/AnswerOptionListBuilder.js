@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Field} from 'redux-form';
 import customPropTypes from '../../constants/customPropTypes';
 
 const AnswerOptionListBuilder = ({
@@ -11,7 +12,7 @@ const AnswerOptionListBuilder = ({
 
   const handleAddNewAnswerOption = () => {
     return onAddNewAnswerOption({questionId});
-  }
+  };
 
   return (
     <div>
@@ -20,14 +21,11 @@ const AnswerOptionListBuilder = ({
           return (
             <li key={answerOption._id}>
               <i className="material-icons">radio_button_unchecked</i>
-              <input
+              <Field
                 type="text"
                 placeholder="Add answer option"
-                value={answerOption.title}
-                onChange={(e) => onChangeAnswerOptionTitle({
-                  title: e.target.value,
-                  answerOptionId: answerOption._id
-                })}
+                component="input"
+                name={`answerOptions.${answerOption._id}`}
               />
             </li>);
         })}
@@ -35,8 +33,10 @@ const AnswerOptionListBuilder = ({
 
       <div className="survey-builder__add-option">
         <i className="material-icons">radio_button_unchecked</i>
-        <button className="button-flat"
-                onClick={handleAddNewAnswerOption}>
+        <button
+          className="button-flat"
+          type="button"
+          onClick={handleAddNewAnswerOption}>
           Add Other
         </button>
       </div>
@@ -44,11 +44,11 @@ const AnswerOptionListBuilder = ({
   );
 };
 
-AnswerOptionListBuilder.propTypes = {
-  answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
-  onAddNewAnswerOption: PropTypes.func.isRequired,
-  onChangeAnswerOptionTitle: PropTypes.func.isRequired,
-  questionId: PropTypes.string.isRequired
-};
+// AnswerOptionListBuilder.propTypes = {
+//   answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
+//   onAddNewAnswerOption: PropTypes.func.isRequired,
+//   onChangeAnswerOptionTitle: PropTypes.func.isRequired,
+//   questionId: PropTypes.string.isRequired
+// };
 
 export default AnswerOptionListBuilder;

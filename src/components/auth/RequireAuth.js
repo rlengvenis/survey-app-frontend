@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import history from '../../history';
+import {withRouter} from 'react-router-dom';
 
 export default function (ComposedComponent) {
 
   class Authentication extends Component {
     componentWillMount() {
       if (!this.props.authenticated) {
-        history.push('/signin');
+        this.props.history.push('/signin');
       }
     }
 
     componentWillUpdate(nextProps) {
       if (!nextProps.authenticated) {
-        history.push('/signin');
+        this.props.history.push('/signin');
       }
     }
 
@@ -26,5 +26,5 @@ export default function (ComposedComponent) {
     return {authenticated: state.auth.authenticated};
   };
 
-  return connect(mapStateToProps)(Authentication);
+  return withRouter(connect(mapStateToProps)(Authentication));
 }

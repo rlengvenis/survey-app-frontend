@@ -1,8 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
+import update from 'immutability-helper';
 
 const questionsReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.SURVEY_LOAD_SUCCESS: {
+    case actionTypes.SURVEY_UPDATE: {
       const {questions} = action.payload.entities;
 
       return {
@@ -11,23 +12,11 @@ const questionsReducer = (state = {}, action) => {
     }
 
     case actionTypes.QUESTION_ADD_NEW: {
-      const {_id} = action.payload;
-      return {
-        ...state,
-        [_id]: action.payload
-      };
-    }
+      const {question, question: {_id}} = action.payload;
 
-    case actionTypes.QUESTION_CHANGE_TITLE: {
-      const {questionId, title} = action.payload;
-
-      return {
-        ...state,
-        [questionId]: {
-          ...state[questionId],
-          title
-        }
-      };
+      return update(state, {
+        $merge: {[_id]: question}
+      });
     }
 
     case actionTypes.QUESTION_CHANGE_TYPE: {
@@ -45,18 +34,14 @@ const questionsReducer = (state = {}, action) => {
 
     case actionTypes.ANSWER_OPTION_ADD_NEW: {
       const {answerOptionId, questionId} = action.payload;
-      const previousQuestion = state[questionId];
 
-      return {
-        ...state,
+      return update(state, {
         [questionId]: {
-          ...previousQuestion,
-          answerOptions: [
-            ...previousQuestion.answerOptions,
-            answerOptionId
-          ]
+          answerOptions: {
+            $push: [answerOptionId]
+          }
         }
-      };
+      });
     }
 
     case actionTypes.SURVEY_SAVE_ANSWERS: {

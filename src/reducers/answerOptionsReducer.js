@@ -1,9 +1,11 @@
 import * as actionTypes from '../constants/actionTypes';
 
+
 const answerOptionsReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.SURVEY_LOAD_SUCCESS: {
+    case actionTypes.SURVEY_UPDATE: {
       const {answerOptions} = action.payload.entities;
+
       return {
         ...answerOptions
       };
@@ -12,6 +14,7 @@ const answerOptionsReducer = (state = {}, action) => {
     case actionTypes.ANSWER_OPTION_ADD_NEW:
     case actionTypes.ANSWER_OPTION_CHANGE_TITLE: {
       const {answerOptionId, title} = action.payload;
+
       return {
         ...state,
         [answerOptionId]: {

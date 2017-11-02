@@ -21,7 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 class SurveyForm extends React.Component {
   componentDidMount() {
-    this.props.surveyActions.loadSurvey();
+    if (this.props.survey) {
+      this.props.surveyActions.loadSurvey();
+    }
   }
 
   handleSurveyAnswers = (surveyFormData) => {
@@ -70,6 +72,6 @@ SurveyForm.propTypes = {
 
 SurveyForm = connect(mapStateToProps, mapDispatchToProps)(SurveyForm);
 
-SurveyForm = reduxForm({form: 'example'})(SurveyForm);
+SurveyForm = reduxForm({form: 'SurveyForm'})(SurveyForm);
 
 export default SurveyForm;

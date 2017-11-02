@@ -31,14 +31,14 @@ if (localStorage.getItem('token')) {
 
 const App = () => (
   <div>
-    <Header />
+    <Header/>
 
     <main className="container">
       <Route exact path="/" component={RequireAuth(SurveyBuilder)}/>
-      <Route exact path="/signin" component={SignIn}/>
-      <Route exact path="/signout" component={SignOut}/>
-      <Route exact path="/signup" component={SignUp}/>
-      <Route exact path="/survey" component={SurveyForm}/>
+      <Route path="/survey" component={RequireAuth(SurveyForm)}/>
+      <Route path="/signin" component={SignIn}/>
+      <Route path="/signout" component={SignOut}/>
+      <Route path="/signup" component={SignUp}/>
     </main>
   </div>
 );

@@ -11,7 +11,3 @@ export const addNewAnswerOption = ({questionId}) => ({
   }
 });
 
-export const changeAnswerOptionTitle = ({answerOptionId, title}) => ({
-  type: actionTypes.ANSWER_OPTION_CHANGE_TITLE,
-  payload: {answerOptionId, title}
-});
