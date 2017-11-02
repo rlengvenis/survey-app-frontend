@@ -1,9 +1,11 @@
 import * as actionTypes from '../constants/actionTypes';
 import update from 'immutability-helper';
 
+import {transformFormDataToState} from '../utils/formDataUtils';
+
 const questionsReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.SURVEY_UPDATE: {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {questions} = action.payload.entities;
 
       return {
@@ -60,6 +62,17 @@ const questionsReducer = (state = {}, action) => {
         ...state,
         ...updatedQuestionsById
       }
+    }
+
+    case actionTypes.SURVEY_BIND_FORM_DATA: {
+      const {questions} = action.payload;
+
+      const newQuestions = transformFormDataToState(questions, state);
+
+      return {
+        ...state,
+        ...newQuestions
+      };
     }
 
     default:

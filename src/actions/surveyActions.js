@@ -20,7 +20,7 @@ export const loadSurvey = () => async (dispatch) => {
 
     if (data.survey) {
       dispatch({
-        type: actionTypes.SURVEY_UPDATE,
+        type: actionTypes.SURVEY_LOAD_SUCCESS,
         payload: normalize(data.survey, survey)
       });
 
@@ -39,34 +39,34 @@ export const loadSurvey = () => async (dispatch) => {
 };
 
 export const saveSurvey = ({surveyFormData}) => (dispatch, getState) => {
-    const state = getState();
-    const surveyId = Object.keys(state.surveys)[0];
+  // const state = getState();
+  // const surveyId = Object.keys(state.surveys)[0];
+  //
+  // const modifiedNormalizedSurvey = {
+  //   entities: {
+  //     surveys: {
+  //       ...state.surveys,
+  //       [surveyId]: {
+  //         ...state.surveys[surveyId],
+  //         name: surveyFormData.surveyName,
+  //         description: surveyFormData.surveyDescription
+  //       }
+  //     },
+  //     questions: _transformFormDataToState(surveyFormData.questions, state.questions),
+  //     answerOptions: _transformFormDataToState(surveyFormData.answerOptions, state.answerOptions)
+  //   }
+  // };
 
-    const modifiedNormalizedSurvey = {
-      entities: {
-        surveys: {
-          ...state.surveys,
-          [surveyId]: {
-            ...state.surveys[surveyId],
-            name: surveyFormData.surveyName,
-            description: surveyFormData.surveyDescription
-          }
-        },
-        questions: _transformFormDataToState(surveyFormData.questions, state.questions),
-        answerOptions: _transformFormDataToState(surveyFormData.answerOptions, state.answerOptions)
-      }
-    };
-
-    dispatch({
-      type: actionTypes.SURVEY_UPDATE,
-      payload: modifiedNormalizedSurvey
-    });
+  dispatch({
+    type: actionTypes.SURVEY_BIND_FORM_DATA,
+    payload: surveyFormData
+  });
 
   _saveSurvey(getDenormalizedSurvey(getState()))
-  };
+};
 
-export const clearSurvey = () => ({
-  type: actionTypes.SURVEY_CLEAN_UP
+export const resetSurvey = () => ({
+  type: actionTypes.SURVEY_RESET
 });
 
 const _transformFormDataToState = (items, state) => {

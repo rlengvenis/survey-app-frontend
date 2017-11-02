@@ -3,7 +3,7 @@ import * as actionTypes from '../constants/actionTypes';
 
 const answersReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.SURVEY_UPDATE: {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {answers} = action.payload.entities;
       return {
         ...answers

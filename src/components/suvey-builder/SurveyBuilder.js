@@ -18,7 +18,7 @@ class SurveyBuilder extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.surveyActions.clearSurvey();
+    this.props.surveyActions.resetSurvey();
   }
 
   render() {

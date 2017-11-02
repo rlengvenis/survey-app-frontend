@@ -1,9 +1,10 @@
 import * as actionTypes from '../constants/actionTypes';
+import {transformFormDataToState} from '../utils/formDataUtils';
 
 
 const answerOptionsReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.SURVEY_UPDATE: {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {answerOptions} = action.payload.entities;
 
       return {
@@ -22,6 +23,27 @@ const answerOptionsReducer = (state = {}, action) => {
           title
         }
       };
+    }
+
+    case actionTypes.SURVEY_BIND_FORM_DATA: {
+      const {answerOptions} = action.payload;
+
+      const newAnswerOptions = transformFormDataToState(answerOptions, state);
+
+      // return Object.keys(state).map(key => {
+      //   if (answerOptions[key]) {
+      //     return {
+      //       ...state[key],
+      //       title: answerOptions[key]
+      //     }
+      //   }
+      //   return state[key];
+      // });
+
+      return {
+        ...state,
+        ...newAnswerOptions
+      }
     }
 
     default:

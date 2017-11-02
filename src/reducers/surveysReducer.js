@@ -4,7 +4,7 @@ import update from 'immutability-helper';
 
 const surveysReducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.SURVEY_UPDATE: {
+    case actionTypes.SURVEY_LOAD_SUCCESS: {
       const {surveys} = action.payload.entities;
       return {
         ...surveys
@@ -42,8 +42,23 @@ const surveysReducer = (state = {}, action) => {
       });
     }
 
-    case actionTypes.SURVEY_CLEAN_UP: {
+    case actionTypes.SURVEY_RESET: {
       return {}
+    }
+
+    case actionTypes.SURVEY_BIND_FORM_DATA: {
+      const {surveyName, surveyDescription} = action.payload;
+
+      const surveyId = Object.keys(state)[0];
+
+      return update(state, {
+        [surveyId]: {
+          $merge: {
+            name: surveyName,
+            description: surveyDescription
+          }
+        }
+      });
     }
 
     default:
