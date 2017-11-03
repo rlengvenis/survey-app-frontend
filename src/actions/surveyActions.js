@@ -1,10 +1,8 @@
 import {v4} from 'node-uuid';
 import {normalize} from 'normalizr';
 
-
 import getDenormalizedSurvey from '../selectors/getDenormalizedSurvey';
 import survey from '../constants/schema';
-import history from '../history';
 
 import * as actionTypes from '../constants/actionTypes';
 
@@ -40,7 +38,7 @@ const _transformFormDataToState = (items, state) => {
   }, {});
 };
 
-export const saveSurveyAnswers = ({surveyFormData}) => (dispatch, getState) => {
+export const saveSurveyAnswers = ({surveyId, surveyFormData}) => (dispatch) => {
   const answers = Object.keys(surveyFormData).map((key) => {
     return {
       _id: v4(),
@@ -49,13 +47,16 @@ export const saveSurveyAnswers = ({surveyFormData}) => (dispatch, getState) => {
     };
   });
 
-  dispatch({
-    type: actionTypes.SURVEY_SAVE_ANSWERS,
-    payload: {answers}
-  });
-
-  _saveSurvey(getDenormalizedSurvey(getState()))
-
+  fetch('/api/answers', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      surveyId,
+      answers
+    })
+  })
 };
 
 const _saveSurvey = (survey) => {

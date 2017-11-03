@@ -46,24 +46,6 @@ const questionsReducer = (state = {}, action) => {
       });
     }
 
-    case actionTypes.SURVEY_SAVE_ANSWERS: {
-      const {answers} = action.payload;
-
-      const updatedQuestionsById = answers.reduce((result, answer) => {
-        result[answer.questionId] = {
-          ...state[answer.questionId],
-          answers: [answer._id]
-        };
-
-        return result;
-      }, {});
-
-      return {
-        ...state,
-        ...updatedQuestionsById
-      }
-    }
-
     case actionTypes.SURVEY_BIND_FORM_DATA: {
       const {questions} = action.payload;
 

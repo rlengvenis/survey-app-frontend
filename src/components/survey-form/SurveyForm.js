@@ -8,28 +8,15 @@ import {withRouter} from 'react-router-dom';
 
 import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
-import customPropTypes from '../../constants/customPropTypes';
 
 import QuestionList from './QuestionList';
 
-
-const mapStateToProps = (state) => ({
-  survey: getDenormalizedSurvey(state)
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  surveyActions: bindActionCreators(surveyActions, dispatch)
-});
 
 class SurveyForm extends React.Component {
   componentDidMount() {
     const surveyId = queryString.parse(this.props.location.search).id;
     this.props.surveyActions.loadSurveyById({surveyId});
   }
-
-  handleSurveyAnswers = (surveyFormData) => {
-    this.props.surveyActions.saveSurveyAnswers({surveyFormData});
-  };
 
   render() {
     const {
@@ -59,6 +46,13 @@ class SurveyForm extends React.Component {
       </article>
     );
   }
+
+  handleSurveyAnswers = (surveyFormData) => {
+    this.props.surveyActions.saveSurveyAnswers({
+      surveyId: this.props.survey._id,
+      surveyFormData
+    });
+  };
 }
 
 // SurveyForm.propTypes = {
@@ -74,6 +68,14 @@ class SurveyForm extends React.Component {
 //     saveSurveyAnswers: PropTypes.func.isRequired
 //   }).isRequired
 // };
+
+const mapStateToProps = (state) => ({
+  survey: getDenormalizedSurvey(state)
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  surveyActions: bindActionCreators(surveyActions, dispatch)
+});
 
 SurveyForm = connect(mapStateToProps, mapDispatchToProps)(SurveyForm);
 
