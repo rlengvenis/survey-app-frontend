@@ -15,12 +15,10 @@ import QuestionList from './QuestionList';
 class SurveyForm extends React.Component {
   componentDidMount() {
     const surveyId = queryString.parse(this.props.location.search).id;
-    this.props.surveyActions.loadSurveyById({surveyId});
-
+    this.props.surveyActions.loadSurvey({surveyId});
   }
 
   render() {
-    console.log('SurveyForm render');
     const {
       survey,
       handleSubmit

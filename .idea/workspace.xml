@@ -23,9 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="115c725b-7818-4c30-92d1-897cb631d3e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/authActions.js" afterPath="$PROJECT_DIR$/src/actions/authActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App.js" afterPath="$PROJECT_DIR$/src/components/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Header.js" afterPath="$PROJECT_DIR$/src/components/Header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/survey-form/SurveyForm.js" afterPath="$PROJECT_DIR$/src/components/survey-form/SurveyForm.js" />
     </list>
@@ -41,7 +38,7 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="275">
               <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -50,45 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SurveyResponses.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/survey-responses/SurveyResponses.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="19" column="27" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="19" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SurveyBuilder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/suvey-builder/SurveyBuilder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+            <state relative-caret-position="99">
+              <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -99,22 +62,10 @@
       <file leaf-file-name="SurveyForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/survey-form/SurveyForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-309">
-              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="306">
+              <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,7 +81,6 @@
       <find>transform</find>
       <find>&lt;button</find>
       <find>handleSaveSurvey</find>
-      <find>console.log</find>
       <find>getDenormalizedSurvey</find>
       <find>console.log()</find>
       <find>clearSurvey</find>
@@ -154,6 +104,7 @@
       <find>SURVEY_LOAD_SUCCESS</find>
       <find>push</find>
       <find>console.log(</find>
+      <find>console.log</find>
     </findStrings>
     <replaceStrings>
       <replace>questions</replace>
@@ -882,20 +833,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-form/SurveyForm.js">
+    <entry file="file://$PROJECT_DIR$/src/components/survey-responses/SurveyResponses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="55" column="23" lean-forward="false" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+        <state relative-caret-position="396">
+          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -904,7 +845,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="275">
           <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -912,10 +853,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/survey-responses/SurveyResponses.js">
+    <entry file="file://$PROJECT_DIR$/src/components/survey-form/SurveyForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        <state relative-caret-position="306">
+          <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

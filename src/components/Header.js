@@ -26,8 +26,6 @@ const renderAuthLinks = (authenticated) => {
 
 const Header = (props) => {
   const {surveyId} = props;
-  const surveyLink = surveyId ? `/survey?id=${surveyId}` : '/survey';
-  console.log('Header render');
 
   return (
     <header className="app__header">
@@ -37,7 +35,13 @@ const Header = (props) => {
             <NavLink activeClassName="active" to="/builder">Survey Builder</NavLink>
           </li>
           <li className="navigation__list-item">
-            <NavLink isActive={handler} activeClassName="active" to={surveyLink}>Survey</NavLink>
+            <NavLink activeClassName="active" to={{
+              pathname: '/survey',
+              search: surveyId && `id=${surveyId}`
+            }}
+            >
+              Survey
+            </NavLink>
           </li>
           <li className="navigation__list-item">
             <NavLink activeClassName="active" to="/responses">Responses</NavLink>
@@ -50,15 +54,5 @@ const Header = (props) => {
     </header>
   );
 };
-
-const handler = (match, location) => {
-  console.log('handler.match', match);
-  console.log('handler.location', location);
-  return !!match;
-  //location.pathname + location.search === `/tags/${tag.tagId}${search}`
-}
-
-
-
 
 export default connect(mapStateToProps, null)(Header);
