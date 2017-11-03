@@ -56,7 +56,7 @@ const _authenticateUser = async (dispatch, {authType, email, password}) => {
       type: actionTypes.AUTH_SIGN_IN_SUCCESS
     });
 
-    history.push('/');
+    history.push('/builder');
 
   } catch (err) {
     dispatch({

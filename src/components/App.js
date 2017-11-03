@@ -6,6 +6,7 @@ import * as actionTypes from '../constants/actionTypes';
 
 import SurveyForm from './survey-form/SurveyForm'
 import SurveyBuilder from './suvey-builder/SurveyBuilder';
+import SurveyResponses from './survey-responses/SurveyResponses';
 import Header from './Header';
 import SignIn from './auth/SignIn';
 import SignOut from './auth/SignOut';
@@ -34,11 +35,13 @@ const App = () => (
     <Header/>
 
     <main className="container">
-      <Route exact path="/" component={RequireAuth(SurveyBuilder)}/>
-      <Route path="/survey" component={RequireAuth(SurveyForm)}/>
       <Route path="/signin" component={SignIn}/>
       <Route path="/signout" component={SignOut}/>
       <Route path="/signup" component={SignUp}/>
+      <Route path="/builder" component={RequireAuth(SurveyBuilder)}/>
+      <Route path="/survey" component={RequireAuth(SurveyForm)}/>
+      <Route path="/responses" component={RequireAuth(SurveyResponses)}/>
+
     </main>
   </div>
 );
