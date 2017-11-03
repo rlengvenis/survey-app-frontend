@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Field} from 'redux-form';
-import customPropTypes from '../../constants/customPropTypes';
+import {required} from 'redux-form-validators'
 
 const AnswerOptionListBuilder = ({
   questionId,
   answerOptions,
-  onChangeAnswerOptionTitle,
   onAddNewAnswerOption
 }) => {
 
@@ -26,6 +25,7 @@ const AnswerOptionListBuilder = ({
                 placeholder="Add answer option"
                 component="input"
                 name={`answerOptions.${answerOption._id}`}
+                validate={[required()]}
               />
             </li>);
         })}

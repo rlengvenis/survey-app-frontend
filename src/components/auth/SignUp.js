@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import * as authActions from '../../actions/authActions';
+import FormInput from '../shared/FormInput';
 
 
 const mapStateToProps = (state) => ({
@@ -17,15 +18,6 @@ const mapDispatchToProps = (dispatch) => ({
 class SignUp extends React.Component {
   handleFormSubmit = ({email, password}) => {
     this.props.authActions.signUpUser({email, password});
-  };
-
-  renderInput(field) {
-    return (
-      <div>
-        <input type={field.type} {...field.input} />
-        {field.meta.touched && <span>{field.meta.error}</span>}
-      </div>
-    )
   };
 
   renderAlert() {
@@ -47,7 +39,7 @@ class SignUp extends React.Component {
           <label>Email:</label>
           <Field
             type="email"
-            component={this.renderInput}
+            component={FormInput}
             name="email"
           />
         </fieldset>
@@ -55,7 +47,7 @@ class SignUp extends React.Component {
           <label>Password:</label>
           <Field
             type="password"
-            component={this.renderInput}
+            component={FormInput}
             name="password"
           />
         </fieldset>
@@ -63,7 +55,7 @@ class SignUp extends React.Component {
           <label>Confirm password:</label>
           <Field
             type="password"
-            component={this.renderInput}
+            component={FormInput}
             name="passwordConfirm"
           />
 

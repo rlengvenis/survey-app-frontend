@@ -36,7 +36,6 @@ class SurveyResponses extends React.Component {
           </ul>
 
         </div>
-
       )
     })
   }
@@ -50,9 +49,7 @@ class SurveyResponses extends React.Component {
       )
     });
   }
-
-};
-
+}
 
 const mapStateToProps = (state) => ({
   survey: getDenormalizedSurvey(state)

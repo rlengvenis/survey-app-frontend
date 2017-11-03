@@ -3,14 +3,15 @@ import {connect} from 'react-redux';
 import {Field, FieldArray} from 'redux-form';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
+import {required} from 'redux-form-validators'
 
 import * as questionActions from '../../actions/questionActions';
 import * as answerOptionActions from '../../actions/answerOptionActions';
 import questionTypes from '../../constants/questionTypes';
-import customPropTypes from '../../constants/customPropTypes';
 
 import QuestionTypeSelector from './QuestionTypeSelector';
 import AnswerOptionListBuilder from './AnswerOptionListBuilder';
+import FormInput from "../shared/FormInput";
 
 
 const mapDispatchToProps = (dispatch) => ({
@@ -65,10 +66,9 @@ const QuestionBuilder = ({
       <Field
         type="text"
         placeholder="Enter Question"
-        component="input"
+        component={FormInput}
         name={`questions.${question._id}`}
-        //value={question.title}
-        //onChange={handleQuestionTitleChange}
+        validate={[required()]}
       />
 
       {

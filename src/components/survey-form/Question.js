@@ -1,24 +1,13 @@
 import React from 'react';
 import {Field} from 'redux-form';
+import {required} from 'redux-form-validators'
 
 import questionTypes from '../../constants/questionTypes';
 import customPropTypes from '../../constants/customPropTypes';
 
 import AnswerOptionList from './AnswerOptionList';
+import FormInput from '../shared/FormInput';
 
-
-const required = (value) => {
-  return value ? undefined : 'Required';
-};
-
-const renderInput = (field) => {
-  return (
-    <div>
-      <input type="text" {...field.input} />
-      {field.meta.touched && <span>{field.meta.error}</span>}
-    </div>
-  )
-};
 
 const Question = ({question}) => {
   return (
@@ -30,10 +19,10 @@ const Question = ({question}) => {
 
         <Field
           type="text"
-          component={renderInput}
+          component={FormInput}
           name={question._id}
           placeholder="Your answer"
-          validate={[required]}
+          validate={[required()]}
         />
       }
 
@@ -44,7 +33,7 @@ const Question = ({question}) => {
           component={AnswerOptionList}
           name={question._id}
           answerOptions={question.answerOptions}
-          validate={[required]}
+          validate={[required()]}
         />
       }
 
