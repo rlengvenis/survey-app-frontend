@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => ({
   authenticated: state.auth.authenticated,
-  survey: state.survey
+  surveyId: Object.keys(state.surveys)[0] //Current implementation supports only one survey
 });
 
 const renderAuthLinks = (authenticated) => {
@@ -24,7 +24,7 @@ const renderAuthLinks = (authenticated) => {
 };
 
 const Header = (props) => {
-  const surveyId = props.survey && props.survey._id;
+  const {surveyId} = props;
   const surveyLink = surveyId ? `/survey?id=${surveyId}` : '/survey';
 
   return (

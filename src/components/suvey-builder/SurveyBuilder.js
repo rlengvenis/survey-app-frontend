@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 import * as surveyActions from '../../actions/surveyActions';
 import * as questionActions from '../../actions/questionActions';
-import customPropTypes from '../../constants/customPropTypes';
 
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import getInitialFormBuilderValues from '../../selectors/getInitialFormBuilderValues';

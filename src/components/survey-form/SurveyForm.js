@@ -2,7 +2,9 @@ import React from 'react';
 import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import queryString from 'query-string';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 
 import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
@@ -21,9 +23,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 class SurveyForm extends React.Component {
   componentDidMount() {
-    if (this.props.survey) {
-      this.props.surveyActions.loadSurvey();
-    }
+    const surveyId = queryString.parse(this.props.location.search).id;
+    this.props.surveyActions.loadSurveyById({surveyId});
   }
 
   handleSurveyAnswers = (surveyFormData) => {
@@ -35,6 +36,10 @@ class SurveyForm extends React.Component {
       survey,
       handleSubmit
     } = this.props;
+
+    if (!survey) {
+      return <h1>Loading</h1>
+    }
 
     return (
       <article>
@@ -56,22 +61,24 @@ class SurveyForm extends React.Component {
   }
 }
 
-SurveyForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  survey: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    questions: PropTypes.arrayOf(customPropTypes.question).isRequired
-  }).isRequired,
-  surveyActions: PropTypes.shape({
-    loadSurvey: PropTypes.func.isRequired,
-    saveSurvey: PropTypes.func.isRequired,
-    saveSurveyAnswers: PropTypes.func.isRequired
-  }).isRequired
-};
+// SurveyForm.propTypes = {
+//   handleSubmit: PropTypes.func.isRequired,
+//   survey: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     questions: PropTypes.arrayOf(customPropTypes.question).isRequired
+//   }).isRequired,
+//   surveyActions: PropTypes.shape({
+//     loadSurvey: PropTypes.func.isRequired,
+//     saveSurvey: PropTypes.func.isRequired,
+//     saveSurveyAnswers: PropTypes.func.isRequired
+//   }).isRequired
+// };
 
 SurveyForm = connect(mapStateToProps, mapDispatchToProps)(SurveyForm);
 
 SurveyForm = reduxForm({form: 'SurveyForm'})(SurveyForm);
+
+SurveyForm = withRouter(SurveyForm);
 
 export default SurveyForm;

@@ -1,9 +1,22 @@
-export const transformFormDataToState = (items, state) => {
-  if (!items) {
-    return {};
-  }
-  return Object.keys(items).reduce((result, nextKey) => {
-    result[nextKey] = {...state[nextKey], title: items[nextKey]};
+/***
+ * Binds titles from reduxForm fields to appropriate reducer title field.
+ * Ex: form answerOptions to answerOptionsReducer
+ *
+ * @param formFields form fields by pattern {id: title, id2: title}
+ * @param state existing reducer state
+ * @returns {*} new state instance
+ */
+export const bindFormDataToState = (formFields, state) => {
+  return Object.keys(state).reduce((result, nextKey) => {
+    if (formFields[nextKey]) {
+      result[nextKey] = {
+        ...state[nextKey],
+        title: formFields[nextKey]
+      }
+    } else {
+      result[nextKey] = state[nextKey];
+    }
+
     return result;
   }, {});
 };

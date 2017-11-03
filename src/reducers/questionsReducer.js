@@ -1,7 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
 import update from 'immutability-helper';
 
-import {transformFormDataToState} from '../utils/formDataUtils';
+import {bindFormDataToState} from '../utils/formDataUtils';
 
 const questionsReducer = (state = {}, action) => {
   switch (action.type) {
@@ -67,12 +67,7 @@ const questionsReducer = (state = {}, action) => {
     case actionTypes.SURVEY_BIND_FORM_DATA: {
       const {questions} = action.payload;
 
-      const newQuestions = transformFormDataToState(questions, state);
-
-      return {
-        ...state,
-        ...newQuestions
-      };
+      return bindFormDataToState(questions, state);
     }
 
     default:
