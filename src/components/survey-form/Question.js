@@ -8,7 +8,6 @@ import customPropTypes from '../../constants/customPropTypes';
 import AnswerOptionList from './AnswerOptionList';
 import FormInput from '../shared/FormInput';
 
-
 const Question = ({question}) => {
   return (
     <div className="survey-form__question">

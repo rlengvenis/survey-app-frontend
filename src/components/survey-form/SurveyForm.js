@@ -79,7 +79,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 SurveyForm = connect(mapStateToProps, mapDispatchToProps)(SurveyForm);
 
-SurveyForm = reduxForm({form: 'SurveyForm'})(SurveyForm);
+SurveyForm = reduxForm({form: 'surveyForm'})(SurveyForm);
 
 SurveyForm = withRouter(SurveyForm);
 

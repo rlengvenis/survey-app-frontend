@@ -1,10 +1,21 @@
 import React from 'react';
+import classnames from 'classnames'
 
-const FormInput = (field) => {
+const FormInput = ({meta, type, input}) => {
+  const inputSyle = classnames('input', {
+    'input__has-error': meta.touched && meta.error
+  });
+
   return (
     <div>
-      <input type={field.type} {...field.input} />
-      {field.meta.touched && <span>{field.meta.error}</span>}
+      <input
+        className={inputSyle}
+        type={type}
+        {...input}
+      />
+      <div className="input--error-message">
+        {meta.touched && meta.error && <span>{`Error: ${meta.error}`}</span>}
+      </div>
     </div>
   )
 };

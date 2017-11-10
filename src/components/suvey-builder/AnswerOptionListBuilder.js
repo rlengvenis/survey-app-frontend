@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Field} from 'redux-form';
 import {required} from 'redux-form-validators'
+import FormInput from '../shared/FormInput';
 
 const AnswerOptionListBuilder = ({
   questionId,
@@ -19,14 +20,17 @@ const AnswerOptionListBuilder = ({
         {answerOptions.map((answerOption, index) => {
           return (
             <li key={answerOption._id}>
-              <i className="material-icons">radio_button_unchecked</i>
-              <Field
-                type="text"
-                placeholder="Add answer option"
-                component="input"
-                name={`answerOptions.${answerOption._id}`}
-                validate={[required()]}
-              />
+              <i className="survey-builder__radio-button-icon material-icons">radio_button_unchecked</i>
+              <div className="survey-builder__answer-option">
+                <Field
+                  className="input"
+                  type="text"
+                  placeholder="Add answer option"
+                  component={FormInput}
+                  name={`answerOptions.${answerOption._id}`}
+                  validate={[required()]}
+                />
+              </div>
             </li>);
         })}
       </ul>

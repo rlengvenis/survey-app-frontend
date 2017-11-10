@@ -1,6 +1,6 @@
 @import "../core/variables.scss";
 
-input {
+.input {
   display: inline-block;
   box-sizing: border-box;
   font-size: $font-size-regular;
@@ -8,8 +8,28 @@ input {
   line-height: 36px;
   border-width: 0;
   border-bottom: 1px solid rgba(33, 33, 33, 0.22);
+  width: 100%;
+
   &:focus {
     border-color: $color-blue;
     transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
   }
+
+  &__has-error {
+    border-color: $color-red
+  }
+
+  &__has-error:focus {
+    border-color: $color-red
+  }
+
+  &--error-message {
+    color: $color-red;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 7px;
+  }
 }
+
+
+

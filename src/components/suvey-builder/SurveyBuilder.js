@@ -31,7 +31,7 @@ class SurveyBuilder extends React.Component {
         <form onSubmit={handleSubmit(this.handleSaveSurvey)}>
           <div className="survey-builder__heading">
             <Field
-              className="survey-builder__title"
+              className="input survey-builder__title"
               type="text"
               component="input"
               name="surveyName"
@@ -39,7 +39,7 @@ class SurveyBuilder extends React.Component {
             />
             <br/>
             <Field
-              className="survey-builder__description"
+              className="input survey-builder__description"
               type="text"
               component="input"
               name="surveyDescription"
