@@ -37,6 +37,13 @@
 
   &__answer-option {
     margin-left: 10px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: $media-md) {
+    &__answer-option {
+      width: 50%
+    }
   }
 
   &__add-option {

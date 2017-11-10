@@ -14,7 +14,7 @@ class SignOut extends React.Component {
   }
   render() {
     return (
-      <div>Sorry to see you go...</div>
+      <h2>Sorry to see you go...</h2>
     );
   }
 }
