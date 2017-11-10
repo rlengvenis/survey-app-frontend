@@ -34,36 +34,43 @@ class SignUp extends React.Component {
     const {handleSubmit} = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit)}>
-        <fieldset>
-          <label>Email:</label>
+      <form
+        className="login-form"
+        onSubmit={handleSubmit(this.handleFormSubmit)}
+      >
+        <div className="login-form--field">
           <Field
             type="email"
             component={FormInput}
+            placeholder="Email"
             name="email"
           />
-        </fieldset>
-        <fieldset>
-          <label>Password:</label>
+        </div>
+        <div className="login-form--field">
           <Field
             type="password"
             component={FormInput}
+            placeholder="Password"
             name="password"
           />
-        </fieldset>
-        <fieldset>
-          <label>Confirm password:</label>
+        </div>
+        <div className="login-form--field">
           <Field
             type="password"
             component={FormInput}
+            placeholder="Confirm password"
             name="passwordConfirm"
           />
-
-        </fieldset>
+        </div>
 
         {this.renderAlert()}
 
-        <button type="submit">Sign up</button>
+        <button
+          className="button-raised login-form--submit"
+          type="submit"
+        >
+          Sign up
+        </button>
       </form>
     );
   }

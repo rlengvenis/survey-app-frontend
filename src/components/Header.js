@@ -10,15 +10,20 @@ const mapStateToProps = (state) => ({
 
 const renderAuthLinks = (authenticated) => {
   return authenticated ? (
-      <li>
+      <li className="navigation__list-item">
         <NavLink to="/signout">Sign out</NavLink>
       </li>
     )
     : [
-      <li key={1}>
+      <li
+        key={1}
+        className="navigation__list-item"
+      >
         <NavLink to="/signin">Sign in</NavLink>
       </li>,
-      <li key={2}>
+      <li key={2}
+          className="navigation__list-item"
+      >
         <NavLink to="/signup">Sign up</NavLink>
       </li>
     ];

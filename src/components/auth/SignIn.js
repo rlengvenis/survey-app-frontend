@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import * as authActions from '../../actions/authActions';
+import FormInput from '../shared/FormInput';
 
 
 const mapStateToProps = (state) => ({
@@ -17,15 +18,6 @@ const mapDispatchToProps = (dispatch) => ({
 class SignIn extends React.Component {
   handleFormSubmit = ({email, password}) => {
     this.props.authActions.signInUser({email, password});
-  };
-
-  renderInput(field) {
-    return (
-      <div>
-        <input type={field.type} {...field.input} />
-        {field.meta.touched && <span>{field.meta.error}</span>}
-      </div>
-    )
   };
 
   renderAlert() {
@@ -42,27 +34,35 @@ class SignIn extends React.Component {
     const {handleSubmit} = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit)}>
-        <fieldset>
-          <label>Email:</label>
+      <form
+        className="login-form"
+        onSubmit={handleSubmit(this.handleFormSubmit)}
+      >
+        <div className="login-form--field">
           <Field
             type="email"
-            component={this.renderInput}
+            component={FormInput}
+            placeholder="Email"
             name="email"
           />
-        </fieldset>
-        <fieldset>
-          <label>Password:</label>
+        </div>
+        <div className="login-form--field">
           <Field
             type="password"
-            component={this.renderInput}
+            component={FormInput}
+            placeholder="Password"
             name="password"
           />
-        </fieldset>
+        </div>
 
         {this.renderAlert()}
 
-        <button type="submit">Sign in</button>
+        <button
+          className="button-raised login-form--submit"
+          type="submit"
+        >
+          Sign in
+        </button>
       </form>
     );
   }

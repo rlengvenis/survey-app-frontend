@@ -19,9 +19,11 @@ import '../styles/modules/buttons.css';
 import '../styles/modules/typography.css';
 import '../styles/modules/form.css';
 import '../styles/modules/navigation.css';
+import '../styles/modules/spinner.css';
 import '../styles/pages/App.css';
 import '../styles/pages/SurveyBuilder.css';
 import '../styles/pages/SurveyForm.css';
+import '../styles/pages/LoginForm.css';
 
 
 if (localStorage.getItem('token')) {

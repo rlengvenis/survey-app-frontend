@@ -10,6 +10,7 @@ import * as questionActions from '../../actions/questionActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import getInitialFormBuilderValues from '../../selectors/getInitialFormBuilderValues';
 import QuestionListBuilder from './QuestionListBuilder';
+import DefaultSpinner from '../shared/DefaultSpinner';
 
 class SurveyBuilder extends React.Component {
   componentDidMount() {
@@ -25,6 +26,10 @@ class SurveyBuilder extends React.Component {
       survey,
       handleSubmit
     } = this.props;
+
+    if (!survey) {
+     return <DefaultSpinner/>;
+    }
 
     return (
       <div className="survey-builder">

@@ -10,6 +10,7 @@ import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 
 import QuestionList from './QuestionList';
+import DefaultSpinner from '../shared/DefaultSpinner';
 
 
 class SurveyForm extends React.Component {
@@ -25,7 +26,7 @@ class SurveyForm extends React.Component {
     } = this.props;
 
     if (!survey) {
-      return <h1>Loading</h1>
+      return <DefaultSpinner/>;
     }
 
     return (

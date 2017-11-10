@@ -25,7 +25,7 @@ const AnswerOptionListBuilder = ({
                 <Field
                   className="input"
                   type="text"
-                  placeholder="Add answer option"
+                  placeholder="Answer option"
                   component={FormInput}
                   name={`answerOptions.${answerOption._id}`}
                   validate={[required()]}
