@@ -5,6 +5,9 @@ import {bindActionCreators} from 'redux';
 import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 
+import DefaultSpinner from '../shared/DefaultSpinner';
+
+
 class SurveyResponses extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
@@ -14,7 +17,7 @@ class SurveyResponses extends React.Component {
     const {survey} = this.props;
 
     if (!survey) {
-      return <h1>Loading</h1>
+      return <DefaultSpinner/>;
     }
 
     return (
