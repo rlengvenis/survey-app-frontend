@@ -17,14 +17,11 @@ class SurveyBuilder extends React.Component {
     this.props.surveyActions.loadSurvey();
   }
 
-  componentWillUnmount() {
-    this.props.surveyActions.resetSurvey();
-  }
-
   render() {
     const {
       survey,
-      handleSubmit
+      handleSubmit,
+      submitting
     } = this.props;
 
     if (!survey) {
@@ -71,6 +68,7 @@ class SurveyBuilder extends React.Component {
             <button
               type="submit"
               className="button-raised"
+              disabled={submitting}
             >
               Save Survey
             </button>
@@ -87,7 +85,7 @@ class SurveyBuilder extends React.Component {
   };
 
   handleSaveSurvey = (surveyFormData) => {
-    this.props.surveyActions.saveSurvey({surveyFormData});
+    return this.props.surveyActions.saveSurvey({surveyFormData});
   };
 
   handleChangeSurveyName = (e) => {

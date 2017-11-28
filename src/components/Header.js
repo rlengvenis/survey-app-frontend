@@ -15,15 +15,10 @@ const renderAuthLinks = (authenticated) => {
       </li>
     )
     : [
-      <li
-        key={1}
-        className="navigation__list-item"
-      >
+      <li key={1} className="navigation__list-item">
         <NavLink to="/signin">Sign in</NavLink>
       </li>,
-      <li key={2}
-          className="navigation__list-item"
-      >
+      <li key={2} className="navigation__list-item">
         <NavLink to="/signup">Sign up</NavLink>
       </li>
     ];
@@ -37,19 +32,25 @@ const Header = (props) => {
       <nav>
         <ul className="navigation__list">
           <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/builder">Survey Builder</NavLink>
+            <NavLink activeClassName="active" to="/builder">
+              Survey Builder
+            </NavLink>
           </li>
           <li className="navigation__list-item">
-            <NavLink activeClassName="active" to={{
-              pathname: '/survey',
-              search: surveyId && `id=${surveyId}`
-            }}
+            <NavLink
+              activeClassName="active"
+              to={{
+                pathname: '/survey',
+                search: surveyId && `id=${surveyId}`
+              }}
             >
               Survey
             </NavLink>
           </li>
           <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/responses">Responses</NavLink>
+            <NavLink activeClassName="active" to="/responses">
+              Responses
+            </NavLink>
           </li>
 
           {renderAuthLinks(props.authenticated)}

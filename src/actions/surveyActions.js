@@ -12,7 +12,7 @@ export const loadSurvey = () => (dispatch) => {
 };
 
 export const loadSurveyById = ({surveyId}) => (dispatch) => {
-  _loadSurvey(dispatch, `/api/survey?id=${surveyId}`)
+  _loadSurvey(dispatch, `/api/surveyById/${surveyId}`)
 };
 
 export const saveSurvey = ({surveyFormData}) => (dispatch, getState) => {
@@ -21,12 +21,8 @@ export const saveSurvey = ({surveyFormData}) => (dispatch, getState) => {
     payload: surveyFormData
   });
 
-  _saveSurvey(getDenormalizedSurvey(getState()))
+  return _saveSurvey(getDenormalizedSurvey(getState()))
 };
-
-export const resetSurvey = () => ({
-  type: actionTypes.SURVEY_RESET
-});
 
 const _transformFormDataToState = (items, state) => {
   if (!items) {
@@ -47,7 +43,7 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => (dispatch) => {
     };
   });
 
-  fetch('/api/answers', {
+  return fetch('/api/answers', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -60,7 +56,7 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => (dispatch) => {
 };
 
 const _saveSurvey = (survey) => {
-  fetch('/api/survey', {
+  return fetch('/api/survey', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

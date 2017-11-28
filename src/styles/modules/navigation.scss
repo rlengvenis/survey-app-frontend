@@ -12,12 +12,13 @@
   }
 
   &__list-item {
-    a {
+    a, span {
       color: #FFFFFF;
       text-decoration: none;
       font-weight: 300;
     }
-    a.active {
+
+    .active {
       border-bottom: 1px solid #FFFFFF;
       padding-bottom: 3px;
     }

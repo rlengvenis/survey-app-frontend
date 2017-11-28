@@ -16,13 +16,14 @@ import DefaultSpinner from '../shared/DefaultSpinner';
 class SurveyForm extends React.Component {
   componentDidMount() {
     const surveyId = queryString.parse(this.props.location.search).id;
-    this.props.surveyActions.loadSurvey({surveyId});
+    this.props.surveyActions.loadSurveyById({surveyId});
   }
 
   render() {
     const {
       survey,
-      handleSubmit
+      handleSubmit,
+      submitting
     } = this.props;
 
     if (!survey) {
@@ -41,7 +42,13 @@ class SurveyForm extends React.Component {
         >
           <QuestionList questions={survey.questions}/>
           <div>
-            <button className="button-raised survey-form__submit" type="submit">Submit</button>
+            <button
+              className="button-raised survey-form__submit"
+              type="submit"
+              disabled={submitting}
+            >
+              Submit
+            </button>
           </div>
         </form>
       </article>
@@ -49,7 +56,7 @@ class SurveyForm extends React.Component {
   }
 
   handleSurveyAnswers = (surveyFormData) => {
-    this.props.surveyActions.saveSurveyAnswers({
+    return this.props.surveyActions.saveSurveyAnswers({
       surveyId: this.props.survey._id,
       surveyFormData
     });
