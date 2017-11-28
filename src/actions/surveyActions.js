@@ -1,5 +1,6 @@
 import {v4} from 'node-uuid';
 import {normalize} from 'normalizr';
+import history from '../history';
 
 import getDenormalizedSurvey from '../selectors/getDenormalizedSurvey';
 import survey from '../constants/schema';
@@ -15,13 +16,21 @@ export const loadSurveyById = ({surveyId}) => (dispatch) => {
   _loadSurvey(dispatch, `/api/surveyById/${surveyId}`)
 };
 
-export const saveSurvey = ({surveyFormData}) => (dispatch, getState) => {
+export const saveSurvey = ({surveyFormData}) => async (dispatch, getState) => {
   dispatch({
     type: actionTypes.SURVEY_BIND_FORM_DATA,
     payload: surveyFormData
   });
 
-  return _saveSurvey(getDenormalizedSurvey(getState()))
+  const state = getState();
+  const surveyId = Object.keys(state.surveys)[0]; // Current implementation allows only one survey
+
+  await _saveSurvey(getDenormalizedSurvey(state));
+
+  history.push({
+    pathname: '/survey',
+    search: surveyId && `id=${surveyId}`
+  })
 };
 
 export const resetSurvey = () => ({
@@ -38,7 +47,7 @@ const _transformFormDataToState = (items, state) => {
   }, {});
 };
 
-export const saveSurveyAnswers = ({surveyId, surveyFormData}) => (dispatch) => {
+export const saveSurveyAnswers = ({surveyId, surveyFormData}) => async (dispatch) => {
   const answers = Object.keys(surveyFormData).map((key) => {
     return {
       _id: v4(),
@@ -47,7 +56,7 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => (dispatch) => {
     };
   });
 
-  return fetch('/api/answers', {
+  await fetch('/api/answers', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -56,7 +65,11 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => (dispatch) => {
       surveyId,
       answers
     })
-  })
+  });
+
+  history.push('/thank-you-page')
+
+
 };
 
 const _saveSurvey = (survey) => {

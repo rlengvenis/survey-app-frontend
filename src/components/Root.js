@@ -8,6 +8,7 @@ import * as actionTypes from '../constants/actionTypes';
 import history from '../history';
 
 import SurveyForm from './survey-form/SurveyForm'
+import ThankYouPage from './survey-form/ThankYouPage';
 import SurveyBuilder from './suvey-builder/SurveyBuilder';
 import SurveyResponses from './survey-responses/SurveyResponses';
 import Header from './Header';
@@ -41,12 +42,13 @@ const Root = () => (
       <div>
         <Header/>
         <main className="container">
-          <Route path="/signin" component={SignIn}/>
-          <Route path="/signout" component={SignOut}/>
-          <Route path="/signup" component={SignUp}/>
+          <Route path="/sign-in" component={SignIn}/>
+          <Route path="/sign-out" component={SignOut}/>
+          <Route path="/sign-up" component={SignUp}/>
           <Route path="/builder" component={RequireAuth(SurveyBuilder)}/>
           <Route path="/survey" component={SurveyForm}/>
           <Route path="/responses" component={RequireAuth(SurveyResponses)}/>
+          <Route path="/thank-you-page" component={ThankYouPage}/>
         </main>
       </div>
     </ConnectedRouter>

@@ -11,15 +11,33 @@ const mapStateToProps = (state) => ({
 const renderAuthLinks = (authenticated) => {
   return authenticated ? (
       <li className="navigation__list-item">
-        <NavLink to="/signout">Sign out</NavLink>
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link--active"
+          to="/sign-out"
+        >
+          Sign out
+        </NavLink>
       </li>
     )
     : [
       <li key={1} className="navigation__list-item">
-        <NavLink to="/signin">Sign in</NavLink>
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link--active"
+          to="/sign-in"
+        >
+          Sign in
+        </NavLink>
       </li>,
       <li key={2} className="navigation__list-item">
-        <NavLink to="/signup">Sign up</NavLink>
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link--active"
+          to="/signup"
+        >
+          Sign up
+        </NavLink>
       </li>
     ];
 };
@@ -32,13 +50,18 @@ const Header = (props) => {
       <nav>
         <ul className="navigation__list">
           <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/builder">
+            <NavLink
+              className="navigation__link"
+              activeClassName="navigation__link--active"
+              to="/builder"
+            >
               Survey Builder
             </NavLink>
           </li>
           <li className="navigation__list-item">
             <NavLink
-              activeClassName="active"
+              className="navigation__link"
+              activeClassName="navigation__link--active"
               to={{
                 pathname: '/survey',
                 search: surveyId && `id=${surveyId}`
@@ -48,7 +71,11 @@ const Header = (props) => {
             </NavLink>
           </li>
           <li className="navigation__list-item">
-            <NavLink activeClassName="active" to="/responses">
+            <NavLink
+              className="navigation__link"
+              activeClassName="navigation__link--active"
+              to="/responses"
+            >
               Responses
             </NavLink>
           </li>

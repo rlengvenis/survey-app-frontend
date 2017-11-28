@@ -12,10 +12,17 @@ import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import QuestionList from './QuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 
+import history from '../../history';
+
 
 class SurveyForm extends React.Component {
   componentDidMount() {
     const surveyId = queryString.parse(this.props.location.search).id;
+
+    if (!surveyId) {
+      history.push('/sign-in');
+    }
+
     this.props.surveyActions.loadSurveyById({surveyId});
   }
 

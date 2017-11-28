@@ -15,7 +15,10 @@ const FormInput = ({meta, type, input, placeholder}) => {
         {...input}
       />
       <div className="input--error-message">
-        {meta.touched && meta.error && <span>{`Error: ${meta.error}`}</span>}
+        {
+          meta.touched && meta.error &&
+          <span>{`Error: ${meta.error}`}</span>
+        }
       </div>
     </div>
   )

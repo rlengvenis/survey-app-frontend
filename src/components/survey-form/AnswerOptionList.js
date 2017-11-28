@@ -7,33 +7,40 @@ class AnswerOptionList extends React.Component {
   render() {
     const {
       input,
-      meta: {touched, error},
+      meta,
       answerOptions
     } = this.props;
 
     return (
       <ul className="survey-form__radio-group-list">
-        {answerOptions.map(answerOption => (
+        {
+          answerOptions.map(answerOption => (
 
-          <li className="survey-form__radio-group-list-item">
-            <input
-              id={answerOption._id}
-              type="radio"
-              {...input}
-              value={answerOption.title}
-              checked={answerOption.title === input.value}
-            />
-
-            <label
-              htmlFor={answerOption._id}
+            <li
               key={answerOption._id}
+              className="survey-form__radio-group-list-item"
             >
-              {answerOption.title}
-            </label>
-          </li>
-        ))
+              <input
+                id={answerOption._id}
+                type="radio"
+                {...input}
+                value={answerOption.title}
+                checked={answerOption.title === input.value}
+              />
+
+              <label
+                htmlFor={answerOption._id}
+                key={answerOption._id}
+              >
+                {answerOption.title}
+              </label>
+            </li>
+          ))
         }
-        {touched && <span className="error">{error}</span>}
+        {
+          meta.touched && meta.error &&
+          <span className="input--error-message">Error: {meta.error}</span>
+        }
       </ul>
     );
   }
