@@ -16,18 +16,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class SignIn extends React.Component {
-  handleFormSubmit = ({email, password}) => {
-    this.props.authActions.signInUser({email, password});
-  };
-
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div>
-          <strong>{this.props.errorMessage}</strong>
-        </div>
-      )
-    }
+  componentWillUnmount() {
+    this.props.authActions.clearErrors();
   }
 
   render() {
@@ -66,6 +56,21 @@ class SignIn extends React.Component {
       </form>
     );
   }
+
+  renderAlert() {
+    if (this.props.errorMessage) {
+      return (
+        <div>
+          <strong>{this.props.errorMessage}</strong>
+        </div>
+      )
+    }
+  }
+
+  handleFormSubmit = ({email, password}) => {
+    this.props.authActions.signInUser({email, password});
+  };
+
 }
 
 

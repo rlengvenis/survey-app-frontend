@@ -24,6 +24,10 @@ export const signOutUser = () => (dispatch) => {
   });
 };
 
+export const clearErrors = () => ({
+  type: actionTypes.AUTH_CLEAR_ERRORS
+})
+
 const _authenticateUser = async (dispatch, {authType, email, password}) => {
   const API_ENDPOINT = authType === authTypes.SIGN_IN
     ? `${API_URL}/api/signin`

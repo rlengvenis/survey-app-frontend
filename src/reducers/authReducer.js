@@ -6,6 +6,10 @@ const authReducer = (state = {}, action) => {
       return {...state, authenticated: true, error: ''}
     }
 
+    case actionTypes.AUTH_CLEAR_ERRORS: {
+      return {...state, error: ''}
+    }
+
     case actionTypes.AUTH_SIGN_IN_ERROR: {
       return {...state, error: action.payload}
     }

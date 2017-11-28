@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
+import {required} from 'redux-form-validators'
 
 import * as surveyActions from '../../actions/surveyActions';
 import * as questionActions from '../../actions/questionActions';
@@ -11,10 +12,15 @@ import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import getInitialFormBuilderValues from '../../selectors/getInitialFormBuilderValues';
 import QuestionListBuilder from './QuestionListBuilder';
 import DefaultSpinner from '../shared/DefaultSpinner';
+import FormInput from '../shared/FormInput';
 
 class SurveyBuilder extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
+  }
+
+  componentWillUnmount() {
+    this.props.surveyActions.resetSurvey();
   }
 
   render() {
@@ -25,7 +31,7 @@ class SurveyBuilder extends React.Component {
     } = this.props;
 
     if (!survey) {
-     return <DefaultSpinner/>;
+      return <DefaultSpinner/>;
     }
 
     return (
@@ -35,17 +41,19 @@ class SurveyBuilder extends React.Component {
             <Field
               className="input survey-builder__title"
               type="text"
-              component="input"
+              component={FormInput}
               name="surveyName"
               placeholder="Survey Name"
+              validate={[required()]}
             />
             <br/>
             <Field
               className="input survey-builder__description"
               type="text"
-              component="input"
+              component={FormInput}
               name="surveyDescription"
               placeholder="Survey description"
+              validate={[required()]}
             />
           </div>
 
@@ -125,7 +133,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 SurveyBuilder = reduxForm({
   form: 'surveyBuilderForm',
-  // enableReinitialize: true
+  shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
 })(SurveyBuilder);
 
 SurveyBuilder = connect(mapStateToProps, mapDispatchToProps)(SurveyBuilder);

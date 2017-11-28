@@ -19,6 +19,10 @@ class SurveyForm extends React.Component {
     this.props.surveyActions.loadSurveyById({surveyId});
   }
 
+  componentWillUnmount() {
+    this.props.surveyActions.resetSurvey();
+  }
+
   render() {
     const {
       survey,
@@ -87,7 +91,10 @@ const mapDispatchToProps = (dispatch) => ({
 
 SurveyForm = connect(mapStateToProps, mapDispatchToProps)(SurveyForm);
 
-SurveyForm = reduxForm({form: 'surveyForm'})(SurveyForm);
+SurveyForm = reduxForm({
+  form: 'surveyForm',
+  shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
+})(SurveyForm);
 
 SurveyForm = withRouter(SurveyForm);
 

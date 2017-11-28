@@ -13,6 +13,10 @@ const questionsReducer = (state = {}, action) => {
       };
     }
 
+    case actionTypes.SURVEY_RESET: {
+      return {}
+    }
+
     case actionTypes.QUESTION_ADD_NEW: {
       const {question, question: {_id}} = action.payload;
 

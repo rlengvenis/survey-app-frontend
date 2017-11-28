@@ -24,6 +24,10 @@ export const saveSurvey = ({surveyFormData}) => (dispatch, getState) => {
   return _saveSurvey(getDenormalizedSurvey(getState()))
 };
 
+export const resetSurvey = () => ({
+  type: actionTypes.SURVEY_RESET
+});
+
 const _transformFormDataToState = (items, state) => {
   if (!items) {
     return {};

@@ -42,6 +42,10 @@ const surveysReducer = (state = {}, action) => {
       });
     }
 
+    case actionTypes.SURVEY_RESET: {
+      return {}
+    }
+
     case actionTypes.SURVEY_BIND_FORM_DATA: {
       const {surveyName, surveyDescription} = action.payload;
 

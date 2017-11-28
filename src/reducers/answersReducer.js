@@ -10,6 +10,10 @@ const answersReducer = (state = {}, action) => {
       };
     }
 
+    case actionTypes.SURVEY_RESET: {
+      return {}
+    }
+
     default: {
       return state;
     }
