@@ -93,7 +93,7 @@ const renderAuthLinks = (authenticated) => {
 const mapStateToProps = (state) => ({
   authenticated: state.auth.authenticated,
   surveyId: Object.keys(state.surveys)[0], //Current implementation supports only one survey
-  routing: state.routing //Otherwise links are not updated, even though router setState happens
+  routing: state.routing //Otherwise active links are not updated, even though router setState happens
 });
 
 export default connect(mapStateToProps, null)(Header);
