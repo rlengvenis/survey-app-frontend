@@ -15,9 +15,9 @@ class SurveyResponses extends React.Component {
     this.props.surveyActions.loadSurvey();
   }
 
-  // componentWillUnmount() {
-  //   this.props.surveyActions.resetSurvey();
-  // }
+  componentWillUnmount() {
+    this.props.surveyActions.resetSurvey();
+  }
 
   render() {
     const {survey} = this.props;
