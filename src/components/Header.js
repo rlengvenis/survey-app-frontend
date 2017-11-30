@@ -51,7 +51,7 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  authenticated: PropTypes.bool.isRequired,
+  authenticated: PropTypes.bool,
   surveyId: PropTypes.string
 };
 
