@@ -1,6 +1,8 @@
 import {v4} from 'node-uuid';
 import {normalize} from 'normalizr';
+
 import history from '../history';
+import {API_URL} from '../constants/endpoints';
 
 import getDenormalizedSurvey from '../selectors/getDenormalizedSurvey';
 import survey from '../constants/schema';
@@ -37,16 +39,6 @@ export const resetSurvey = () => ({
   type: actionTypes.SURVEY_RESET
 });
 
-const _transformFormDataToState = (items, state) => {
-  if (!items) {
-    return {};
-  }
-  return Object.keys(items).reduce((result, nextKey) => {
-    result[nextKey] = {...state[nextKey], title: items[nextKey]};
-    return result;
-  }, {});
-};
-
 export const saveSurveyAnswers = ({surveyId, surveyFormData}) => async (dispatch) => {
   const answers = Object.keys(surveyFormData).map((key) => {
     return {
@@ -56,7 +48,7 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => async (dispatch
     };
   });
 
-  await fetch('/api/answers', {
+  await fetch(`${API_URL}/api/answers`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -73,7 +65,7 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => async (dispatch
 };
 
 const _saveSurvey = (survey) => {
-  return fetch('/api/survey', {
+  return fetch(`${API_URL}/api/survey`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -86,7 +78,7 @@ const _saveSurvey = (survey) => {
 };
 
 const _loadSurvey = async (dispatch, urlPath) => {
-  const response = await fetch(urlPath, {
+  const response = await fetch(API_URL + urlPath, {
     method: 'GET',
     headers: {
       'Authorization': localStorage.getItem('token')

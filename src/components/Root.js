@@ -1,7 +1,7 @@
 import React from 'react'
 import {Provider} from 'react-redux'
 import {ConnectedRouter} from 'react-router-redux';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
 import store from '../configureStore'
 import * as actionTypes from '../constants/actionTypes';
@@ -42,13 +42,16 @@ const Root = () => (
       <div>
         <Header/>
         <main className="container">
-          <Route path="/sign-in" component={SignIn}/>
-          <Route path="/sign-out" component={SignOut}/>
-          <Route path="/sign-up" component={SignUp}/>
-          <Route path="/builder" component={RequireAuth(SurveyBuilder)}/>
-          <Route path="/survey" component={SurveyForm}/>
-          <Route path="/responses" component={RequireAuth(SurveyResponses)}/>
-          <Route path="/thank-you-page" component={ThankYouPage}/>
+          <Switch>
+            <Route path="/sign-in" component={SignIn}/>
+            <Route path="/sign-out" component={SignOut}/>
+            <Route path="/sign-up" component={SignUp}/>
+            <Route path="/builder" component={RequireAuth(SurveyBuilder)}/>
+            <Route path="/survey" component={SurveyForm}/>
+            <Route path="/responses" component={RequireAuth(SurveyResponses)}/>
+            <Route path="/thank-you-page" component={ThankYouPage}/>
+            <Redirect to="/builder"/>
+          </Switch>
         </main>
       </div>
     </ConnectedRouter>

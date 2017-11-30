@@ -1,0 +1,22 @@
+SEVER SIDE ERRORS
+	Jei blogas pwd
+		422 => {error: 'Email is in use'}
+
+	Jei nėra pwd:
+		422 => {error: 'You must provide email and password'}
+
+	Jei erroras ivyko:
+		500 => html template with error
+
+	Jei nėra teisių
+		401 => unouthorized
+
+CLIENT
+	Jei 500 
+		payload: status.code
+
+	Jei 400
+		payload: email or pwd is incorrect
+
+	Jei 422
+		payload: error

@@ -3,8 +3,7 @@ import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import queryString from 'query-string';
-import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+//import PropTypes from 'prop-types';
 
 import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
@@ -12,12 +11,11 @@ import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import QuestionList from './QuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 
-import history from '../../history';
-
 
 class SurveyForm extends React.Component {
   componentDidMount() {
-    const surveyId = queryString.parse(this.props.location.search).id;
+    const {location, history} = this.props;
+    const surveyId = queryString.parse(location.search).id;
 
     if (!surveyId) {
       history.push('/sign-in');
@@ -102,7 +100,5 @@ SurveyForm = reduxForm({
   form: 'surveyForm',
   shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
 })(SurveyForm);
-
-SurveyForm = withRouter(SurveyForm);
 
 export default SurveyForm;

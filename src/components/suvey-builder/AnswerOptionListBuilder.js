@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import {Field} from 'redux-form';
 import {required} from 'redux-form-validators'
 import FormInput from '../shared/FormInput';

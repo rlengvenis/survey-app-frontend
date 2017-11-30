@@ -2,7 +2,6 @@
   "name": "questionnaire-builder",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",

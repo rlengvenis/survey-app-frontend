@@ -26,7 +26,7 @@ export const signOutUser = () => (dispatch) => {
 
 export const clearErrors = () => ({
   type: actionTypes.AUTH_CLEAR_ERRORS
-})
+});
 
 const _authenticateUser = async (dispatch, {authType, email, password}) => {
   const API_ENDPOINT = authType === authTypes.SIGN_IN
@@ -44,15 +44,19 @@ const _authenticateUser = async (dispatch, {authType, email, password}) => {
       })
     });
 
+    if (response.status === 500) {
+      throw Error(response.statusText);
+    }
+
     if (response.status === 401) {
       throw Error('Email or password is invalid');
     }
 
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-
     const data = await response.json();
+
+    if (response.status === 422) {
+      throw Error(data.error);
+    }
 
     localStorage.setItem('token', data.token);
 

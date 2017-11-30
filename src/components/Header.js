@@ -34,7 +34,7 @@ const renderAuthLinks = (authenticated) => {
         <NavLink
           className="navigation__link"
           activeClassName="navigation__link--active"
-          to="/signup"
+          to="/sign-up"
         >
           Sign up
         </NavLink>

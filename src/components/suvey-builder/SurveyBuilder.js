@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import {bindActionCreators} from 'redux';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import {required} from 'redux-form-validators'
 
 import * as surveyActions from '../../actions/surveyActions';

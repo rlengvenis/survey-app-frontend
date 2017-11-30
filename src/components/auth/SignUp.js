@@ -7,27 +7,9 @@ import * as authActions from '../../actions/authActions';
 import FormInput from '../shared/FormInput';
 
 
-const mapStateToProps = (state) => ({
-  errorMessage: state.auth.error
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  authActions: bindActionCreators(authActions, dispatch)
-});
-
 class SignUp extends React.Component {
-  handleFormSubmit = ({email, password}) => {
-    this.props.authActions.signUpUser({email, password});
-  };
-
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div>
-          <strong>{this.props.errorMessage}</strong>
-        </div>
-      )
-    }
+  componentWillUnmount() {
+    this.props.authActions.clearErrors();
   }
 
   render() {
@@ -74,6 +56,20 @@ class SignUp extends React.Component {
       </form>
     );
   }
+
+  renderAlert() {
+    if (this.props.errorMessage) {
+      return (
+        <div>
+          <strong>{this.props.errorMessage}</strong>
+        </div>
+      )
+    }
+  }
+
+  handleFormSubmit = ({email, password}) => {
+    this.props.authActions.signUpUser({email, password});
+  };
 }
 
 const validate = (formProps) => {
@@ -97,6 +93,14 @@ const validate = (formProps) => {
 
   return errors;
 };
+
+const mapStateToProps = (state) => ({
+  errorMessage: state.auth.error
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  authActions: bindActionCreators(authActions, dispatch)
+});
 
 SignUp = connect(mapStateToProps, mapDispatchToProps)(SignUp);
 

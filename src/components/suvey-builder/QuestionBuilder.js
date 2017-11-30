@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Field, FieldArray} from 'redux-form';
-import PropTypes from 'prop-types';
+import {Field} from 'redux-form';
+//import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {required} from 'redux-form-validators'
 
@@ -30,13 +30,6 @@ const QuestionBuilder = ({
     return questionActions.changeQuestionType({
       questionId: question._id,
       type
-    });
-  };
-
-  const handleQuestionTitleChange = (e) => {
-    return questionActions.changeQuestionTitle({
-      questionId: question._id,
-      title: e.target.value
     });
   };
 
