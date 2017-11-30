@@ -7,8 +7,6 @@ import PropTypes from 'prop-types';
 const Header = (props) => {
   const {surveyId} = props;
 
-  console.log('Header render');
-
   return (
     <header className="app__header">
       <nav>
