@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 const Header = (props) => {
   const {surveyId} = props;
 
+  console.log('Header render');
+
   return (
     <header className="app__header">
       <nav>
@@ -52,7 +54,6 @@ const Header = (props) => {
 
 Header.propTypes = {
   authenticated: PropTypes.bool.isRequired,
-  routing: PropTypes.object,
   surveyId: PropTypes.string
 };
 
@@ -93,7 +94,6 @@ const renderAuthLinks = (authenticated) => {
 const mapStateToProps = (state) => ({
   authenticated: state.auth.authenticated,
   surveyId: Object.keys(state.surveys)[0], //Current implementation supports only one survey
-  routing: state.routing
 });
 
 export default connect(mapStateToProps, null)(Header);
