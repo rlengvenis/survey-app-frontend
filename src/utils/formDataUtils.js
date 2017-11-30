@@ -1,5 +1,5 @@
 /***
- * Bind reduxForm data to appropriate reducer.
+ * Bind reduxForm fields to appropriate reducer.
  * Ex: form answerOptions to answerOptionsReducer
  *
  * @param formFields form fields by pattern {id: title, id2: title}
