@@ -1,8 +1,12 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {Field} from 'redux-form';
 import {required} from 'redux-form-validators'
+
+import customPropTypes from '../../constants/customPropTypes';
+
 import FormInput from '../shared/FormInput';
+
 
 const AnswerOptionListBuilder = ({
   questionId,
@@ -48,11 +52,10 @@ const AnswerOptionListBuilder = ({
   );
 };
 
-// AnswerOptionListBuilder.propTypes = {
-//   answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
-//   onAddNewAnswerOption: PropTypes.func.isRequired,
-//   onChangeAnswerOptionTitle: PropTypes.func.isRequired,
-//   questionId: PropTypes.string.isRequired
-// };
+AnswerOptionListBuilder.propTypes = {
+  answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
+  onAddNewAnswerOption: PropTypes.func.isRequired,
+  questionId: PropTypes.string.isRequired
+};
 
 export default AnswerOptionListBuilder;

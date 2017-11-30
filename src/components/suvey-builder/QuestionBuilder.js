@@ -1,23 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Field} from 'redux-form';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {required} from 'redux-form-validators'
 
 import * as questionActions from '../../actions/questionActions';
 import * as answerOptionActions from '../../actions/answerOptionActions';
 import questionTypes from '../../constants/questionTypes';
+import customPropTypes from '../../constants/customPropTypes';
 
 import QuestionTypeSelector from './QuestionTypeSelector';
 import AnswerOptionListBuilder from './AnswerOptionListBuilder';
 import FormInput from "../shared/FormInput";
 
-
-const mapDispatchToProps = (dispatch) => ({
-  questionActions: bindActionCreators(questionActions, dispatch),
-  answerOptionActions: bindActionCreators(answerOptionActions, dispatch)
-});
 
 const QuestionBuilder = ({
   question,
@@ -78,18 +74,21 @@ const QuestionBuilder = ({
   );
 };
 
-// QuestionBuilder.propTypes = {
-//   questionActions: PropTypes.shape({
-//     changeQuestionTitle: PropTypes.func.isRequired,
-//     changeQuestionType: PropTypes.func.isRequired,
-//     deleteQuestion: PropTypes.func.isRequired
-//   }).isRequired,
-//   answerOptionActions: PropTypes.shape({
-//     addNewAnswerOption: PropTypes.func.isRequired,
-//     changeAnswerOptionTitle: PropTypes.func.isRequired,
-//   }).isRequired,
-//   question: customPropTypes.question.isRequired
-// };
+QuestionBuilder.propTypes = {
+  answerOptionActions: PropTypes.shape({
+    addNewAnswerOption: PropTypes.func.isRequired
+  }).isRequired,
+  question: customPropTypes.question.isRequired,
+  questionActions: PropTypes.shape({
+    changeQuestionType: PropTypes.func.isRequired,
+    deleteQuestion: PropTypes.func.isRequired
+  }).isRequired
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  questionActions: bindActionCreators(questionActions, dispatch),
+  answerOptionActions: bindActionCreators(answerOptionActions, dispatch)
+});
 
 
 export default connect(null, mapDispatchToProps)(QuestionBuilder);

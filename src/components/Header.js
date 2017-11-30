@@ -1,46 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-const mapStateToProps = (state) => ({
-  authenticated: state.auth.authenticated,
-  surveyId: Object.keys(state.surveys)[0], //Current implementation supports only one survey
-  routing: state.routing
-});
-
-const renderAuthLinks = (authenticated) => {
-  return authenticated ? (
-      <li className="navigation__list-item">
-        <NavLink
-          className="navigation__link"
-          activeClassName="navigation__link--active"
-          to="/sign-out"
-        >
-          Sign out
-        </NavLink>
-      </li>
-    )
-    : [
-      <li key={1} className="navigation__list-item">
-        <NavLink
-          className="navigation__link"
-          activeClassName="navigation__link--active"
-          to="/sign-in"
-        >
-          Sign in
-        </NavLink>
-      </li>,
-      <li key={2} className="navigation__list-item">
-        <NavLink
-          className="navigation__link"
-          activeClassName="navigation__link--active"
-          to="/sign-up"
-        >
-          Sign up
-        </NavLink>
-      </li>
-    ];
-};
 
 const Header = (props) => {
   const {surveyId} = props;
@@ -87,5 +49,51 @@ const Header = (props) => {
     </header>
   );
 };
+
+Header.propTypes = {
+  authenticated: PropTypes.bool.isRequired,
+  routing: PropTypes.object,
+  surveyId: PropTypes.string
+};
+
+const renderAuthLinks = (authenticated) => {
+  return authenticated ? (
+      <li className="navigation__list-item">
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link--active"
+          to="/sign-out"
+        >
+          Sign out
+        </NavLink>
+      </li>
+    )
+    : [
+      <li key={1} className="navigation__list-item">
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link--active"
+          to="/sign-in"
+        >
+          Sign in
+        </NavLink>
+      </li>,
+      <li key={2} className="navigation__list-item">
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link--active"
+          to="/sign-up"
+        >
+          Sign up
+        </NavLink>
+      </li>
+    ];
+};
+
+const mapStateToProps = (state) => ({
+  authenticated: state.auth.authenticated,
+  surveyId: Object.keys(state.surveys)[0], //Current implementation supports only one survey
+  routing: state.routing
+});
 
 export default connect(mapStateToProps, null)(Header);

@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames'
+import PropTypes from 'prop-types';
 
 const FormInput = ({meta, type, input, placeholder}) => {
   const inputSyle = classnames('input', {
@@ -24,4 +25,11 @@ const FormInput = ({meta, type, input, placeholder}) => {
   )
 };
 
-export default FormInput
+FormInput.propTypes = {
+  input: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+};
+
+export default FormInput;

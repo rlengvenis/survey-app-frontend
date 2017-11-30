@@ -2,7 +2,7 @@ import React from 'react';
 import Spinner from 'react-spinner-material';
 
 
-const DefaultSpinner = (props) => {
+const DefaultSpinner = () => {
   return (
     <div className="spinner-holder">
       <Spinner

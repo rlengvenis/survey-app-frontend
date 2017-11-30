@@ -1,7 +1,7 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-//import customPropTypes from '../../constants/customPropTypes';
+import customPropTypes from '../../constants/customPropTypes';
 
 import QuestionBuilder from './QuestionBuilder';
 
@@ -20,8 +20,9 @@ const QuestionListBuilder = ({questions, surveyId}) => {
   );
 };
 
-// QuestionListBuilder.propTypes = {
-//   questions: PropTypes.arrayOf(customPropTypes.question).isRequired
-// };
+QuestionListBuilder.propTypes = {
+  questions: PropTypes.arrayOf(customPropTypes.question).isRequired,
+  surveyId: PropTypes.string.isRequired
+};
 
 export default QuestionListBuilder;

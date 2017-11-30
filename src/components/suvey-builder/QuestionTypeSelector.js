@@ -49,11 +49,11 @@ const QuestionTypeSelector = ({
 };
 
 QuestionTypeSelector.propTypes = {
+  onSelectQuestionType: PropTypes.func.isRequired,
   questionType: PropTypes.oneOf([
     questionTypes.SHORT_ANSWER,
     questionTypes.MULTIPLE_ANSWER
-  ]).isRequired,
-  onSelectQuestionType: PropTypes.func.isRequired
+  ]).isRequired
 };
 
 export default QuestionTypeSelector;

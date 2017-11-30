@@ -2,18 +2,11 @@ import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import * as authActions from '../../actions/authActions';
 import FormInput from '../shared/FormInput';
 
-
-const mapStateToProps = (state) => ({
-  errorMessage: state.auth.error
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  authActions: bindActionCreators(authActions, dispatch)
-});
 
 class SignIn extends React.Component {
   componentWillUnmount() {
@@ -73,6 +66,14 @@ class SignIn extends React.Component {
 
 }
 
+SignIn.propTypes = {
+  authActions: PropTypes.shape({
+    clearErrors: PropTypes.func.isRequired,
+    signInUser: PropTypes.func.isRequired
+  }).isRequired,
+  errorMessage: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired
+};
 
 const validate = (formProps) => {
   const errors = {};
@@ -87,6 +88,14 @@ const validate = (formProps) => {
 
   return errors;
 };
+
+const mapStateToProps = (state) => ({
+  errorMessage: state.auth.error
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  authActions: bindActionCreators(authActions, dispatch)
+});
 
 SignIn = connect(mapStateToProps, mapDispatchToProps)(SignIn);
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import * as authActions from '../../actions/authActions';
 import FormInput from '../shared/FormInput';
@@ -71,6 +72,15 @@ class SignUp extends React.Component {
     this.props.authActions.signUpUser({email, password});
   };
 }
+
+SignUp.propTypes = {
+  authActions: PropTypes.shape({
+    clearErrors: PropTypes.func.isRequired,
+    signUpUser: PropTypes.func.isRequired
+  }).isRequired,
+  errorMessage: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired
+};
 
 const validate = (formProps) => {
   const errors = {};

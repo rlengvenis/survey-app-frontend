@@ -3,10 +3,11 @@ import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import queryString from 'query-string';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
+import customPropTypes from '../../constants/customPropTypes';
 
 import QuestionList from './QuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
@@ -72,19 +73,19 @@ class SurveyForm extends React.Component {
   };
 }
 
-// SurveyForm.propTypes = {
-//   handleSubmit: PropTypes.func.isRequired,
-//   survey: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     questions: PropTypes.arrayOf(customPropTypes.question).isRequired
-//   }).isRequired,
-//   surveyActions: PropTypes.shape({
-//     loadSurvey: PropTypes.func.isRequired,
-//     saveSurvey: PropTypes.func.isRequired,
-//     saveSurveyAnswers: PropTypes.func.isRequired
-//   }).isRequired
-// };
+SurveyForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  survey: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    questions: PropTypes.arrayOf(customPropTypes.question).isRequired
+  }),
+  surveyActions: PropTypes.shape({
+    loadSurvey: PropTypes.func.isRequired,
+    saveSurvey: PropTypes.func.isRequired,
+    saveSurveyAnswers: PropTypes.func.isRequired
+  }).isRequired
+};
 
 const mapStateToProps = (state) => ({
   survey: getDenormalizedSurvey(state)
@@ -100,5 +101,6 @@ SurveyForm = reduxForm({
   form: 'surveyForm',
   shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
 })(SurveyForm);
+
 
 export default SurveyForm;

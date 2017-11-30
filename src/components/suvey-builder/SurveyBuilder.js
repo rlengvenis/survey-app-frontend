@@ -2,11 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
 import {bindActionCreators} from 'redux';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {required} from 'redux-form-validators'
 
 import * as surveyActions from '../../actions/surveyActions';
 import * as questionActions from '../../actions/questionActions';
+import customPropTypes from '../../constants/customPropTypes';
 
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import getInitialFormBuilderValues from '../../selectors/getInitialFormBuilderValues';
@@ -95,31 +96,21 @@ class SurveyBuilder extends React.Component {
   handleSaveSurvey = (surveyFormData) => {
     return this.props.surveyActions.saveSurvey({surveyFormData});
   };
-
-  handleChangeSurveyName = (e) => {
-    return this.props.surveyActions.changeSurveyName(e.target.value);
-  };
-
-  handleChangeSurveyDescription = (e) => {
-    return this.props.surveyActions.changeSurveyDescription(e.target.value);
-  };
 }
 
-// SurveyBuilder.propTypes = {
-//   questionActions: PropTypes.shape({
-//     addNewQuestion: PropTypes.func.isRequired,
-//   }).isRequired,
-//   survey: PropTypes.shape({
-//     description: PropTypes.string.isRequired,
-//     questions: PropTypes.arrayOf(customPropTypes.question).isRequired,
-//     name: PropTypes.string.isRequired
-//   }).isRequired,
-//   surveyActions: PropTypes.shape({
-//     changeSurveyDescription: PropTypes.func.isRequired,
-//     changeSurveyName: PropTypes.func.isRequired,
-//     saveSurvey: PropTypes.func.isRequired
-//   }).isRequired
-// };
+SurveyBuilder.propTypes = {
+  questionActions: PropTypes.shape({
+    addNewQuestion: PropTypes.func.isRequired,
+  }).isRequired,
+  survey: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    questions: PropTypes.arrayOf(customPropTypes.question).isRequired,
+    name: PropTypes.string.isRequired
+  }),
+  surveyActions: PropTypes.shape({
+    saveSurvey: PropTypes.func.isRequired
+  }).isRequired
+};
 
 const mapStateToProps = (state) => ({
   survey: getDenormalizedSurvey(state),
