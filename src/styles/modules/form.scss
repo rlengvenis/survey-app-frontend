@@ -3,12 +3,12 @@
 .input {
   display: inline-block;
   box-sizing: border-box;
+  width: 100%;
   font-size: $font-size-regular;
   font-weight: $font-weight-light;
   line-height: 36px;
   border-width: 0;
   border-bottom: 1px solid rgba(33, 33, 33, 0.22);
-  width: 100%;
 
   &:focus {
     border-color: $color-blue;
@@ -24,10 +24,10 @@
   }
 
   &--error-message {
-    color: $color-red;
     display: inline-block;
-    font-size: 14px;
     margin-top: 7px;
+    font-size: 14px;
+    color: $color-red;
   }
 }
 

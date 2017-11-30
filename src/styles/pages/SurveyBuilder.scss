@@ -6,15 +6,15 @@
   }
 
   &__title {
-    font-size: $font-size-large;
     display: block;
     width: 100%;
+    font-size: $font-size-large;
   }
 
   &__description {
-    font-size: $font-size-small;
     display: block;
     width: 100%;
+    font-size: $font-size-small;
   }
 
   &__question {
@@ -30,8 +30,8 @@
 
     li {
       display: flex;
-      align-items: flex-start;
       margin-top: 10px;
+      align-items: flex-start;
     }
   }
 
@@ -56,20 +56,20 @@
   }
 
   &__add-question-button {
-    color: $color-blue;
-    font-size: 35px;
     margin: 30px 0 30px -5px;
+    font-size: 35px;
+    color: $color-blue;
     cursor: pointer;
   }
 
   &__question-control-group {
     display: flex;
-    align-items: center;
     margin-top: 35px;
+    align-items: center;
 
     ul {
-      list-style: none;
       display: flex;
+      list-style: none;
 
       li {
         margin-right: 15px;
@@ -78,8 +78,8 @@
   }
 
   &__remove-question-button {
-    color: $color-blue;
     margin-left: auto;
+    color: $color-blue;
     cursor: pointer;
   }
 }

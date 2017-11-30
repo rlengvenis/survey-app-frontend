@@ -1,10 +1,10 @@
 .navigation {
   &__list {
-    margin: 0 15px;
-    list-style-type: none;
-    font-size: 18px;
     display: flex;
+    margin: 0 15px;
     flex-wrap: wrap;
+    font-size: 18px;
+    list-style-type: none;
   }
 
   &__list-item:not(:last-child) {
@@ -12,13 +12,13 @@
   }
 
   &__link {
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 300;
+    text-decoration: none;
+    font-weight: 300;
+    color: #FFFFFF;
   }
 
   &__link--active {
-    border-bottom: 1px solid #FFFFFF;
     padding-bottom: 3px;
+    border-bottom: 1px solid #FFFFFF;
   }
 }

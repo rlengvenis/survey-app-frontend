@@ -10,13 +10,13 @@
   }
 
   &__radio-group-list {
-    list-style: none;
     margin-top: 20px;
+    list-style: none;
   }
 
   &__radio-group-list-item {
-    margin-top: 20px;
     display: flex;
+    margin-top: 20px;
     align-items: baseline;
 
     label {
