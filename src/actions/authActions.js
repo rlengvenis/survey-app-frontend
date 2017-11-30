@@ -1,7 +1,7 @@
 import history from '../history';
 
 import * as actionTypes from '../constants/actionTypes';
-import {API_URL} from '../constants/endpoints';
+import {API_URL} from '../config/appConfig';
 
 const authTypes = {
   SIGN_IN: 'signIn',

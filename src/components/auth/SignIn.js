@@ -5,7 +5,11 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 import * as authActions from '../../actions/authActions';
+import {NOTIFICATION_DISPLAY_INTERVAL} from '../../config/appConfig';
+
 import FormInput from '../shared/FormInput';
+import ErrorMessage from '../shared/ErrorMessage';
+
 
 
 class SignIn extends React.Component {
@@ -13,51 +17,58 @@ class SignIn extends React.Component {
     this.props.authActions.clearErrors();
   }
 
-  render() {
-    const {handleSubmit} = this.props;
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errorMessage) {
 
-    return (
-      <form
-        className="login-form"
-        onSubmit={handleSubmit(this.handleFormSubmit)}
-      >
-        <div className="login-form--field">
-          <Field
-            type="email"
-            component={FormInput}
-            placeholder="Email"
-            name="email"
-          />
-        </div>
-        <div className="login-form--field">
-          <Field
-            type="password"
-            component={FormInput}
-            placeholder="Password"
-            name="password"
-          />
-        </div>
-
-        {this.renderAlert()}
-
-        <button
-          className="button-raised login-form--submit"
-          type="submit"
-        >
-          Sign in
-        </button>
-      </form>
-    );
+      setTimeout(() => {
+        this.props.authActions.clearErrors();
+      }, NOTIFICATION_DISPLAY_INTERVAL);
+    }
   }
 
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div>
-          <strong>{this.props.errorMessage}</strong>
-        </div>
-      )
-    }
+  render() {
+    const {
+      handleSubmit,
+      errorMessage
+    } = this.props;
+
+    return (
+      <div>
+        {
+          errorMessage &&
+          <ErrorMessage message={errorMessage}/>
+        }
+
+        <form
+          className="login-form"
+          onSubmit={handleSubmit(this.handleFormSubmit)}
+        >
+          <div className="login-form--field">
+            <Field
+              type="email"
+              component={FormInput}
+              placeholder="Email"
+              name="email"
+            />
+          </div>
+          <div className="login-form--field">
+            <Field
+              type="password"
+              component={FormInput}
+              placeholder="Password"
+              name="password"
+            />
+          </div>
+
+          <button
+            className="button-raised login-form--submit"
+            type="submit"
+          >
+            Sign in
+          </button>
+        </form>
+      </div>
+    );
   }
 
   handleFormSubmit = ({email, password}) => {

@@ -2,10 +2,10 @@ import {v4} from 'node-uuid';
 import {normalize} from 'normalizr';
 
 import history from '../history';
-import {API_URL} from '../constants/endpoints';
+import {API_URL} from '../config/appConfig';
 
 import getDenormalizedSurvey from '../selectors/getDenormalizedSurvey';
-import survey from '../constants/schema';
+import survey from '../models/schema';
 
 import * as actionTypes from '../constants/actionTypes';
 

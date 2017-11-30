@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-// Put all reusable prop types there
-
+/***
+ * Reusable custom prop types
+ */
 
 const answerOption = PropTypes.shape({
   _id: PropTypes.string.isRequired,
