@@ -1,5 +1,5 @@
 /***
- * Binds titles from reduxForm fields to appropriate reducer title field.
+ * Bind reduxForm data to appropriate reducers.
  * Ex: form answerOptions to answerOptionsReducer
  *
  * @param formFields form fields by pattern {id: title, id2: title}
