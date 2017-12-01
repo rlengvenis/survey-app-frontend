@@ -1,3 +1,5 @@
+@import "../core/variables.scss";
+
 .survey-responses {
   &__question {
     margin-top: 40px;
@@ -5,6 +7,20 @@
 
   &__answer-list {
     list-style: none;
+  }
+
+  &__answer-list-item {
+    padding: 7px;
+    font-size: $font-size-small;
+    line-height: 1.5;
+  }
+
+  &__answer-list-item:nth-of-type(2n+1) {
+    background-color: $color-blue-light;
+  }
+
+  &__answer-list-item:nth-of-type(2n) {
+    background-color: $color-blue-lightest;
   }
 
   &__chart {

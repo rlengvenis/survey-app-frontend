@@ -124,7 +124,10 @@ class SurveyResponses extends React.Component {
         {
           answers.map(answer => {
             return (
-              <li key={answer._id}>
+              <li
+                className="survey-responses__answer-list-item"
+                key={answer._id}
+              >
                 {answer.answerText}
               </li>
             )
