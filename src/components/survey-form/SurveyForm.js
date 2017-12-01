@@ -43,7 +43,7 @@ class SurveyForm extends React.Component {
 
     if (submitSucceeded) {
        return (
-        <h2>Thank you for participating in survey :)</h2>
+        <h2>Thank you for participating in a survey :)</h2>
       );
     }
 
