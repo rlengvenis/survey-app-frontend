@@ -18,28 +18,36 @@ const questionsReducer = (state = {}, action) => {
     }
 
     case actionTypes.QUESTION_ADD_NEW: {
-      const {question, question: {_id}} = action.payload;
+      const {question} = action.payload;
 
       return update(state, {
-        $merge: {[_id]: question}
+        $merge: {
+          [question._id]: question
+        }
       });
     }
 
     case actionTypes.QUESTION_CHANGE_TYPE: {
-      const {questionId, type} = action.payload;
+      const {
+        questionId,
+        type
+      } = action.payload;
 
-      return {
-        ...state,
+      return update(state, {
         [questionId]: {
-          ...state[questionId],
-          answerOptions: [],
-          type
+          $merge: {
+            answerOptions: [],
+            type
+          }
         }
-      };
+      })
     }
 
     case actionTypes.ANSWER_OPTION_ADD_NEW: {
-      const {answerOptionId, questionId} = action.payload;
+      const {
+        answerOptionId,
+        questionId
+      } = action.payload;
 
       return update(state, {
         [questionId]: {

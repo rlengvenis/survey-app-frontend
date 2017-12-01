@@ -1,5 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 import {bindFormDataToState} from '../utils/formDataUtils';
+import update from 'immutability-helper';
 
 
 const answerOptionsReducer = (state = {}, action) => {
@@ -16,19 +17,24 @@ const answerOptionsReducer = (state = {}, action) => {
     case actionTypes.ANSWER_OPTION_CHANGE_TITLE: {
       const {answerOptionId, title} = action.payload;
 
-      return {
-        ...state,
-        [answerOptionId]: {
-          _id: answerOptionId,
-          title
+      return update(state, {
+        $merge: {
+          [answerOptionId]: {
+            _id: answerOptionId,
+            title
+          }
         }
-      };
+      })
     }
 
     case actionTypes.SURVEY_BIND_FORM_DATA: {
       const {answerOptions} = action.payload;
 
       return bindFormDataToState(answerOptions, state);
+    }
+
+    case actionTypes.SURVEY_RESET: {
+      return {}
     }
 
     default:
