@@ -28,6 +28,7 @@ import '../styles/pages/App.css';
 import '../styles/pages/SurveyBuilder.css';
 import '../styles/pages/SurveyForm.css';
 import '../styles/pages/LoginForm.css';
+import '../styles/pages/SurveyResponses.css';
 
 
 if (localStorage.getItem('token')) {
