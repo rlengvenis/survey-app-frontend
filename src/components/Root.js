@@ -8,7 +8,6 @@ import * as actionTypes from '../constants/actionTypes';
 import history from '../history';
 
 import SurveyForm from './survey-form/SurveyForm'
-import ThankYouPage from './survey-form/ThankYouPage';
 import SurveyBuilder from './suvey-builder/SurveyBuilder';
 import SurveyResponses from './survey-responses/SurveyResponses';
 import Header from './Header';
@@ -50,7 +49,6 @@ const Root = () => (
             <Route path="/builder" component={RequireAuth(SurveyBuilder)}/>
             <Route path="/survey" component={SurveyForm}/>
             <Route path="/responses" component={RequireAuth(SurveyResponses)}/>
-            <Route path="/thank-you-page" component={ThankYouPage}/>
             <Redirect to="/builder"/>
           </Switch>
         </main>

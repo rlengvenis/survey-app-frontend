@@ -58,10 +58,6 @@ export const saveSurveyAnswers = ({surveyId, surveyFormData}) => async (dispatch
       answers
     })
   });
-
-  history.push('/thank-you-page')
-
-
 };
 
 const _saveSurvey = (survey) => {

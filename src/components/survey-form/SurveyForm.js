@@ -33,11 +33,18 @@ class SurveyForm extends React.Component {
     const {
       survey,
       handleSubmit,
-      submitting
+      submitting,
+      submitSucceeded
     } = this.props;
 
     if (!survey) {
       return <DefaultSpinner/>;
+    }
+
+    if (submitSucceeded) {
+       return (
+        <h2>Thank you for participating in survey :)</h2>
+      );
     }
 
     return (
