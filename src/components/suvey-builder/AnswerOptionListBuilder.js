@@ -40,7 +40,7 @@ const AnswerOptionListBuilder = ({
       </ul>
 
       <div className="survey-builder__add-option">
-        <i className="material-icons">radio_button_unchecked</i>
+        <i className="survey-builder__radio-button-icon material-icons">radio_button_unchecked</i>
         <button
           className="button-flat"
           type="button"

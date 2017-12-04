@@ -30,7 +30,10 @@ const answerOptionsReducer = (state = {}, action) => {
     case actionTypes.SURVEY_BIND_FORM_DATA: {
       const {answerOptions} = action.payload;
 
-      return bindFormDataToState(answerOptions, state);
+      return bindFormDataToState({
+        formFields: answerOptions,
+        state
+      });
     }
 
     case actionTypes.SURVEY_RESET: {

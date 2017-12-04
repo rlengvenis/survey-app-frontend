@@ -61,7 +61,10 @@ const questionsReducer = (state = {}, action) => {
     case actionTypes.SURVEY_BIND_FORM_DATA: {
       const {questions} = action.payload;
 
-      return bindFormDataToState(questions, state);
+      return bindFormDataToState({
+        formFields: questions,
+        state
+      });
     }
 
     default:

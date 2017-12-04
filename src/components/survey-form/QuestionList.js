@@ -7,10 +7,6 @@ import Question from './Question';
 
 
 const QuestionList = ({questions}) => {
-  if (questions.length === 0) {
-    return null;
-  }
-
   return (
     <div>
       {

@@ -23,9 +23,11 @@
 
   &__radio-button-icon {
     margin-top: 5px;
+    color: $color-grey;
   }
 
   &__answer-options {
+    margin-bottom: 10px;
     list-style: none;
 
     li {
@@ -48,10 +50,11 @@
 
   &__add-option {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     button {
       margin-left: 10px;
+      line-height: 36px
     }
   }
 

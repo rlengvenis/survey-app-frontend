@@ -6,7 +6,8 @@
  * @param state existing reducer state
  * @returns {*} new state instance
  */
-export const bindFormDataToState = (formFields, state) => {
+
+export const bindFormDataToState = ({formFields, state}) => {
   return Object.keys(state).reduce((result, nextKey) => {
     if (formFields[nextKey]) {
       result[nextKey] = {
