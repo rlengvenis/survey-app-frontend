@@ -3,6 +3,7 @@ import {Doughnut} from 'react-chartjs-2';
 import randomColor from 'randomcolor';
 
 import {populateLabelValues, populateChartData} from '../../utils/chartUtils';
+import customPropTypes from '../../constants/customPropTypes';
 
 
 const AnswerDoughnutChart = ({question}) => {
@@ -22,6 +23,10 @@ const AnswerDoughnutChart = ({question}) => {
   return <div key={question._id}>
     <Doughnut data={data}/>
   </div>
+};
+
+AnswerDoughnutChart.propTypes = {
+  question: customPropTypes.question.isRequired
 };
 
 export default AnswerDoughnutChart;

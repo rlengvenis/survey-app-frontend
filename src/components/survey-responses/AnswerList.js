@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import customPropTypes from '../../constants/customPropTypes';
+
 
 const AnswerList = ({answers}) => {
   return (
@@ -17,6 +21,10 @@ const AnswerList = ({answers}) => {
       }
     </ul>
   )
+};
+
+AnswerList.propTypes = {
+  answers: PropTypes.arrayOf(customPropTypes.answers).isRequired
 };
 
 export default AnswerList;

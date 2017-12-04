@@ -2,6 +2,8 @@ import React from 'react';
 import {Bar} from 'react-chartjs-2';
 
 import {populateLabelValues, populateChartData} from '../../utils/chartUtils';
+import customPropTypes from '../../constants/customPropTypes';
+
 
 const AnswerBarChart = ({question}) => {
   const data = {
@@ -35,6 +37,10 @@ const AnswerBarChart = ({question}) => {
       />
     </div>
   )
+};
+
+AnswerBarChart.propTypes = {
+  question: customPropTypes.question.isRequired
 };
 
 export default AnswerBarChart;
