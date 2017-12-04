@@ -30,7 +30,7 @@ class SurveyResponses extends React.Component {
     return (
       <div>
         <h1>{survey.name}</h1>
-        <p>{survey.description}</p>
+        <p className="survey-responses__description">{survey.description}</p>
 
         <QuestionList questions={survey.questions}/>
       </div>

@@ -20,7 +20,7 @@ const AnswerDoughnutChart = ({question}) => {
     }]
   };
 
-  return <div key={question._id}>
+  return <div className="survey-responses__doughnut-chart">
     <Doughnut data={data}/>
   </div>
 };

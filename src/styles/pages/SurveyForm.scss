@@ -1,8 +1,12 @@
 .survey-form {
   margin-top: 35px;
 
+  &__description {
+    margin-top: 10px;
+  }
+
   &__question {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   &__submit {
@@ -10,13 +14,13 @@
   }
 
   &__radio-group-list {
-    margin-top: 20px;
+    margin-top: 15px;
     list-style: none;
   }
 
   &__radio-group-list-item {
     display: flex;
-    margin-top: 20px;
+    margin-top: 15px;
     align-items: baseline;
 
     label {

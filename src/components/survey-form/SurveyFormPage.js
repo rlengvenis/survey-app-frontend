@@ -51,7 +51,7 @@ class SurveyForm extends React.Component {
       <article>
         <div>
           <h1>{survey.name}</h1>
-          <p>{survey.description}</p>
+          <p className="survey-form__description">{survey.description}</p>
         </div>
         <form
           className="survey-form"

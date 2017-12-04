@@ -1,8 +1,12 @@
 @import "../core/variables.scss";
 
 .survey-responses {
+  &__description {
+    margin-top: 10px;
+  }
+
   &__question {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 
   &__answer-list {
@@ -24,7 +28,11 @@
     background-color: $color-blue-lightest;
   }
 
-  &__chart {
-    margin-top: 16px;
+  &__doughnut-chart {
+    margin-top: 8px;
+  }
+
+  &__bar-chart {
+    margin-top: 10px;
   }
 }

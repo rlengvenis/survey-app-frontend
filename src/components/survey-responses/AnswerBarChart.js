@@ -19,7 +19,7 @@ const AnswerBarChart = ({question}) => {
   };
 
   return (
-    <div className="survey-responses__chart">
+    <div className="survey-responses__bar-chart">
       <Bar
         data={data}
         height={250}
