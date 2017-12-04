@@ -29,7 +29,13 @@ const AnswerBarChart = ({question}) => {
           scales: {
             yAxes: [{
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                stepSize: 1
+              }
+            }],
+            xAxes: [{
+              ticks: {
+                autoSkip: false
               }
             }]
           }
