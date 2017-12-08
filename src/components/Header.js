@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 
-const Header = (props) => {
+export const Header = (props) => {
   const {surveyId} = props;
 
   return (
