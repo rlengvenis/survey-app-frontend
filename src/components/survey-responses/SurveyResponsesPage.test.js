@@ -1,56 +1,59 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import {spy} from 'sinon';
 
-import surveyQuestionTypes from '../../constants/questionTypes';
+import {survey} from './testDummyData';
 
 import {SurveyResponsesPage} from './SurveyResponsesPage';
 import QuestionList from './QuestionList';
-import AnswerList from './AnswerList';
-import AnswerBarChart from './AnswerBarChart';
+import DefaultSpinner from '../../components/shared/DefaultSpinner';
 
 
 describe('SurveyResponsesPage component', () => {
+  let wrapper;
   let props;
 
   beforeEach(() => {
     props = {
-      survey: {
-        name: 'Test',
-        description: 'Test Description',
-        questions: [{
-          _id: 'Id_1',
-          title: 'Test question 1',
-          type: surveyQuestionTypes.MULTIPLE_ANSWER,
-          answerOptions: [{
-            _id: 'Id_2',
-            title: 'Option A',
-          }, {
-            _id: 'Id_3',
-            title: 'Option B'
-          }],
-          answers: [{
-            _id: 'Id_4',
-            answerText: 'Option A'
-          }, {
-            _id: 'Id_5',
-            answerText: 'Option B'
-          }]
-        }]
-      },
+      survey,
       surveyActions: {
         loadSurvey: spy(),
         resetSurvey: spy()
       }
-    }
+    };
+
+    wrapper = shallow(<SurveyResponsesPage {...props}/>);
   });
 
-  it('all inner components exist', () => {
-    const wrapper = mount(<SurveyResponsesPage {...props}/>);
-    expect(wrapper.containsAllMatchingElements([
-      <AnswerBarChart/>
-    ])).to.equal(true);
+  it('should show loader when props are not loaded', () => {
+    const props = {
+      surveyActions: {
+        loadSurvey: spy(),
+        resetSurvey: spy()
+      }
+    };
+
+    const wrapper = shallow(<SurveyResponsesPage {...props} />);
+
+    expect(wrapper.containsMatchingElement(
+      <DefaultSpinner />
+    )).to.equal(true);
+  });
+
+  it('should load survey when component is mounted', () => {
+    expect(props.surveyActions.loadSurvey.callCount).to.equal(1);
+  });
+
+  it('should renders QuestionList when mounted', () => {
+    const questions = props.survey.questions;
+
+    expect(wrapper.containsMatchingElement(
+      <QuestionList questions={questions}/>
+    )).to.equal(true);
+  });
+
+  it('should reset survey data when component is unmounted', () => {
+    wrapper.unmount();
+    expect(props.surveyActions.resetSurvey.callCount).to.equal(1);
   });
 });
-
-

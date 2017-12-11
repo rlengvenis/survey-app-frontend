@@ -36,7 +36,7 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
-    "test": "NODE_ENV=development mocha --require babel-core/register src/setupTests.js 'src/**/*.test.js'",
+    "test": "NODE_ENV=development mocha --watch --require babel-core/register src/setupTests.js 'src/**/*.test.js'",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

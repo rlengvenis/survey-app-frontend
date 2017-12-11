@@ -16,8 +16,8 @@ const answerOption = PropTypes.shape({
 
 const question = PropTypes.shape({
   _id: PropTypes.string.isRequired,
-  answerOptions: PropTypes.arrayOf(answerOption).isRequired,
-  answers: PropTypes.arrayOf(answer).isRequired,
+  answerOptions: PropTypes.arrayOf(answerOption),
+  answers: PropTypes.arrayOf(answer),
   title: PropTypes.string.isRequired,
   type: PropTypes.number.isRequired
 });
