@@ -5,12 +5,12 @@
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react-app": "^3.1.0",
     "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.4.0",
     "material-ui": "^0.19.0",
     "node-sass-chokidar": "^0.0.3",
-    "node-uuid": "^1.4.8",
     "normalizr": "^3.2.4",
     "npm-run-all": "^4.1.1",
     "prop-types": "^15.6.0",
@@ -27,7 +27,8 @@
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
     "redux-form-validators": "^2.1.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -35,13 +36,17 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "NODE_ENV=development mocha --require babel-core/register src/setupTests.js 'src/**/*.test.js'",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
     "chai": "^4.1.2",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
-    "react-test-renderer": "^16.2.0"
+    "jsdom": "^11.5.1",
+    "mocha": "^4.0.1",
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.1.3"
   }
 }

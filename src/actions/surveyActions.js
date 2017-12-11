@@ -1,4 +1,4 @@
-import {v4} from 'node-uuid';
+import {v4} from 'uuid';
 import {normalize} from 'normalizr';
 
 import history from '../history';

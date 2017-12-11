@@ -1,4 +1,9 @@
 {
-  "plugins": ["transform-class-properties", "babel-preset-es2017"]
+  "presets": [
+    "react-app"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-es2015-modules-commonjs"
+  ]
 }
-

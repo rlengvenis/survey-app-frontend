@@ -1,4 +1,4 @@
-import {v4} from 'node-uuid';
+import {v4} from 'uuid';
 
 import * as actionTypes from '../constants/actionTypes';
 

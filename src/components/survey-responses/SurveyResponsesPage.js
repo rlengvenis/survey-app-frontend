@@ -11,7 +11,7 @@ import DefaultSpinner from '../shared/DefaultSpinner';
 import QuestionList from './QuestionList';
 
 
-class SurveyResponses extends React.Component {
+export class SurveyResponsesPage extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
@@ -38,7 +38,7 @@ class SurveyResponses extends React.Component {
   }
 }
 
-SurveyResponses.propTypes = {
+SurveyResponsesPage.propTypes = {
   survey: PropTypes.shape({
     description: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -46,6 +46,7 @@ SurveyResponses.propTypes = {
   }),
   surveyActions: PropTypes.shape({
     loadSurvey: PropTypes.func.isRequired,
+    resetSurvey: PropTypes.func.isRequired
   })
 };
 
@@ -57,6 +58,4 @@ const mapDispatchToProps = (dispatch) => ({
   surveyActions: bindActionCreators(surveyActions, dispatch)
 });
 
-SurveyResponses = connect(mapStateToProps, mapDispatchToProps)(SurveyResponses);
-
-export default SurveyResponses;
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyResponsesPage);

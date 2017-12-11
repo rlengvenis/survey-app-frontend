@@ -24,7 +24,7 @@ const AnswerList = ({answers}) => {
 };
 
 AnswerList.propTypes = {
-  answers: PropTypes.arrayOf(customPropTypes.answers).isRequired
+  answers: PropTypes.arrayOf(customPropTypes.answer).isRequired
 };
 
 export default AnswerList;

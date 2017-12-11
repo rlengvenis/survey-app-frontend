@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
  * Reusable custom prop types
  */
 
-const answers = PropTypes.shape({
+const answer = PropTypes.shape({
   _id: PropTypes.string.isRequired,
   answerText: PropTypes.string.isRequired
 });
@@ -15,13 +15,15 @@ const answerOption = PropTypes.shape({
 });
 
 const question = PropTypes.shape({
-  answerOptions: PropTypes.arrayOf(answerOption).isRequired,
   _id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  answerOptions: PropTypes.arrayOf(answerOption).isRequired,
+  answers: PropTypes.arrayOf(answer).isRequired,
+  title: PropTypes.string.isRequired,
+  type: PropTypes.number.isRequired
 });
 
 export default {
-  answers,
+  answer,
   answerOption,
   question
 };

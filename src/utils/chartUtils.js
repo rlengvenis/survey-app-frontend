@@ -5,9 +5,7 @@
  * @returns {Array} a list of answer option titles
  */
 export const populateLabelValues = ({answerOptions}) => {
-  return Object
-    .values(answerOptions)
-    .map(answerOption => answerOption.title);
+  return answerOptions.map(answerOption => answerOption.title);
 };
 
 /***
@@ -17,12 +15,11 @@ export const populateLabelValues = ({answerOptions}) => {
  * @returns {Array} a list of how much each answer option occurred in the answers
  */
 export const populateChartData = ({question}) => {
-  return Object.values(question.answerOptions).map(answerOption => {
+  return question.answerOptions.map(answerOption => {
     const title = answerOption.title;
 
     // Get how many instances of a given title exist
-    return Object
-      .values(question.answers)
+    return question.answers
       .filter(answer => answer.answerText === title)
       .length
   });
