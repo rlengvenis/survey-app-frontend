@@ -5,10 +5,10 @@ import {required} from 'redux-form-validators'
 import questionTypes from '../../constants/questionTypes';
 import customPropTypes from '../../constants/customPropTypes';
 
-import AnswerOptionList from './AnswerOptionList';
+import SurveyAnswerOptionList from './SurveyAnswerOptionList';
 import FormInput from '../shared/FormInput';
 
-const Question = ({question}) => {
+const SurveyQuestion = ({question}) => {
   return (
     <div className="survey-form__question">
       <h2> {question.title} <abbr title="Required">*</abbr></h2>
@@ -29,7 +29,7 @@ const Question = ({question}) => {
         question.answerOptions.length > 0 &&
 
         <Field
-          component={AnswerOptionList}
+          component={SurveyAnswerOptionList}
           name={question._id}
           answerOptions={question.answerOptions}
           validate={[required()]}
@@ -40,8 +40,8 @@ const Question = ({question}) => {
   );
 };
 
-Question.propTypes = {
+SurveyQuestion.propTypes = {
   question: customPropTypes.question.isRequired
 };
 
-export default Question;
+export default SurveyQuestion;

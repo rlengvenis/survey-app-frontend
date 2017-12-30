@@ -7,9 +7,9 @@ import store from '../configureStore'
 import * as actionTypes from '../constants/actionTypes';
 import history from '../history';
 
-import SurveyFormPage from './SurveyFormPage/SurveyFormPage'
+import SurveyPage from './SurveyPage/SurveyPage'
 import SurveyBuilderPage from './SurveyBuilderPage/SurveyBuilderPage';
-import SurveyResponsesPage from './SurveyResponsesPage/SurveyResponsesPage';
+import ResponsesPage from './ResponsesPage/ResponsesPage';
 import Header from './Header/Header';
 import SignInPage from './auth/SignInPage';
 import SignOutPage from './auth/SignOutPage';
@@ -48,8 +48,8 @@ const Root = () => (
             <Route path="/sign-out" component={SignOutPage}/>
             <Route path="/sign-up" component={SignUpPage}/>
             <Route path="/builder" component={RequireAuth(SurveyBuilderPage)}/>
-            <Route path="/survey" component={SurveyFormPage}/>
-            <Route path="/responses" component={RequireAuth(SurveyResponsesPage)}/>
+            <Route path="/survey" component={SurveyPage}/>
+            <Route path="/responses" component={RequireAuth(ResponsesPage)}/>
             <Redirect to="/builder"/>
           </Switch>
         </main>

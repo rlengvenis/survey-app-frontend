@@ -8,7 +8,7 @@ import AnswerList from '../AnswerList/AnswerList';
 import AnswerChartRenderer from '../AnswerChartRenderer/AnswerChartRenderer';
 
 
-const QuestionResponses = ({question}) => {
+const QuestionResponseList = ({question}) => {
   return (
     <div className="survey-responses__question">
       <h2>{question.title}</h2>
@@ -28,8 +28,8 @@ const QuestionResponses = ({question}) => {
   )
 };
 
-QuestionResponses.propTypes = {
+QuestionResponseList.propTypes = {
   question: customPropTypes.question.isRequired
 };
 
-export default QuestionResponses;
+export default QuestionResponseList;

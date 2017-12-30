@@ -9,11 +9,11 @@ import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import customPropTypes from '../../constants/customPropTypes';
 
-import QuestionList from './QuestionList';
+import SurveyQuestionList from './SurveyQuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 
 
-class SurveyForm extends React.Component {
+class SurveyPage extends React.Component {
   componentDidMount() {
     const {location, history} = this.props;
     const surveyId = queryString.parse(location.search).id;
@@ -57,7 +57,7 @@ class SurveyForm extends React.Component {
           className="survey-form"
           onSubmit={handleSubmit(this.handleSurveyAnswers)}
         >
-          <QuestionList questions={survey.questions}/>
+          <SurveyQuestionList questions={survey.questions}/>
           <div>
             <button
               className="button-raised survey-form__submit"
@@ -80,7 +80,7 @@ class SurveyForm extends React.Component {
   };
 }
 
-SurveyForm.propTypes = {
+SurveyPage.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   survey: PropTypes.shape({
     description: PropTypes.string.isRequired,
@@ -102,12 +102,12 @@ const mapDispatchToProps = (dispatch) => ({
   surveyActions: bindActionCreators(surveyActions, dispatch)
 });
 
-SurveyForm = connect(mapStateToProps, mapDispatchToProps)(SurveyForm);
+SurveyPage = connect(mapStateToProps, mapDispatchToProps)(SurveyPage);
 
-SurveyForm = reduxForm({
-  form: 'surveyForm',
+SurveyPage = reduxForm({
+  form: 'SurveyPage',
   shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
-})(SurveyForm);
+})(SurveyPage);
 
 
-export default SurveyForm;
+export default SurveyPage;

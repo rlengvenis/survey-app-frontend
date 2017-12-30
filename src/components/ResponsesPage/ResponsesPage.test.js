@@ -4,12 +4,12 @@ import {spy} from 'sinon';
 
 import {survey} from './testDummyData';
 
-import {SurveyResponsesPage} from './SurveyResponsesPage';
-import QuestionList from './QuestionList';
+import {ResponsesPage} from './ResponsesPage';
+import ResponsesPageQuestionList from './ResponsesPageQuestionList/ResponsesPageQuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 
 
-describe('SurveyResponsesPage component', () => {
+describe('ResponsesPage component', () => {
   let wrapper;
   let props;
 
@@ -22,7 +22,7 @@ describe('SurveyResponsesPage component', () => {
       }
     };
 
-    wrapper = shallow(<SurveyResponsesPage {...props}/>);
+    wrapper = shallow(<ResponsesPage {...props}/>);
   });
 
   it('should show loader when props are not loaded', () => {
@@ -33,7 +33,7 @@ describe('SurveyResponsesPage component', () => {
       }
     };
 
-    const wrapper = shallow(<SurveyResponsesPage {...props} />);
+    const wrapper = shallow(<ResponsesPage {...props} />);
 
     expect(wrapper.containsMatchingElement(
       <DefaultSpinner />
@@ -44,11 +44,11 @@ describe('SurveyResponsesPage component', () => {
     expect(props.surveyActions.loadSurvey.callCount).to.equal(1);
   });
 
-  it('should renders QuestionList when mounted', () => {
+  it('should renders ResponsesPageQuestionList when mounted', () => {
     const questions = props.survey.questions;
 
     expect(wrapper.containsMatchingElement(
-      <QuestionList questions={questions}/>
+      <ResponsesPageQuestionList questions={questions}/>
     )).to.equal(true);
   });
 

@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import customPropTypes from '../../constants/customPropTypes';
 
-import Question from './Question';
+import SurveyQuestion from './SurveyQuestion';
 
 
-const QuestionList = ({questions}) => {
+const SurveyQuestionList = ({questions}) => {
   return (
     <div>
       {
         questions.map((question) => (
-          <Question
+          <SurveyQuestion
             key={question._id}
             question={question}
           />
@@ -21,8 +21,8 @@ const QuestionList = ({questions}) => {
   );
 };
 
-QuestionList.propTypes = {
+SurveyQuestionList.propTypes = {
   questions: PropTypes.arrayOf(customPropTypes.question).isRequired
 };
 
-export default QuestionList;
+export default SurveyQuestionList;

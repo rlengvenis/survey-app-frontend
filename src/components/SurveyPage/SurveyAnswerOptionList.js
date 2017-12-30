@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import customPropTypes from '../../constants/customPropTypes';
 
-class AnswerOptionList extends React.Component {
+class SurveyAnswerOptionList extends React.Component {
   render() {
     const {
       input,
@@ -46,10 +46,10 @@ class AnswerOptionList extends React.Component {
   }
 }
 
-AnswerOptionList.propTypes = {
+SurveyAnswerOptionList.propTypes = {
   answerOptions: PropTypes.arrayOf(customPropTypes.answerOption).isRequired,
   input: PropTypes.object.isRequired,
   meta: PropTypes.object.isRequired
 };
 
-export default AnswerOptionList;
+export default SurveyAnswerOptionList;

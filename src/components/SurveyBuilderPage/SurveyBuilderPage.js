@@ -11,11 +11,11 @@ import customPropTypes from '../../constants/customPropTypes';
 
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import getInitialFormBuilderValues from '../../selectors/getInitialFormBuilderValues';
-import QuestionListBuilder from './QuestionListBuilder';
+import SurveyBuilderQuestionList from './SurveyBuilderQuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 import FormInput from '../shared/FormInput';
 
-class SurveyBuilder extends React.Component {
+class SurveyBuilderPage extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
@@ -60,7 +60,7 @@ class SurveyBuilder extends React.Component {
 
           {
             survey && survey.questions &&
-            <QuestionListBuilder
+            <SurveyBuilderQuestionList
               surveyId={survey._id}
               questions={survey.questions}
             />
@@ -98,7 +98,7 @@ class SurveyBuilder extends React.Component {
   };
 }
 
-SurveyBuilder.propTypes = {
+SurveyBuilderPage.propTypes = {
   questionActions: PropTypes.shape({
     addNewQuestion: PropTypes.func.isRequired,
   }).isRequired,
@@ -122,12 +122,12 @@ const mapDispatchToProps = (dispatch) => ({
   questionActions: bindActionCreators(questionActions, dispatch)
 });
 
-SurveyBuilder = reduxForm({
+SurveyBuilderPage = reduxForm({
   form: 'surveyBuilderForm',
   shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
-})(SurveyBuilder);
+})(SurveyBuilderPage);
 
-SurveyBuilder = connect(mapStateToProps, mapDispatchToProps)(SurveyBuilder);
+SurveyBuilderPage = connect(mapStateToProps, mapDispatchToProps)(SurveyBuilderPage);
 
 
-export default SurveyBuilder;
+export default SurveyBuilderPage;

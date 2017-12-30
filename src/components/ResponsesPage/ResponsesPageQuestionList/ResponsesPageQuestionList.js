@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import customPropTypes from '../../../constants/customPropTypes';
 
-import QuestionResponses from '../QuestionResponses/QuestionResponses'
+import QuestionResponseList from '../QuestionResponseList/QuestionResponseList'
 
 
-const QuestionList = ({questions}) => {
+const ResponsesPageQuestionList = ({questions}) => {
   return questions.map(question => {
     return (
-      <QuestionResponses
+      <QuestionResponseList
         key={question._id}
         question={question}
       />
@@ -17,9 +17,9 @@ const QuestionList = ({questions}) => {
   })
 };
 
-QuestionList.propTypes = {
+ResponsesPageQuestionList.propTypes = {
   questions: PropTypes.arrayOf(customPropTypes.question).isRequired
 };
 
 
-export default QuestionList;
+export default ResponsesPageQuestionList;

@@ -8,10 +8,10 @@ import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import customPropTypes from '../../constants/customPropTypes';
 
 import DefaultSpinner from '../shared/DefaultSpinner';
-import QuestionList from './QuestionList/QuestionList';
+import ResponsesPageQuestionList from './ResponsesPageQuestionList/ResponsesPageQuestionList';
 
 
-export class SurveyResponsesPage extends React.Component {
+export class ResponsesPage extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
@@ -32,13 +32,13 @@ export class SurveyResponsesPage extends React.Component {
         <h1>{survey.name}</h1>
         <p className="survey-responses__description">{survey.description}</p>
 
-        <QuestionList questions={survey.questions}/>
+        <ResponsesPageQuestionList questions={survey.questions}/>
       </div>
     )
   }
 }
 
-SurveyResponsesPage.propTypes = {
+ResponsesPage.propTypes = {
   survey: PropTypes.shape({
     description: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -58,4 +58,4 @@ const mapDispatchToProps = (dispatch) => ({
   surveyActions: bindActionCreators(surveyActions, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SurveyResponsesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ResponsesPage);

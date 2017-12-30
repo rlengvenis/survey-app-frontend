@@ -6,7 +6,7 @@ import customPropTypes from '../../constants/customPropTypes';
 import QuestionBuilder from './QuestionBuilder';
 
 
-const QuestionListBuilder = ({questions, surveyId}) => {
+const SurveyBuilderQuestionList = ({questions, surveyId}) => {
   return (
     <div>
       {questions.map((question) => (
@@ -20,9 +20,9 @@ const QuestionListBuilder = ({questions, surveyId}) => {
   );
 };
 
-QuestionListBuilder.propTypes = {
+SurveyBuilderQuestionList.propTypes = {
   questions: PropTypes.arrayOf(customPropTypes.question).isRequired,
   surveyId: PropTypes.string.isRequired
 };
 
-export default QuestionListBuilder;
+export default SurveyBuilderQuestionList;
