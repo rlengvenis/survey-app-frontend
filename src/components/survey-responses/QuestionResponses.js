@@ -2,6 +2,7 @@ import React from 'react';
 
 import surveyQuestionTypes from '../../constants/questionTypes';
 import customPropTypes from '../../constants/customPropTypes';
+import {CHART_TYPE_CONFIGURED} from '../../config/appConfig';
 
 import AnswerList from './AnswerList';
 import AnswerChartRenderer from './AnswerChartRenderer';
@@ -14,9 +15,15 @@ const QuestionResponses = ({question}) => {
 
       {
         question.type === surveyQuestionTypes.MULTIPLE_ANSWER
-          ? <AnswerChartRenderer question={question}/>
+          ? (
+            <AnswerChartRenderer
+              question={question}
+              chartType={CHART_TYPE_CONFIGURED}
+            />
+          )
           : <AnswerList answers={question.answers}/>
       }
+
     </div>
   )
 };

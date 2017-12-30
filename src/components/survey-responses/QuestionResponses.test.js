@@ -2,6 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import {survey} from './testDummyData';
+import chartTypes from '../../constants/chartTypes';
 
 import QuestionResponses from './QuestionResponses';
 import AnswerChartRenderer from './AnswerChartRenderer';
@@ -11,7 +12,8 @@ import AnswerList from './AnswerList';
 describe('QuestionResponses component', () => {
   it('should render multiple answer question response', () => {
     const props = {
-      question: survey.questions[0]
+      question: survey.questions[0],
+      chartType: chartTypes.BAR_CHART
     };
 
     const wrapper = shallow(<QuestionResponses {...props}/>);

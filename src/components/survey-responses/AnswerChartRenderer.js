@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import {CHART_TYPE_CONFIGURED} from '../../config/appConfig';
 import chartTypes from '../../constants/chartTypes';
 import customPropTypes from '../../constants/customPropTypes';
 
@@ -8,8 +8,8 @@ import AnswerBarChart from './AnswerBarChart';
 import AnswerDoughnutChart from './AnswerDoughnutChart';
 
 
-const AnswerChartRenderer = ({question}) => {
-  switch (CHART_TYPE_CONFIGURED) {
+const AnswerChartRenderer = ({question, chartType}) => {
+  switch (chartType) {
     default:
     case chartTypes.BAR_CHART: {
       return <AnswerBarChart question={question}/>
@@ -21,6 +21,7 @@ const AnswerChartRenderer = ({question}) => {
 };
 
 AnswerChartRenderer.propTypes = {
+  chartType: PropTypes.number.isRequired,
   question: customPropTypes.question.isRequired
 };
 
