@@ -1,12 +1,12 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {survey} from './testDummyData';
-import chartTypes from '../../constants/chartTypes';
+import {survey} from '../testDummyData';
+import chartTypes from '../../../constants/chartTypes';
 
 import QuestionResponses from './QuestionResponses';
-import AnswerChartRenderer from './AnswerChartRenderer';
-import AnswerList from './AnswerList';
+import AnswerChartRenderer from '../AnswerChartRenderer/AnswerChartRenderer';
+import AnswerList from '../AnswerList/AnswerList';
 
 
 describe('QuestionResponses component', () => {

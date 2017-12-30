@@ -2,8 +2,8 @@ import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import randomColor from 'randomcolor';
 
-import {populateLabelValues, populateChartData} from '../../utils/chartUtils';
-import customPropTypes from '../../constants/customPropTypes';
+import {populateLabelValues, populateChartData} from '../../../utils/chartUtils';
+import customPropTypes from '../../../constants/customPropTypes';
 
 
 const AnswerDoughnutChart = ({question}) => {

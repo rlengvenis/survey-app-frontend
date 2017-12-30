@@ -11,7 +11,8 @@ import FormInput from '../shared/FormInput';
 import ErrorMessage from '../shared/ErrorMessage';
 
 
-class SignUp extends React.Component {
+
+class SignInPage extends React.Component {
   componentWillUnmount() {
     this.props.authActions.clearErrors();
   }
@@ -58,36 +59,28 @@ class SignUp extends React.Component {
               name="password"
             />
           </div>
-          <div className="login-form--field">
-            <Field
-              type="password"
-              component={FormInput}
-              placeholder="Confirm password"
-              name="passwordConfirm"
-            />
-          </div>
 
           <button
             className="button-raised login-form--submit"
             type="submit"
           >
-            Sign up
+            Sign in
           </button>
         </form>
-
       </div>
     );
   }
 
   handleFormSubmit = ({email, password}) => {
-    this.props.authActions.signUpUser({email, password});
+    this.props.authActions.signInUser({email, password});
   };
+
 }
 
-SignUp.propTypes = {
+SignInPage.propTypes = {
   authActions: PropTypes.shape({
     clearErrors: PropTypes.func.isRequired,
-    signUpUser: PropTypes.func.isRequired
+    signInUser: PropTypes.func.isRequired
   }).isRequired,
   errorMessage: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired
@@ -104,14 +97,6 @@ const validate = (formProps) => {
     errors.password = 'Please enter a password';
   }
 
-  if (!formProps.passwordConfirm) {
-    errors.passwordConfirm = 'Please enter a password confirmation';
-  }
-
-  if (formProps.password !== formProps.passwordConfirm) {
-    errors.passwordConfirm = 'Passwords must match'
-  }
-
   return errors;
 };
 
@@ -123,9 +108,9 @@ const mapDispatchToProps = (dispatch) => ({
   authActions: bindActionCreators(authActions, dispatch)
 });
 
-SignUp = connect(mapStateToProps, mapDispatchToProps)(SignUp);
+SignInPage = connect(mapStateToProps, mapDispatchToProps)(SignInPage);
 
 export default reduxForm({
-  form: 'signUpForm',
+  form: 'signInForm',
   validate
-})(SignUp);
+})(SignInPage);

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import chartTypes from '../../constants/chartTypes';
-import customPropTypes from '../../constants/customPropTypes';
+import chartTypes from '../../../constants/chartTypes';
+import customPropTypes from '../../../constants/customPropTypes';
 
 import AnswerBarChart from './AnswerBarChart';
 import AnswerDoughnutChart from './AnswerDoughnutChart';

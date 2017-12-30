@@ -8,7 +8,7 @@ import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import customPropTypes from '../../constants/customPropTypes';
 
 import DefaultSpinner from '../shared/DefaultSpinner';
-import QuestionList from './QuestionList';
+import QuestionList from './QuestionList/QuestionList';
 
 
 export class SurveyResponsesPage extends React.Component {

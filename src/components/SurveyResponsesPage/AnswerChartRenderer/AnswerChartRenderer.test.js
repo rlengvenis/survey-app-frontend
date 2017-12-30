@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import chartTypes from '../../constants/chartTypes';
-import {survey} from './testDummyData';
+import chartTypes from '../../../constants/chartTypes';
+import {survey} from '../testDummyData';
 
 import AnswerChartRenderer from './AnswerChartRenderer';
 import AnswerBarChart from './AnswerBarChart';

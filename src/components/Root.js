@@ -7,13 +7,13 @@ import store from '../configureStore'
 import * as actionTypes from '../constants/actionTypes';
 import history from '../history';
 
-import SurveyFormPage from './survey-form/SurveyFormPage'
-import SurveyBuilderPage from './suvey-builder/SurveyBuilderPage';
-import SurveyResponsesPage from './survey-responses/SurveyResponsesPage';
-import Header from './Header';
-import SignIn from './auth/SignIn';
-import SignOut from './auth/SignOut';
-import SignUp from './auth/SignUp';
+import SurveyFormPage from './SurveyFormPage/SurveyFormPage'
+import SurveyBuilderPage from './SurveyBuilderPage/SurveyBuilderPage';
+import SurveyResponsesPage from './SurveyResponsesPage/SurveyResponsesPage';
+import Header from './Header/Header';
+import SignInPage from './auth/SignInPage';
+import SignOutPage from './auth/SignOutPage';
+import SignUpPage from './auth/SignUpPage';
 import RequireAuth from './auth/RequireAuth';
 
 import '../styles/core/reset.css';
@@ -44,9 +44,9 @@ const Root = () => (
         <Header/>
         <main className="container">
           <Switch>
-            <Route path="/sign-in" component={SignIn}/>
-            <Route path="/sign-out" component={SignOut}/>
-            <Route path="/sign-up" component={SignUp}/>
+            <Route path="/sign-in" component={SignInPage}/>
+            <Route path="/sign-out" component={SignOutPage}/>
+            <Route path="/sign-up" component={SignUpPage}/>
             <Route path="/builder" component={RequireAuth(SurveyBuilderPage)}/>
             <Route path="/survey" component={SurveyFormPage}/>
             <Route path="/responses" component={RequireAuth(SurveyResponsesPage)}/>

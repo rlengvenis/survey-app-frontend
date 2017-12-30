@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import customPropTypes from '../../constants/customPropTypes';
+import customPropTypes from '../../../constants/customPropTypes';
 
-import QuestionResponses from './QuestionResponses'
+import QuestionResponses from '../QuestionResponses/QuestionResponses'
 
 
 const QuestionList = ({questions}) => {

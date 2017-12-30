@@ -6,7 +6,7 @@ import {survey} from './testDummyData';
 
 import {SurveyResponsesPage} from './SurveyResponsesPage';
 import QuestionList from './QuestionList';
-import DefaultSpinner from '../../components/shared/DefaultSpinner';
+import DefaultSpinner from '../shared/DefaultSpinner';
 
 
 describe('SurveyResponsesPage component', () => {

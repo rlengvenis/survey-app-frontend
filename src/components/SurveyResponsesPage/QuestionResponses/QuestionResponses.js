@@ -1,11 +1,11 @@
 import React from 'react';
 
-import surveyQuestionTypes from '../../constants/questionTypes';
-import customPropTypes from '../../constants/customPropTypes';
-import {CHART_TYPE_CONFIGURED} from '../../config/appConfig';
+import surveyQuestionTypes from '../../../constants/questionTypes';
+import customPropTypes from '../../../constants/customPropTypes';
+import {CHART_TYPE_CONFIGURED} from '../../../config/appConfig';
 
-import AnswerList from './AnswerList';
-import AnswerChartRenderer from './AnswerChartRenderer';
+import AnswerList from '../AnswerList/AnswerList';
+import AnswerChartRenderer from '../AnswerChartRenderer/AnswerChartRenderer';
 
 
 const QuestionResponses = ({question}) => {
