@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import {Field} from 'redux-form';
 import {required} from 'redux-form-validators'
 
-import customPropTypes from '../../constants/customPropTypes';
+import customPropTypes from '../../../constants/customPropTypes';
 
-import FormInput from '../shared/FormInput';
+import FormInput from '../../shared/FormInput';
 
 
 const AnswerOptionListBuilder = ({

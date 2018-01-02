@@ -11,11 +11,11 @@ import customPropTypes from '../../constants/customPropTypes';
 
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import getInitialFormBuilderValues from '../../selectors/getInitialFormBuilderValues';
-import SurveyBuilderQuestionList from './SurveyBuilderQuestionList';
+import SurveyBuilderQuestionList from './SurveyBuilderQuestionList/SurveyBuilderQuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 import FormInput from '../shared/FormInput';
 
-class SurveyBuilderPage extends React.Component {
+export class SurveyBuilderPage extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
@@ -99,15 +99,19 @@ class SurveyBuilderPage extends React.Component {
 }
 
 SurveyBuilderPage.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
   questionActions: PropTypes.shape({
     addNewQuestion: PropTypes.func.isRequired,
   }).isRequired,
+  submitting: PropTypes.bool.isRequired,
   survey: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    questions: PropTypes.arrayOf(customPropTypes.question).isRequired,
+    questions: PropTypes.arrayOf(customPropTypes.question),
     name: PropTypes.string.isRequired
   }),
   surveyActions: PropTypes.shape({
+    loadSurvey: PropTypes.func.isRequired,
+    resetSurvey: PropTypes.func.isRequired,
     saveSurvey: PropTypes.func.isRequired
   }).isRequired
 };
@@ -122,12 +126,14 @@ const mapDispatchToProps = (dispatch) => ({
   questionActions: bindActionCreators(questionActions, dispatch)
 });
 
-SurveyBuilderPage = reduxForm({
+export const SurveyBuilderPageForm = reduxForm({
   form: 'surveyBuilderForm',
   shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
 })(SurveyBuilderPage);
 
-SurveyBuilderPage = connect(mapStateToProps, mapDispatchToProps)(SurveyBuilderPage);
+const ConnectedSurveyBuilderPageForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SurveyBuilderPageForm);
 
-
-export default SurveyBuilderPage;
+export default ConnectedSurveyBuilderPageForm;

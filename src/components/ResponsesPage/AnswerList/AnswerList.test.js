@@ -4,7 +4,7 @@ import {shallow} from 'enzyme';
 import AnswerList from './AnswerList';
 
 
-describe('AnswerList component', () => {
+describe('AnswerList', () => {
   it('should render empty list if no answers provided', () => {
     const answers = [];
 

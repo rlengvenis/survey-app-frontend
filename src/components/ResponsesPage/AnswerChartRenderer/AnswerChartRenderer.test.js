@@ -2,11 +2,9 @@ import React from 'react';
 import {shallow} from 'enzyme';
 
 import chartTypes from '../../../constants/chartTypes';
-import {survey} from '../testDummyData';
+import {survey} from '../../testDummyData';
 
 import AnswerChartRenderer from './AnswerChartRenderer';
-import AnswerBarChart from './AnswerBarChart';
-import AnswerDoughnutChart from './AnswerDoughnutChart';
 
 
 describe('AnswerChartRenderer', () => {
@@ -20,9 +18,7 @@ describe('AnswerChartRenderer', () => {
       />
     );
 
-    expect(wrapper.containsMatchingElement(
-      <AnswerBarChart question={question}/>
-    )).to.equal(true);
+    expect(wrapper.find('AnswerBarChart')).to.have.length(1);
   });
 
   it('should render AnswerDoughnutChart', () => {
@@ -35,8 +31,6 @@ describe('AnswerChartRenderer', () => {
       />
     );
 
-    expect(wrapper.containsMatchingElement(
-      <AnswerDoughnutChart question={question}/>
-    )).to.equal(true);
+    expect(wrapper.find('AnswerDoughnutChart')).to.have.length(1);
   });
 });

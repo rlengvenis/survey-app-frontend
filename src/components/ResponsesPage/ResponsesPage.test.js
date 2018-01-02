@@ -2,14 +2,12 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {spy} from 'sinon';
 
-import {survey} from './testDummyData';
+import {survey} from '../testDummyData';
 
 import {ResponsesPage} from './ResponsesPage';
-import ResponsesPageQuestionList from './ResponsesPageQuestionList/ResponsesPageQuestionList';
-import DefaultSpinner from '../shared/DefaultSpinner';
 
 
-describe('ResponsesPage component', () => {
+describe('ResponsesPage', () => {
   let wrapper;
   let props;
 
@@ -26,34 +24,23 @@ describe('ResponsesPage component', () => {
   });
 
   it('should show loader when props are not loaded', () => {
-    const props = {
-      surveyActions: {
-        loadSurvey: spy(),
-        resetSurvey: spy()
-      }
-    };
+    const propsWithoutSurvey = {...props, survey: undefined};
+    const wrapper = shallow(<ResponsesPage {...propsWithoutSurvey} />);
 
-    const wrapper = shallow(<ResponsesPage {...props} />);
-
-    expect(wrapper.containsMatchingElement(
-      <DefaultSpinner />
-    )).to.equal(true);
+    expect(wrapper.find('DefaultSpinner')).to.have.length(1);
   });
 
   it('should load survey when component is mounted', () => {
-    expect(props.surveyActions.loadSurvey.callCount).to.equal(1);
+    expect(props.surveyActions.loadSurvey.calledOnce);
   });
 
   it('should renders ResponsesPageQuestionList when mounted', () => {
-    const questions = props.survey.questions;
-
-    expect(wrapper.containsMatchingElement(
-      <ResponsesPageQuestionList questions={questions}/>
-    )).to.equal(true);
+    expect(wrapper.find('ResponsesPageQuestionList')).to.have.length(1);
   });
 
   it('should reset survey data when component is unmounted', () => {
     wrapper.unmount();
-    expect(props.surveyActions.resetSurvey.callCount).to.equal(1);
+    expect(props.surveyActions.resetSurvey.callOnce);
   });
+
 });

@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 
 
 export const Header = (props) => {
-  const {surveyId} = props;
+  const {
+    surveyId,
+    authenticated
+  } = props;
 
   return (
     <header className="app__header">
@@ -42,7 +45,7 @@ export const Header = (props) => {
             </NavLink>
           </li>
 
-          {renderAuthLinks(props.authenticated)}
+          {renderAuthLinks(authenticated)}
 
         </ul>
       </nav>

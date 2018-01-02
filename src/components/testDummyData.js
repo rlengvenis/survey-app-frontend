@@ -1,7 +1,8 @@
-import surveyQuestionTypes from '../../constants/questionTypes';
+import surveyQuestionTypes from '../constants/questionTypes';
 
 
 export const survey = {
+  _id: 'Id_s1',
   name: 'Test',
   description: 'Test Description',
   questions: [{

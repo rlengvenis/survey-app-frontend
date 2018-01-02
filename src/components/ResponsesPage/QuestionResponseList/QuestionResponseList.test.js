@@ -1,15 +1,13 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {survey} from '../testDummyData';
+import {survey} from '../../testDummyData';
 import chartTypes from '../../../constants/chartTypes';
 
 import QuestionResponseList from './QuestionResponseList';
-import AnswerChartRenderer from '../AnswerChartRenderer/AnswerChartRenderer';
-import AnswerList from '../AnswerList/AnswerList';
 
 
-describe('QuestionResponseList component', () => {
+describe('QuestionResponseList', () => {
   it('should render multiple answer question response', () => {
     const props = {
       question: survey.questions[0],
@@ -18,9 +16,7 @@ describe('QuestionResponseList component', () => {
 
     const wrapper = shallow(<QuestionResponseList {...props}/>);
 
-    expect(wrapper.containsMatchingElement(
-      <AnswerChartRenderer {...props}/>
-    )).to.equal(true);
+    expect(wrapper.find('AnswerChartRenderer')).to.have.length(1);
   });
 
   it('should render answer list as question response', () => {
@@ -30,8 +26,6 @@ describe('QuestionResponseList component', () => {
 
     const wrapper = shallow(<QuestionResponseList {...props}/>);
 
-    expect(wrapper.containsMatchingElement(
-      <AnswerList answers={props.question.answers}/>
-    )).to.equal(true);
+    expect(wrapper.find('AnswerList')).to.have.length(1);
   });
 });

@@ -5,17 +5,17 @@ import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {required} from 'redux-form-validators'
 
-import * as questionActions from '../../actions/questionActions';
-import * as answerOptionActions from '../../actions/answerOptionActions';
-import questionTypes from '../../constants/questionTypes';
-import customPropTypes from '../../constants/customPropTypes';
+import * as questionActions from '../../../actions/questionActions';
+import * as answerOptionActions from '../../../actions/answerOptionActions';
+import questionTypes from '../../../constants/questionTypes';
+import customPropTypes from '../../../constants/customPropTypes';
 
-import QuestionTypeSelector from './QuestionTypeSelector';
-import AnswerOptionListBuilder from './AnswerOptionListBuilder';
-import FormInput from "../shared/FormInput";
+import QuestionTypeSelector from '../QuestionTypeSelector/QuestionTypeSelector';
+import AnswerOptionListBuilder from '../AnswerOptionListBuilder/AnswerOptionListBuilder';
+import FormInput from "../../shared/FormInput";
 
 
-const QuestionBuilder = ({
+export const QuestionBuilder = ({
   question,
   surveyId,
   questionActions,

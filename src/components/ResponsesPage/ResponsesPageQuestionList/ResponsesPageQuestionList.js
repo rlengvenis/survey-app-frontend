@@ -7,14 +7,18 @@ import QuestionResponseList from '../QuestionResponseList/QuestionResponseList'
 
 
 const ResponsesPageQuestionList = ({questions}) => {
-  return questions.map(question => {
-    return (
-      <QuestionResponseList
-        key={question._id}
-        question={question}
-      />
-    );
-  })
+  return (
+    <div>
+      {questions.map(question => {
+        return (
+          <QuestionResponseList
+            key={question._id}
+            question={question}
+          />
+        );
+      })}
+    </div>
+  )
 };
 
 ResponsesPageQuestionList.propTypes = {
