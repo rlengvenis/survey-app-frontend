@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import customPropTypes from '../../constants/customPropTypes';
+import customPropTypes from '../../../constants/customPropTypes';
 
-import SurveyQuestion from './SurveyQuestion';
+import SurveyQuestion from '../SurveyQuestion/SurveyQuestion';
 
 
 const SurveyQuestionList = ({questions}) => {

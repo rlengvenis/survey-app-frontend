@@ -10,7 +10,7 @@ describe('AnswerList', () => {
 
     const wrapper = shallow(<AnswerList answers={[]}/>);
 
-    expect(wrapper.find('li')).to.have.length(0);
+    expect(wrapper.find('li').exists()).to.equal(false);
   });
 
   it('should render list of answers provided', () => {

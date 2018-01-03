@@ -32,13 +32,13 @@ describe('SurveyBuilderPage', () => {
     const propsWithoutSurvey = {...props, survey: undefined};
     const wrapper = shallow(<SurveyBuilderPage {...propsWithoutSurvey}/>);
 
-    expect(wrapper.find('DefaultSpinner')).to.have.length(1);
+    expect(wrapper.find('DefaultSpinner').exists());
   });
 
   it('should not show SurveyBuilderQuestionList when survey is new', () => {
     const wrapper = shallow(<SurveyBuilderPage {...props}/>);
 
-    expect(wrapper.find('SurveyBuilderQuestionList')).to.have.length(0);
+    expect(wrapper.find('SurveyBuilderQuestionList').exists()).to.equal(false);
   });
 
   it('should call addNewQuestion handler when Add new question button is clicked', () => {

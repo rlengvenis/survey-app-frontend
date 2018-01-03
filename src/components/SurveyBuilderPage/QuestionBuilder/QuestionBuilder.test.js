@@ -36,7 +36,7 @@ describe('QuestionBuilder', () => {
 
   it('should render question with AnswerOptionListBuilder', () => {
     const wrapper = shallow(<QuestionBuilder {...props} />);
-    expect(wrapper.find('AnswerOptionListBuilder')).to.have.length(1);
+    expect(wrapper.find('AnswerOptionListBuilder').exists());
   });
 
   it('should render question without AnswerOptionListBuilder', () => {
@@ -49,7 +49,7 @@ describe('QuestionBuilder', () => {
     };
     const wrapper = shallow(<QuestionBuilder {...propsWithShortAnswer}/>);
 
-    expect(wrapper.find('AnswerOptionListBuilder')).to.have.length(0);
+    expect(wrapper.find('AnswerOptionListBuilder').exists()).to.equal(false);
   });
 
   it('should call handleDeleteQuestion callback when delete button pressed', () => {

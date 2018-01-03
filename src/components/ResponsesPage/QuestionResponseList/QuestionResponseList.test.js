@@ -1,8 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import {survey} from '../../testDummyData';
-import chartTypes from '../../../constants/chartTypes';
+import surveyQuestionTypes from '../../../constants/questionTypes';
 
 import QuestionResponseList from './QuestionResponseList';
 
@@ -10,22 +9,33 @@ import QuestionResponseList from './QuestionResponseList';
 describe('QuestionResponseList', () => {
   it('should render multiple answer question response', () => {
     const props = {
-      question: survey.questions[0],
-      chartType: chartTypes.BAR_CHART
+      question: {
+        _id: 'Id_q1',
+        title: 'Test question 1',
+        type: surveyQuestionTypes.MULTIPLE_ANSWER
+      }
     };
 
     const wrapper = shallow(<QuestionResponseList {...props}/>);
 
-    expect(wrapper.find('AnswerChartRenderer')).to.have.length(1);
+    expect(wrapper.find('AnswerChartRenderer').exists());
   });
 
   it('should render answer list as question response', () => {
     const props = {
-      question: survey.questions[1]
+      question: {
+        _id: 'Id_q2',
+        title: 'Test question 2',
+        type: surveyQuestionTypes.SHORT_ANSWER,
+        answers: [{
+          _id: 'Id_a3',
+          answerText: 'First answer'
+        }]
+      }
     };
 
     const wrapper = shallow(<QuestionResponseList {...props}/>);
 
-    expect(wrapper.find('AnswerList')).to.have.length(1);
+    expect(wrapper.find('AnswerList').exists());
   });
 });

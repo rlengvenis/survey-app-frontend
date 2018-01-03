@@ -2,11 +2,11 @@ import React from 'react';
 import {Field} from 'redux-form';
 import {required} from 'redux-form-validators'
 
-import questionTypes from '../../constants/questionTypes';
-import customPropTypes from '../../constants/customPropTypes';
+import questionTypes from '../../../constants/questionTypes';
+import customPropTypes from '../../../constants/customPropTypes';
 
-import SurveyAnswerOptionList from './SurveyAnswerOptionList';
-import FormInput from '../shared/FormInput';
+import SurveyAnswerOptionList from '../SurveyAnswerOptionList/SurveyAnswerOptionList';
+import FormInput from '../../shared/FormInput';
 
 const SurveyQuestion = ({question}) => {
   return (

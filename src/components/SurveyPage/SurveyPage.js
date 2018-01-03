@@ -9,11 +9,11 @@ import * as surveyActions from '../../actions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import customPropTypes from '../../constants/customPropTypes';
 
-import SurveyQuestionList from './SurveyQuestionList';
+import SurveyQuestionList from './SurveyQuestionList/SurveyQuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 
 
-class SurveyPage extends React.Component {
+export class SurveyPage extends React.Component {
   componentDidMount() {
     const {location, history} = this.props;
     const surveyId = queryString.parse(location.search).id;
@@ -82,13 +82,16 @@ class SurveyPage extends React.Component {
 
 SurveyPage.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
   survey: PropTypes.shape({
     description: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     questions: PropTypes.arrayOf(customPropTypes.question).isRequired
   }),
   surveyActions: PropTypes.shape({
-    loadSurvey: PropTypes.func.isRequired,
+    loadSurveyById: PropTypes.func.isRequired,
+    resetSurvey: PropTypes.func.isRequired,
     saveSurvey: PropTypes.func.isRequired,
     saveSurveyAnswers: PropTypes.func.isRequired
   }).isRequired
@@ -102,12 +105,11 @@ const mapDispatchToProps = (dispatch) => ({
   surveyActions: bindActionCreators(surveyActions, dispatch)
 });
 
-SurveyPage = connect(mapStateToProps, mapDispatchToProps)(SurveyPage);
-
-SurveyPage = reduxForm({
+const SurveyPageForm = reduxForm({
   form: 'SurveyPage',
   shouldValidate: () => true // Due to bug https://github.com/erikras/redux-form/issues/3276
 })(SurveyPage);
 
+const ConnectedSurveyPageForm = connect(mapStateToProps, mapDispatchToProps)(SurveyPageForm);
 
-export default SurveyPage;
+export default ConnectedSurveyPageForm;
