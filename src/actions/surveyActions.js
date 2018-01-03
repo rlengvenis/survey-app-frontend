@@ -90,6 +90,8 @@ const _loadSurvey = async (dispatch, urlPath) => {
         payload: normalize(data.survey, survey)
       });
 
+      console.log(normalize(data.survey, survey));
+
     } else {
       dispatch({
         type: actionTypes.SURVEY_INIT_NEW,

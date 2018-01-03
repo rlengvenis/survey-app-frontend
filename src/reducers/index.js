@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import {reducer as formReducer} from 'redux-form'
 
-import surveysReducer from './surveysReducer';
+import surveysReducer from './surveysReducer/surveysReducer';
 import questionsReducer from './questionsReducer';
 import answerOptionsReducer from './answerOptionsReducer';
 import answersReducer from './answersReducer';

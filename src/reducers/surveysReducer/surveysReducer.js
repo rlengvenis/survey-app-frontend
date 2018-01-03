@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../../constants/actionTypes';
 import update from 'immutability-helper';
 
 
@@ -53,7 +53,7 @@ const surveysReducer = (state = {}, action) => {
     }
 
     case actionTypes.SURVEY_RESET: {
-      return {}
+      return {};
     }
 
     case actionTypes.SURVEY_BIND_FORM_DATA: {
