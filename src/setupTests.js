@@ -1,9 +1,14 @@
-import { configure } from 'enzyme';
+import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {JSDOM} from 'jsdom'
 import {expect} from 'chai';
+import {use} from 'chai';
+import chaiExclude from 'chai-exclude';
 
-configure({ adapter: new Adapter() });
+
+use(chaiExclude);
+
+configure({adapter: new Adapter()});
 
 const dom = new JSDOM('<!doctype html><html><body></body></html>');
 

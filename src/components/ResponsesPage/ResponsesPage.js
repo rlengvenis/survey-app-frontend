@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 
-import * as surveyActions from '../../actions/surveyActions';
+import * as surveyActions from '../../actions/surveyActions/surveyActions';
 import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
 import customPropTypes from '../../constants/customPropTypes';
 

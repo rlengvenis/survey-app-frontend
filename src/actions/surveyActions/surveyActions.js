@@ -1,21 +1,21 @@
 import {v4} from 'uuid';
 import {normalize} from 'normalizr';
 
-import history from '../history';
-import {API_URL} from '../config/appConfig';
+import history from '../../history';
+import {API_URL} from '../../config/appConfig';
 
-import getDenormalizedSurvey from '../selectors/getDenormalizedSurvey';
-import survey from '../models/schema';
+import getDenormalizedSurvey from '../../selectors/getDenormalizedSurvey';
+import survey from '../../models/schema';
 
-import * as actionTypes from '../constants/actionTypes';
+import * as actionTypes from '../../constants/actionTypes';
 
 
 export const loadSurvey = () => (dispatch) => {
-  _loadSurvey(dispatch, '/api/survey');
+  return _loadSurvey(dispatch, '/api/survey');
 };
 
 export const loadSurveyById = ({surveyId}) => (dispatch) => {
-  _loadSurvey(dispatch, `/api/surveyById/${surveyId}`)
+  return _loadSurvey(dispatch, `/api/surveyById/${surveyId}`)
 };
 
 export const saveSurvey = ({surveyFormData}) => async (dispatch, getState) => {
@@ -84,13 +84,13 @@ const _loadSurvey = async (dispatch, urlPath) => {
   if (response.ok) {
     const data = await response.json();
 
+
+
     if (data.survey) {
       dispatch({
         type: actionTypes.SURVEY_LOAD_SUCCESS,
         payload: normalize(data.survey, survey)
       });
-
-      console.log(normalize(data.survey, survey));
 
     } else {
       dispatch({

@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {required} from 'redux-form-validators'
 
-import * as surveyActions from '../../actions/surveyActions';
+import * as surveyActions from '../../actions/surveyActions/surveyActions';
 import * as questionActions from '../../actions/questionActions';
 import customPropTypes from '../../constants/customPropTypes';
 

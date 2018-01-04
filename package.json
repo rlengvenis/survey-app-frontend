@@ -42,11 +42,14 @@
   "devDependencies": {
     "canvas-prebuilt": "^1.6.5-prerelease.1",
     "chai": "^4.1.2",
+    "chai-exclude": "^1.0.3",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "fetch-mock": "^5.13.1",
     "jsdom": "^11.5.1",
     "mocha": "^4.0.1",
     "react-test-renderer": "^16.2.0",
+    "redux-mock-store": "^1.4.0",
     "sinon": "^4.1.3"
   }
 }
