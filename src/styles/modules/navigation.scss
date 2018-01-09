@@ -1,24 +1,63 @@
+@import "../core/variables.scss";
+
 .navigation {
-  &__list {
-    display: flex;
+  &__menu {
     margin: 0 15px;
-    flex-wrap: wrap;
-    font-size: 18px;
-    list-style-type: none;
+    line-height: 64px;
+    font-size: $font-size-x-large;
+    cursor: pointer;
+    color: $color-white;
   }
 
-  &__list-item:not(:last-child) {
-    margin-right: 15px;
+  &__list {
+    margin: 0 15px;
+    max-height: 300px;
+    line-height: 64px;
+    font-size: 18px;
+    list-style-type: none;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &--hidden {
+      max-height: 0px;
+    }
+  }
+
+  &__list-item {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
   }
 
   &__link {
     text-decoration: none;
     font-weight: 300;
     color: #FFFFFF;
+
+    &--active {
+      padding-bottom: 3px;
+      border-bottom: 1px solid #FFFFFF;
+    }
   }
 
-  &__link--active {
-    padding-bottom: 3px;
-    border-bottom: 1px solid #FFFFFF;
+  @media screen and (min-width: $media-md) {
+    &__menu {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+    }
   }
 }
+
+@keyframes navigation {
+  0% {
+    color: pink;
+  }
+
+  100% {
+    color: blue;
+  }
+}
+
+

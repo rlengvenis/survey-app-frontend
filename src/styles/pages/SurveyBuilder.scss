@@ -42,12 +42,6 @@
     width: 100%;
   }
 
-  @media screen and (min-width: $media-md) {
-    &__answer-option {
-      width: 50%
-    }
-  }
-
   &__add-option {
     display: flex;
     align-items: flex-start;
@@ -84,5 +78,11 @@
     margin-left: auto;
     color: $color-blue;
     cursor: pointer;
+  }
+
+  @media screen and (min-width: $media-md) {
+    &__answer-option {
+      width: 50%
+    }
   }
 }
