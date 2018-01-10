@@ -82,7 +82,7 @@ export class Header extends React.Component {
 
   handleNavigationVisibilityToggle = () => {
     this.setState({
-      isNavListVisible: !this.state.isNavListVisible
+      isNavListVisible: window.innerWidth >= MEDIA_MD || !this.state.isNavListVisible
     });
   }
 }
