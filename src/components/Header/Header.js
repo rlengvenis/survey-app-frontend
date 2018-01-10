@@ -37,7 +37,10 @@ export class Header extends React.Component {
           >
             menu
           </i>
-          <ul className={navigationStyle}>
+          <ul
+            className={navigationStyle}
+            onClick={this.handleNavigationVisibilityToggle}
+          >
             <li className="navigation__list-item">
               <NavLink
                 className="navigation__link"
