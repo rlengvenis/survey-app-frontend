@@ -2,8 +2,11 @@
 
 .app {
   &__header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
     background: $color-blue-dark;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   }
 }
 
