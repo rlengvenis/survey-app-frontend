@@ -37,14 +37,12 @@ export class Header extends React.Component {
           >
             menu
           </i>
-          <ul
-            className={navigationStyle}
-            onClick={this.handleNavigationVisibilityToggle}
-          >
+          <ul className={navigationStyle}>
             <li className="navigation__list-item">
               <NavLink
                 className="navigation__link"
                 activeClassName="navigation__link--active"
+                onClick={this.handleNavigationVisibilityToggle}
                 to="/builder"
               >
                 Survey Builder
@@ -54,6 +52,7 @@ export class Header extends React.Component {
               <NavLink
                 className="navigation__link"
                 activeClassName="navigation__link--active"
+                onClick={this.handleNavigationVisibilityToggle}
                 to={{
                   pathname: '/survey',
                   search: surveyId && `id=${surveyId}`
@@ -66,13 +65,14 @@ export class Header extends React.Component {
               <NavLink
                 className="navigation__link"
                 activeClassName="navigation__link--active"
+                onClick={this.handleNavigationVisibilityToggle}
                 to="/responses"
               >
                 Responses
               </NavLink>
             </li>
 
-            {renderAuthLinks(authenticated)}
+            {renderAuthLinks(authenticated, this.handleNavigationVisibilityToggle)}
 
           </ul>
         </nav>
@@ -93,12 +93,13 @@ Header.propTypes = {
   surveyId: PropTypes.string
 };
 
-const renderAuthLinks = (authenticated) => {
+const renderAuthLinks = (authenticated, handleNavigationVisibilityToggle) => {
   return authenticated ? (
       <li className="navigation__list-item">
         <NavLink
           className="navigation__link"
           activeClassName="navigation__link--active"
+          onClick={handleNavigationVisibilityToggle}
           to="/sign-out"
         >
           Sign out
@@ -110,6 +111,7 @@ const renderAuthLinks = (authenticated) => {
         <NavLink
           className="navigation__link"
           activeClassName="navigation__link--active"
+          onClick={handleNavigationVisibilityToggle}
           to="/sign-in"
         >
           Sign in
@@ -119,6 +121,7 @@ const renderAuthLinks = (authenticated) => {
         <NavLink
           className="navigation__link"
           activeClassName="navigation__link--active"
+          onClick={handleNavigationVisibilityToggle}
           to="/sign-up"
         >
           Sign up
