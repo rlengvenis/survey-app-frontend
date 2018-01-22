@@ -87,6 +87,9 @@ Component functionality was tested with focus to regression vulnerable logic. On
 | Async/await presets | DONE | [Mdn async_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) |
 | Router v4  | DONE | [github.com/ReactTraining/react-router](https://github.com/ReactTraining/react-router)|
 | Redux selectors | DONE | [Computing Derived Data](https://redux.js.org/docs/recipes/ComputingDerivedData.html) |
-| Mobile version | DONE | |
-| Unit tests | DONE | |
-| Error handling | DONE | |
+| Mobile version | DONE ||
+| Unit tests | DONE ||
+| Error handling | DONE ||
+| Offline usage and workers ||||
+| RxJS and observable ||||
+| Docker container ||||
