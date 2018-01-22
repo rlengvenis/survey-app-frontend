@@ -80,13 +80,13 @@ Component functionality was tested with focus to regression vulnerable logic. On
 | Feature | Status | References |
 |:---|:---|:---|
 | JWT authentification using Passport.js | DONE | [www.passportjs.org](http://www.passportjs.org/),  [jwt.io](https://jwt.io/)  |
-| BEM for CSS | DONE | [getbem.com](http://getbem.com/) |
+| BEM and SCSS | DONE | [getbem.com](http://getbem.com/) |
 | Redux-form and validation | DONE | [github.com/erikras/redux-form](https://github.com/erikras/redux-form) |
 | Data normalization | DONE | [github.com/paularmstrong/normalizr](https://github.com/paularmstrong/normalizr) |
 | Fetch for API calls | DONE | [github.com/github/fetch](https://github.com/github/fetch) |
 | Async/await presets | DONE | [Mdn async_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) |
 | Router v4  | DONE | [github.com/ReactTraining/react-router](https://github.com/ReactTraining/react-router)|
-| Usage of selectors | DONE | [Computing Derived Data](https://redux.js.org/docs/recipes/ComputingDerivedData.html) |
+| Redux selectors | DONE | [Computing Derived Data](https://redux.js.org/docs/recipes/ComputingDerivedData.html) |
 | Mobile version | DONE | |
 | Unit tests | DONE | |
 | Error handling | DONE | |
