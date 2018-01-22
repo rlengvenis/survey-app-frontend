@@ -91,5 +91,5 @@ Component functionality was tested with focus to regression vulnerable logic. On
 | Unit tests | DONE ||
 | Error handling | DONE ||
 | Offline usage and workers ||||
-| RxJS and observable ||||
+| RxJS and Observable ||||
 | Docker container ||||
