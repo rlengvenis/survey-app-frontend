@@ -2,6 +2,8 @@
 
 Survey app is a simplified alternative to Google Forms written with [React.js](http://facebook.github.io/react/index.html).
 
+Related to: [survey-backend](https://github.com/RokasLeng/survey-app-backend)
+
 ## Demo
 
 Live demo: [survey-app.lengvenis.me](http://survey-app.lengvenis.me)
