@@ -6,6 +6,9 @@ Survey app is a simplified alternative to Google Forms app written with [React.j
 
 Live demo: [survey-app.lengvenis.me](http://survey-app.lengvenis.me)
 
+* Username: demo@demo.com
+* Password: demo
+
 ## Scripts
 
 Webpack configuration is based on [create-react-app](https://github.com/facebookincubator/create-react-app) boilerplate.
