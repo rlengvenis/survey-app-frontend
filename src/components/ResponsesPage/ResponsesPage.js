@@ -11,7 +11,7 @@ import DefaultSpinner from '../shared/DefaultSpinner';
 import ResponsesPageQuestionList from './ResponsesPageQuestionList/ResponsesPageQuestionList';
 
 
-export class ResponsesPage extends React.Component {
+export class ResponsesPage extends React.PureComponent {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
@@ -25,6 +25,11 @@ export class ResponsesPage extends React.Component {
 
     if (!survey) {
       return <DefaultSpinner/>;
+    }
+
+
+    if (!survey.questions.length) {
+      return <h2>Survey responses not ready.</h2>;
     }
 
     return (

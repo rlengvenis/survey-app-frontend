@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 const MEDIA_MD = 600; // The viewport min size, where mobile navigation bar is not shown any more
 
-export class Header extends React.Component {
+export class Header extends React.PureComponent {
 
   constructor(props) {
     super(props);

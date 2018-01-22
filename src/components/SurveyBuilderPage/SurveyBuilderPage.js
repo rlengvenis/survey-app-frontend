@@ -15,7 +15,7 @@ import SurveyBuilderQuestionList from './SurveyBuilderQuestionList/SurveyBuilder
 import DefaultSpinner from '../shared/DefaultSpinner';
 import FormInput from '../shared/FormInput';
 
-export class SurveyBuilderPage extends React.Component {
+export class SurveyBuilderPage extends React.PureComponent {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }
