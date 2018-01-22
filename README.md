@@ -87,7 +87,7 @@ Component functionality was tested with focus to regression vulnerable logic. On
 | Redux-form and validation | DONE | [github.com/erikras/redux-form](https://github.com/erikras/redux-form) |
 | Data normalization | DONE | [github.com/paularmstrong/normalizr](https://github.com/paularmstrong/normalizr) |
 | Fetch for API calls | DONE | [github.com/github/fetch](https://github.com/github/fetch) |
-| Async/await presets | DONE | [MDN async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) |
+| Async/await presets | DONE | [MDN Async Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) |
 | Router v4  | DONE | [github.com/ReactTraining/react-router](https://github.com/ReactTraining/react-router)|
 | Redux selectors | DONE | [Computing Derived Data](https://redux.js.org/docs/recipes/ComputingDerivedData.html) |
 | Mobile version | DONE ||
