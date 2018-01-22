@@ -70,7 +70,7 @@ More reasoning about CSS usage: [Stop using CSS in JavaScript for web developmen
 
 ### Unit tests ###
 
-`src/setupTests.js` holds project test configuration. Technologies used:
+`src/setupTests.js` holds project test env configuration. Technologies used:
 
 * [enzyme](https://github.com/airbnb/enzyme) - a wrapper for React test utils
 * [chai](https://github.com/chaijs/chai) - assertion library
