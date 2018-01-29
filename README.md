@@ -8,9 +8,6 @@ Related to: [survey-backend](https://github.com/RokasLeng/survey-app-backend)
 
 Live demo: [survey-app.lengvenis.me](http://survey-app.lengvenis.me)
 
-* Username: demo@demo.com
-* Password: demo
-
 ## Scripts
 
 Webpack configuration is based on [create-react-app](https://github.com/facebookincubator/create-react-app) boilerplate.
