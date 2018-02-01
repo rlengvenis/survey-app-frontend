@@ -44,19 +44,15 @@ const _authenticateUser = async (dispatch, {authType, email, password}) => {
       })
     });
 
-    if (response.status === 500) {
-      throw Error(response.statusText);
-    }
-
     if (response.status === 401) {
       throw Error('Email or password is invalid');
     }
 
-    const data = await response.json();
-
-    if (response.status === 422) {
-      throw Error(data.error);
+    if (String(response.status).startsWith(5)) {
+      throw Error('Server error occurred');
     }
+
+    const data = await response.json();
 
     localStorage.setItem('token', data.token);
 
