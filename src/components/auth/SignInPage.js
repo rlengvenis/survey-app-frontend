@@ -43,7 +43,7 @@ class SignInPage extends React.Component {
           className="login-form"
           onSubmit={handleSubmit(this.handleFormSubmit)}
         >
-          <div className="login-form--field">
+          <div className="login-form__field">
             <Field
               type="email"
               component={FormInput}
@@ -51,7 +51,7 @@ class SignInPage extends React.Component {
               name="email"
             />
           </div>
-          <div className="login-form--field">
+          <div className="login-form__field">
             <Field
               type="password"
               component={FormInput}
@@ -61,7 +61,7 @@ class SignInPage extends React.Component {
           </div>
 
           <button
-            className="button-raised login-form--submit"
+            className="button-raised login-form__submit"
             type="submit"
           >
             Sign in

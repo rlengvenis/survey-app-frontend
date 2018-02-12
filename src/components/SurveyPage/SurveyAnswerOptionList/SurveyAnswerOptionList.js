@@ -36,7 +36,7 @@ const SurveyAnswerOptionList = ({
       }
       {
         meta.touched && meta.error &&
-        <span className="input--error-message">Error: {meta.error}</span>
+        <span className="input__error-message">Error: {meta.error}</span>
       }
     </ul>
   );
