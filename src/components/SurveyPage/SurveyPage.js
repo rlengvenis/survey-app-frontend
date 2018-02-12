@@ -13,7 +13,7 @@ import SurveyQuestionList from './SurveyQuestionList/SurveyQuestionList';
 import DefaultSpinner from '../shared/DefaultSpinner';
 
 
-export class SurveyPage extends React.PureComponent {
+export class SurveyPage extends React.Component {
   componentDidMount() {
     const {location, history} = this.props;
     const surveyId = queryString.parse(location.search).id;

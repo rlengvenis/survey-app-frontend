@@ -11,7 +11,7 @@ import FormInput from '../shared/FormInput';
 import ErrorMessage from '../shared/ErrorMessage';
 
 
-class SignUpPage extends React.PureComponent {
+class SignUpPage extends React.Component {
   componentWillUnmount() {
     this.props.authActions.clearErrors();
   }

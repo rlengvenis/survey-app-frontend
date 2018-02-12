@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import * as authActions from '../../actions/authActions';
 
 
-class SignOutPage extends React.PureComponent {
+class SignOutPage extends React.Component {
   componentDidMount() {
     this.props.authActions.signOutUser();
   }

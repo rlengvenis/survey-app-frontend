@@ -11,7 +11,7 @@ import DefaultSpinner from '../shared/DefaultSpinner';
 import ResponsesPageQuestionList from './ResponsesPageQuestionList/ResponsesPageQuestionList';
 
 
-export class ResponsesPage extends React.PureComponent {
+export class ResponsesPage extends React.Component {
   componentDidMount() {
     this.props.surveyActions.loadSurvey();
   }

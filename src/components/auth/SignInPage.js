@@ -12,7 +12,7 @@ import ErrorMessage from '../shared/ErrorMessage';
 
 
 
-class SignInPage extends React.PureComponent {
+class SignInPage extends React.Component {
   componentWillUnmount() {
     this.props.authActions.clearErrors();
   }
